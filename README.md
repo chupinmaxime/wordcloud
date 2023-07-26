@@ -32,7 +32,7 @@ Then, you will have to place the .mp files in the
 * `wordcloud.tex` (LaTeX);
 * `wordcloud.lua` (Lua).
 
-```
+
 
 ### With MikTEX and Windows
 

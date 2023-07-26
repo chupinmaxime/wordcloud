@@ -1,0 +1,12 @@
+\NeedsTeXFormat{LaTeX2e}%
+\def\PackageName{wordcloud}%
+\def\fileversion{v0.1}%
+\def\filedate{2023/07/26}%
+\ProvidesPackage{wordcloud}[\filedate\space\fileversion]%
+%
+% package to load
+\RequirePackage{luamplib}%
+
+%
+% load the lua code
+\directlua{require("wordcloud.lua")}%

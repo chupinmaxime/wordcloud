@@ -34,7 +34,7 @@ function wc_add_ignored_words(tab)
     wc_table_concat(wordcloud_ignor_words,tab)    
 end
 
-function wc_build_table_freq(mystr)
+function wc_build_table_weight(mystr)
     local loc_str = mystr;
     local ignor_chars = {";","’","'","\"","{","}","[","]","(",")","…",".","?","!","$","\\","#","<",">","«","»","+","*","-","/","=","%%", "€",":","~"}
     loc_str = loc_str:gsub('[%p%c]+',' ')
@@ -63,31 +63,34 @@ function wc_build_table_freq(mystr)
     return t
 end
 
-function wc_build_freq(t)
-  local freq = {}
+function wc_build_weight(t)
+  local weight = {}
   for _, v in ipairs(t) do
-    freq[v] = (freq[v] or 0) + 1
+    weight[v] = (weight[v] or 0) + 1
   end
-  return freq
+  return weight
 end
 
-function wc_build_mp_code(table_freq,maximum,rotation)
+function wc_build_mp_code(table_weight,maximum,rotation)
+    -- optional arguments
     maximum = maximum or 50
+    rotation = rotation or 0
+
     local total_occ = 0
-    local tabular_freq = {}
-    for k,v in pairs(table_freq) do 
+    local tabular_weight = {}
+    for k,v in pairs(table_weight) do 
         total_occ=total_occ+v
     end
     local i=0
-    for k,v in pairs(table_freq) do
+    for k,v in pairs(table_weight) do
         i=i+1 
-        tabular_freq[i] ={}
-        tabular_freq[i][1]=k
-        tabular_freq[i][2]=v/total_occ
+        tabular_weight[i] ={}
+        tabular_weight[i][1]=k
+        tabular_weight[i][2]=v/total_occ
     end
-    table.sort(tabular_freq,function (k1, k2) return k1[2] > k2[2] end)
-    --for i=1,#tabular_freq do 
-    --    print(tabular_freq[i][1],tabular_freq[i][2])
+    table.sort(tabular_weight,function (k1, k2) return k1[2] > k2[2] end)
+    --for i=1,#tabular_weight do 
+    --    print(tabular_weight[i][1],tabular_weight[i][2])
     --end
     
     local str_mp=[[input wordcloud
@@ -96,18 +99,19 @@ function wc_build_mp_code(table_freq,maximum,rotation)
         numeric weights[];
     ]]
     local i=0
-    for i=1, #tabular_freq do
+    for i=1, #tabular_weight do
          
-        str_mp=str_mp.."words["..i.."]:=\""..tabular_freq[i][1].."\";"
-        str_mp=str_mp.."weights["..i.."]:="..tabular_freq[i][2]..";"
+        str_mp=str_mp.."words["..i.."]:=\""..tabular_weight[i][1].."\";"
+        str_mp=str_mp.."weights["..i.."]:="..tabular_weight[i][2]..";"
         if (i>=maximum) then
             break
         end
     end
-    str_mp=str_mp.."draw_wordcloud(words,weights,"..rotation..","..math.min(maximum,#tabular_freq)..");endfig;"
+    str_mp=str_mp.."draw_wordcloud(words,weights,"..rotation..","..math.min(maximum,#tabular_weight)..");endfig;"
     return str_mp
 end
 
+function wc_build_mp_code_list()
 
 str = wc_file2string("texte.txt")
 --table_w = str:gmatch("%S+")
@@ -116,9 +120,9 @@ str = wc_file2string("texte.txt")
 --    print(w)
 --end
 
-t = wc_build_table_freq(str)
+t = wc_build_table_weight(str)
 
-test = wc_build_freq(t)
+test = wc_build_weight(t)
 --for k,v in pairs(test) do
 --    print(k,v)
 --end

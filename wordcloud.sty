@@ -10,3 +10,28 @@
 %
 % load the lua code
 \directlua{require("wordcloud.lua")}%
+
+\ExplSyntaxOn
+
+% variable globale
+\tl_new:N \g__wc_wordcloud_scale_tl
+
+% definitions des clés/valeurs pour la commande \wordcloud
+\keys_define:nn{wc/wordcloud}{%
+  scale .tl_gset:N = \g__wc_wordcloud_scale_tl,
+  scale .value_required:n = true,
+}
+
+\NewDocumentCommand\wordcloud{ o m }{%
+    % pour les clés à valeur par défaut
+    \keys_set:nn { wc/wordcloud } { scale=1 } %
+    \IfNoValueF {#1}
+    {
+        \keys_set:nn { wc/wordcloud } { #1 }
+    }
+    
+}
+
+
+
+\ExplSyntaxOff

@@ -1,0 +1,94 @@
+%!PS
+%%BoundingBox: -37 -30 33 30 
+%%HiResBoundingBox: -36.03307 -29.01599 32.23833 29.2406 
+%%Creator: MetaPost 2.02
+%%CreationDate: 2023.07.31:1802
+%%Pages: 1
+%*Font: cmr10 15.62105 9.96265 45:81011
+%*Font: cmr7 10.93472 6.97385 41:8
+%*Font: cmr10 13.49812 9.96265 63:e0386
+%*Font: cmr10 5.88051 9.96265 45:80011003c1f78
+%*Font: cmr10 4.51796 9.96265 61:ba1e31
+%*Font: cmr10 2.93895 9.96265 13:80000000000000000013fe7fe4
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0 0 0 setrgbcolor
+-20.04468 -7.0186 moveto
+(L) cmr10 15.62105 fshow
+-15.90509 -3.81636 moveto
+(A) cmr7 10.93472 fshow
+-9.02737 -7.0186 moveto
+(T) cmr10 15.62105 fshow
+-0.34949 -10.38141 moveto
+(E) cmr10 15.62105 fshow
+8.32886 -7.0186 moveto
+(X) cmr10 15.62105 fshow
+-25.50381 5.15567 moveto
+(do) cmr10 13.49812 fshow
+-10.88081 5.15567 moveto
+(cumen) cmr10 13.49812 fshow
+26.989 5.15567 moveto
+(t) cmr10 13.49812 fshow
+-9.97055 -16.0106 moveto
+(T) cmr10 5.88051 fshow
+-6.70378 -17.27652 moveto
+(E) cmr10 5.88051 fshow
+-3.43683 -16.0106 moveto
+(X) cmr10 5.88051 fshow
+3.00302 -15.7319 moveto
+(plus) cmr10 5.88051 fshow
+-7.5652 15.85286 moveto
+(do) cmr10 5.88051 fshow
+-1.19464 15.85286 moveto
+(cumen) cmr10 5.88051 fshow
+15.30348 15.85286 moveto
+(ts) cmr10 5.88051 fshow
+-14.61671 -23.59863 moveto
+(forme) cmr10 5.88051 fshow
+3.36893 -22.91483 moveto
+(p) cmr10 5.88051 fshow
+6.79926 -22.91483 moveto
+(ermet) cmr10 5.88051 fshow
+1.77386 22.02968 moveto
+(commandes) cmr10 4.51796 fshow
+-21.62428 -15.71309 moveto
+(texte) cmr10 4.51796 fshow
+-10.84785 26.10312 moveto
+(commande) cmr10 4.51796 fshow
+-25.97188 19.5845 moveto
+(langage) cmr10 4.51796 fshow
+14.1723 -16.1113 moveto
+(group) cmr10 2.93895 fshow
+21.60953 -16.1113 moveto
+(es) cmr10 2.93895 fshow
+17.6283 -13.32277 moveto
+(langue) cmr10 2.93895 fshow
+-16.4532 -18.43628 moveto
+(^) cmr10 2.93895 fshow
+-16.37158 -18.43628 moveto
+(etre) cmr10 2.93895 fshow
+-36.03307 -1.30893 moveto
+(nom) cmr10 2.93895 fshow
+-30.56332 -1.30893 moveto
+(breux) cmr10 2.93895 fshow
+-34.73901 -6.48175 moveto
+(form) cmr10 2.93895 fshow
+-28.85292 -6.48175 moveto
+(ules) cmr10 2.93895 fshow
+-24.8321 -28.44452 moveto
+(math) cmr10 2.93895 fshow
+-18.21942 -28.44452 moveto
+(\023) cmr10 2.93895 fshow
+-18.1378 -28.44452 moveto
+(ematiques) cmr10 2.93895 fshow
+20.9123 -8.95383 moveto
+(mise) cmr10 2.93895 fshow
+22.20955 -4.91043 moveto
+(co) cmr10 2.93895 fshow
+25.06686 -4.91043 moveto
+(de) cmr10 2.93895 fshow
+22.65884 -0.25851 moveto
+(page) cmr10 2.93895 fshow
+showpage
+%%EOF

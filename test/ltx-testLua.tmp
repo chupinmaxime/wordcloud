@@ -1,0 +1,26 @@
+verbatimtex
+%&latex
+\documentclass{article}
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex \LaTeX etex ;
+latexmp_picture[2]:= btex document etex ;
+latexmp_picture[3]:= btex \TeX etex ;
+latexmp_picture[4]:= btex plus etex ;
+latexmp_picture[5]:= btex documents etex ;
+latexmp_picture[6]:= btex forme etex ;
+latexmp_picture[7]:= btex permet etex ;
+latexmp_picture[8]:= btex commandes etex ;
+latexmp_picture[9]:= btex texte etex ;
+latexmp_picture[10]:= btex commande etex ;
+latexmp_picture[11]:= btex langage etex ;
+latexmp_picture[12]:= btex groupes etex ;
+latexmp_picture[13]:= btex langue etex ;
+latexmp_picture[14]:= btex être etex ;
+latexmp_picture[15]:= btex nombreux etex ;
+latexmp_picture[16]:= btex formules etex ;
+latexmp_picture[17]:= btex mathématiques etex ;
+latexmp_picture[18]:= btex mise etex ;
+latexmp_picture[19]:= btex code etex ;
+latexmp_picture[20]:= btex page etex ;

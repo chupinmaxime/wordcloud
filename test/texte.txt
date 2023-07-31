@@ -1,0 +1,51 @@
+LaTeX (dont le logo est LATEX) est un langage et un système de composition de documents. Il s'agit d'une collection de macrocommandes destinées à faciliter l'utilisation du « processeur de texte » TeX de Donald Knuth.
+
+LaTeX permet de rédiger des documents dont la mise en page est réalisée automatiquement en se conformant du mieux possible à des normes typographiques. Une fonctionnalité distinctive de LaTeX est son mode mathématique, qui permet de composer des formules complexes.
+
+LaTeX est particulièrement utilisé dans les domaines techniques et scientifiques pour la production de documents de taille moyenne (tels que des articles) ou importante (thèses ou livres, par exemple). Néanmoins, il peut être employé pour générer des documents de types très variés (lettres ou transparents, par exemple). Enfin, de nombreux sites Internet — dont le texte est typiquement mis en forme par d’autres moyens — emploient un sous-ensemble de LaTeX pour composer notamment leurs formules mathématiques.
+
+Il a été développé par Leslie Lamport au début des années 19803. Depuis 1989, il est maintenu par une équipe de bénévoles au sein du projet LaTeX3.
+
+Les commandes débutent par le caractère barre oblique inversée (« \ »). Une commande peut avoir des paramètres. Les paramètres facultatifs sont à mettre entre crochets. Les paramètres obligatoires doivent être encadrés par des accolades. Cependant, si le paramètre en question ne fait qu'un caractère de long ou s'il s'agit d'une autre commande, les accolades peuvent être omises.
+
+La commande \documentclass est la première de tout document LaTeX : elle définit l'apparence générale du document. Outre minimal, de nombreuses classes sont disponibles, telles que article (pour des articles), report (pour des rapports plus longs), book (pour des livres entiers, voire des thèses), letter ou lettre (pour des lettres), slides (pour des transparents à projeter), beamer (pour des présentations sur écran).
+
+La commande \usepackage permet de charger un paquet, en l’occurrence le paquet babel avec l’option french, qui applique au document les règles de typographie spécifiques à la langue française — par exemple, l’espace avant les deux-points.
+
+La paire de commandes \begin{document} et \end{document} encadre le contenu du document. Le texte est essentiellement écrit tel quel. La commande \textbf produit du texte gras. La paire de commandes \[ et \] contient une formule mathématique.
+
+Fonctionnement
+LaTeX se présente sous la forme d’un langage informatique de balisage. On compose donc un document LaTeX en écrivant son code source au moyen d’un éditeur de texte. Ce code source est ensuite traité par le compilateur de LaTeX pour produire le document mis en forme. Le résultat est fourni dans un format de description de page propre à TeX, le format DVI (sigle de l’anglais DeVice Independent, signifiant « indépendant du périphérique »). Ce format peut alors être imprimé, ou traduit dans l’un des formats PostScript ou PDF.
+
+De nombreux langages de balisage léger (tels txt2tags, reST ou POD) peuvent s’exporter vers le langage LaTeX. Il est ainsi possible de rédiger ses documents dans l’un de ces langages, plus simples et plus lisibles que le langage LaTeX, pour le même rendu final. En contrepartie, les possibilités de mise en forme sont en général fortement restreintes.
+
+LaTeX réalise le principe de séparation du fond et de la forme. Il encourage le rédacteur à se concentrer sur la structure logique et le contenu de son document, tandis que sa mise en page (pagination, césure des mots, alinéas, insertion d’en-têtes et de pieds-de-pages…) est laissée au compilateur.
+
+Interfaces de saisie
+Son mode de saisie — l’écriture d’un code source décrivant le document — distingue LaTeX des logiciels de type WYSIWYG, tels LibreOffice Writer ou Microsoft Word, où la forme est immédiatement visible à l'écran. Certains logiciels, comme LyX, donnent cependant une interface de ce type à LaTeX. Dans ce cas, le logiciel affiche en temps réel un rendu approximatif qui souligne la structure du document, tandis que le compilateur LaTeX produit le document final en tâche de fond.
+
+Le langage
+L’utilisateur peut adapter LaTeX à ses besoins spécifiques en créant ou modifiant des macrocommandes.
+
+Paquets
+Pour complémenter les fonctions de LaTeX, l’utilisateur peut charger des paquets tiers. Ceux-ci, à l'instar des bibliothèques logicielles, fournissent des commandes supplémentaires, qui vont de simples symboles jusqu’à des fonctionnalités complexes, pouvant impliquer une modification du processus de compilation du document.
+
+Voici quelques exemples de paquets parmi les plus communs :
+
+babel prend en charge la langue du document, en adaptant la typographie et en fournissant des commandes spécifiques à chaque langue ;
+amsmath, développé par la Société américaine de mathématiques, étend considérablement les possibilités d'édition de formules mathématiques ;
+tikz permet la création d’illustrations vectorielles, telles que des graphiques ;
+graphicx est utilisé pour insérer des images ;
+listings permet l’affichage de code source avec coloration syntaxique ;
+calc fournit un mécanisme de calcul.
+Il existe un très grand nombre de paquets TeX, que la communauté rassemble au sein du dépôt CTAN (sigle de l’anglais Comprehensive TeX Archive Network).
+
+Qualités
+LaTeX requiert un apprentissage initial plus important que celui qui est nécessaire pour les logiciels de type WYSIWYG, du moins pour la mise en page de petits documents simples. En contrepartie, le système permet de composer une très grande variété de formules mathématiques, le document produit présente une grande qualité typographique, les références bibliographiques sont aisées à insérer et à regrouper (grâce à BibTeX), les titres sont numérotés et les tables des matières générées automatiquement.
+
+Communautés
+L'évolution de LaTeX — et plus généralement de TeX — est assurée par une communauté structurée en groupes d'utilisateurs.
+
+Il existe de nombreux groupes d'utilisateurs de TeX/LaTeX de par le monde, qui sont généralement liés à une langue : GUTenberg (francophone), TUG (États-Unis, avec des sous-groupes dans de nombreux pays), DANTE (germanophone), CervanTeX (hispanophone), GUIT (italophone), NTG (néerlandophone)…
+
+Certains de ces groupes publient des journaux (les Cahiers GUTenberg, la Lettre GUTenberg, PracTeX, TUGboat…), organisent aussi des conférences, parfois de façon conjointe (EuroTeX…) et proposent de l'aide en ligne, comme texnique.fr [archive] dans le monde francophone.

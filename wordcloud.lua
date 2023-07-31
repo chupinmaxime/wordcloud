@@ -71,11 +71,7 @@ function wc_build_weight(t)
   return weight
 end
 
-function wc_build_mp_code(table_weight,maximum,rotation)
-    -- optional arguments
-    maximum = maximum or 50
-    rotation = rotation or 0
-
+function wc_table_to_tabular(table_weight)
     local total_occ = 0
     local tabular_weight = {}
     for k,v in pairs(table_weight) do 
@@ -89,12 +85,19 @@ function wc_build_mp_code(table_weight,maximum,rotation)
         tabular_weight[i][2]=v/total_occ
     end
     table.sort(tabular_weight,function (k1, k2) return k1[2] > k2[2] end)
-    --for i=1,#tabular_weight do 
-    --    print(tabular_weight[i][1],tabular_weight[i][2])
-    --end
+    return tabular_weight
+end
+
+function wc_build_mp_code(table_weight,maximum,rotation)
+    -- optional arguments
+    maximum = maximum or 50
+    rotation = rotation or 0
+
+    local total_occ = 0
+    local tabular_weight = wc_table_to_tabular(table_weight)
     
-    local str_mp=[[input wordcloud
-        beginfig(0);
+    
+    local str_mp=[[
         string words[];
         numeric weights[];
     ]]
@@ -107,44 +110,63 @@ function wc_build_mp_code(table_weight,maximum,rotation)
             break
         end
     end
-    str_mp=str_mp.."draw_wordcloud(words,weights,"..rotation..","..math.min(maximum,#tabular_weight)..");endfig;"
+    str_mp=str_mp.."draw_wordcloud(words,weights,"..rotation..","..math.min(maximum,#tabular_weight)..");"
     return str_mp
 end
 
-function wc_build_mp_code_list()
+function wc_list_to_table(list)
+    -- list of words and weights (word1,weight1);(word2,weight2); etc.
+    local table_weight = {}
+    local pair = string.explode(list, ";")
+    local lgth=#pair
+    for i=1,lgth do
+        word,weight=string.match(pair[i],"%((.+),(.+)%)")
+        table_weight[word]=weight
+    end
+    return table_weight
+end
 
-str = wc_file2string("texte.txt")
---table_w = str:gmatch("%S+")
---print(type(table_w))
---for w in table_w do
---    print(w)
---end
+function wc_size_of_table(table)
+    local lengthNum = 0
 
-t = wc_build_table_weight(str)
+    for k, v in pairs(table) do -- for every key in the table with a corresponding non-nil value 
+        lengthNum = lengthNum + 1
+    end
+    return lengthNum
+end 
 
-test = wc_build_weight(t)
---for k,v in pairs(test) do
---    print(k,v)
---end
+function wc_build_wordcloud(str,rotation,scale)
+    local table = wc_list_to_table(str)
+    local lgth_table = wc_size_of_table(table)
+    print(lgth_table)
+    local output
+    output= [[\begin{mplibcode}
+    input wordcloud
+    beginfig(0);
+    ]] 
+    output = output.."set_wordcloud_scale("..scale..");"
+    output = output..wc_build_mp_code(table,lgth_table,rotation)
+    output = output.."endfig;\\end{mplibcode}"
+    print(output)
+    tex.sprint(output)
+end
 
-output = wc_build_mp_code(test,20,0)
---print(output)
-
-file = io.open("testLua.mp", "w")
-file:write(output.."end.")
-file:close()
-
-file = io.open("testLuaTeX.tex", "w")
-LuaOutput = [[
-    \documentclass{standalone}
-    \usepackage{xcharter-otf}
-    \usepackage{luamplib}
-    
-    \begin{document}
-    \begin{mplibcode} 
-]]..output..[[
-\end{mplibcode}
-\end{document} 
-]]
-file:write(LuaOutput)
-file:close()
+--file = io.open("testLua.mp", "w")
+--file:write(output.."end.")
+--file:close()
+--
+--file = io.open("testLuaTeX.tex", "w")
+--LuaOutput = [[
+--    \documentclass{standalone}
+--    \usepackage{xcharter-otf}
+--    \usepackage{luamplib}
+--    
+--    \begin{document}
+--    \begin{mplibcode} 
+--]]..output..[[
+--\end{mplibcode}
+--\end{document} 
+--]]
+--file:write(LuaOutput)
+--file:close()
+--

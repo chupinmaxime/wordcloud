@@ -226,7 +226,11 @@ def _wordcloud_rotation(expr a,b)=
   if b=0:
     a
   else:
-    -a
+    if(a=0):
+      90
+    else:
+      -a
+    fi
   fi
 enddef;
 

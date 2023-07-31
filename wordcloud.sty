@@ -21,15 +21,24 @@
   scale .tl_gset:N = \g__wc_wordcloud_scale_tl,
   scale .value_required:n = true,
 }
-
+% function to build a wordcloud from a list of the form :
+% (word1,weight1);(word2,weight2);etc.
 \NewDocumentCommand\wordcloud{ o m }{%
-    % pour les clés à valeur par défaut
-    \keys_set:nn { wc/wordcloud } { scale=1 } %
-    \IfNoValueF {#1}
-    {
-        \keys_set:nn { wc/wordcloud } { #1 }
-    }
-    
+  % mandatory argument : list (word1,weight1);(word2,weight2);etc.
+  % optional argument :
+  % scale=<value> (default 1)
+
+  % pour les clés à valeur par défaut
+  \keys_set:nn { wc/wordcloud } { scale=1 } %
+  \IfNoValueF {#1}
+  {
+      \keys_set:nn { wc/wordcloud } { #1 }
+  }
+  %\show {coucous}
+  \directlua{%
+    %tex.sprint("test")
+    wc_build_wordcloud("#2",0,1)
+  }%
 }
 
 

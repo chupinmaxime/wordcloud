@@ -135,7 +135,7 @@ function wc_size_of_table(table)
     return lengthNum
 end 
 
-function wc_build_wordcloud(str,rotation,scale)
+function wc_build_wordcloud(str,rotation,scale,margin)
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)
     print(lgth_table)
@@ -145,6 +145,7 @@ function wc_build_wordcloud(str,rotation,scale)
     beginfig(0);
     ]] 
     output = output.."set_wordcloud_scale("..scale..");"
+    output = output.."set_box_margin("..margin..");"
     output = output..wc_build_mp_code(table,lgth_table,rotation)
     output = output.."endfig;\\end{mplibcode}"
     print(output)

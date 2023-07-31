@@ -20,6 +20,10 @@
 \keys_define:nn{wc/wordcloud}{%
   scale .tl_gset:N = \g__wc_wordcloud_scale_tl,
   scale .value_required:n = true,
+  rotate .tl_gset:N = \g__wc_wordcloud_rotate_tl,
+  rotate .value_required:n = true,
+  margin .tl_gset:N = \g__wc_wordcloud_margin_tl,
+  margin .value_required:n = true,
 }
 % function to build a wordcloud from a list of the form :
 % (word1,weight1);(word2,weight2);etc.
@@ -30,6 +34,9 @@
 
   % pour les clés à valeur par défaut
   \keys_set:nn { wc/wordcloud } { scale=1 } %
+  \keys_set:nn { wc/wordcloud } { rotate=0 } %
+  \keys_set:nn { wc/wordcloud } { margin=0.3pt } %
+  
   \IfNoValueF {#1}
   {
       \keys_set:nn { wc/wordcloud } { #1 }
@@ -37,7 +44,7 @@
   %\show {coucous}
   \directlua{%
     %tex.sprint("test")
-    wc_build_wordcloud("#2",0,1)
+    wc_build_wordcloud("#2",\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl")
   }%
 }
 

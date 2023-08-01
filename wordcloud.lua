@@ -140,7 +140,7 @@ function wc_build_wordcloud(str,rotation,scale,margin)
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)
     local output
-    output= [[\begin{mplibcode}
+    output= [[\begin{mplibcode}[wordcloud]
     input wordcloud
     beginfig(0);
     ]] 
@@ -160,7 +160,7 @@ function wc_build_wordcloud_file(file,number,rotation,scale,margin)
 
     local table_weight = wc_build_table_weight(words)
     local output
-    output= [[\begin{mplibcode}
+    output= [[\begin{mplibcode}[wordcloud]
     input wordcloud
     beginfig(0);
     ]] 

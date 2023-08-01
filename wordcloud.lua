@@ -34,6 +34,15 @@ function wc_add_ignored_words(tab)
     wc_table_concat(wordcloud_ignor_words,tab)    
 end
 
+-- function to build a tab from a string of the form
+-- word1,word2,word3,etc.
+function wc_string_to_tab(strWord)
+    local tab
+    strWord=string.gsub(strWord, "%s+", "") -- space delete
+    tab = string.explode(strWord, ",")
+    return tab
+end
+
 function wc_build_word_table(mystr)
     local loc_str = mystr;
     local ignor_chars = {";","’","'","\"","{","}","[","]","(",")","…",".","?","!","$","\\","#","<",">","«","»","+","*","-","/","=","%%", "€",":","~"}

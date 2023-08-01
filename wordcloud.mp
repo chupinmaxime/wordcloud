@@ -1,5 +1,5 @@
 if not known mplib: input latexmp ; show"wordcloud Infos: latexmp loaded";fi;
-input format; % pour avoir la fonction roundd(x,d)
+
 
 
 % function to get all the path of letters (too slow)

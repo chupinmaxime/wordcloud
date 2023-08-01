@@ -73,11 +73,19 @@
   }
   %\show {coucous}
   \directlua{%
-
     wc_build_wordcloud_file("#2",#3,\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl")
   }%
 }
 
+% function to add words to ignor when a wordcloud is build from a text file
+\NewDocumentCommand\wordcloudIgnoreWords{m}{%
+  % mandatory argument : list of words separated by commas 
+  % word1, word2, word3, etc.
+  \directlua{%
+    tab=wc_string_to_tab("#1")
+    wc_add_ignored_words(tab)
+  }%
+}
 
 
 \ExplSyntaxOff

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  1 AUG 2023 14:19
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  1 AUG 2023 15:12
  restricted system commands enabled.
 **testLaTeX.tex
 (./testLaTeX.tex
@@ -116,14 +116,14 @@ Here is how much of LuaTeX's memory you used:
  406 words of node memory still in use:
    3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 48 glue_spec,
  4 attribute_list, 1 write nodes
-   avail lists: 2:79,3:86,4:1,5:31,6:2,7:234,9:92,11:20
+   avail lists: 2:79,3:86,4:1,5:32,6:2,7:220,9:92,11:16
  20904 multiletter control sequences out of 65536+600000
  26 fonts using 1476743 bytes
- 40i,5n,46p,875b,123s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 40i,5n,46p,869b,123s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.ot
 f></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular
 .otf>
-Output written on testLaTeX.pdf (2 pages, 7749 bytes).
+Output written on testLaTeX.pdf (2 pages, 7719 bytes).
 
 PDF statistics: 25 PDF objects out of 1000 (max. 8388607)
  14 compressed objects within 1 object stream

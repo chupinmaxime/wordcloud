@@ -34,7 +34,7 @@ function wc_add_ignored_words(tab)
     wc_table_concat(wordcloud_ignor_words,tab)    
 end
 
-function wc_build_table_weight(mystr)
+function wc_build_word_table(mystr)
     local loc_str = mystr;
     local ignor_chars = {";","’","'","\"","{","}","[","]","(",")","…",".","?","!","$","\\","#","<",">","«","»","+","*","-","/","=","%%", "€",":","~"}
     loc_str = loc_str:gsub('[%p%c]+',' ')
@@ -63,7 +63,7 @@ function wc_build_table_weight(mystr)
     return t
 end
 
-function wc_build_weight(t)
+function wc_build_table_weight(t)
   local weight = {}
   for _, v in ipairs(t) do
     weight[v] = (weight[v] or 0) + 1
@@ -135,10 +135,10 @@ function wc_size_of_table(table)
     return lengthNum
 end 
 
+-- build mp code for the wordcloud of a list given in LaTeX command
 function wc_build_wordcloud(str,rotation,scale,margin)
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)
-    print(lgth_table)
     local output
     output= [[\begin{mplibcode}
     input wordcloud
@@ -148,26 +148,25 @@ function wc_build_wordcloud(str,rotation,scale,margin)
     output = output.."set_box_margin("..margin..");"
     output = output..wc_build_mp_code(table,lgth_table,rotation)
     output = output.."endfig;\\end{mplibcode}"
-    print(output)
     tex.sprint(output)
 end
 
---file = io.open("testLua.mp", "w")
---file:write(output.."end.")
---file:close()
---
---file = io.open("testLuaTeX.tex", "w")
---LuaOutput = [[
---    \documentclass{standalone}
---    \usepackage{xcharter-otf}
---    \usepackage{luamplib}
---    
---    \begin{document}
---    \begin{mplibcode} 
---]]..output..[[
---\end{mplibcode}
---\end{document} 
---]]
---file:write(LuaOutput)
---file:close()
---
+
+-- build mp code for the wordcloud of a file given in LaTeX command
+function wc_build_wordcloud_file(file,number,rotation,scale,margin)
+    local str = wc_file2string(file)
+
+    local words = wc_build_word_table(str)
+
+    local table_weight = wc_build_table_weight(words)
+    local output
+    output= [[\begin{mplibcode}
+    input wordcloud
+    beginfig(0);
+    ]] 
+    output = output.."set_wordcloud_scale("..scale..");"
+    output = output.."set_box_margin("..margin..");"
+    output = output..wc_build_mp_code(table_weight,number,rotation)
+    output = output.."endfig;\\end{mplibcode}"
+    tex.sprint(output)
+end

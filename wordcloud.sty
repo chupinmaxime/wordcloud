@@ -15,6 +15,8 @@
 
 % variable globale
 \tl_new:N \g__wc_wordcloud_scale_tl
+\tl_new:N \g__wc_wordcloud_rotate_tl
+\tl_new:N \g__wc_wordcloud_margin_tl
 
 % definitions des clés/valeurs pour la commande \wordcloud
 \keys_define:nn{wc/wordcloud}{%
@@ -29,8 +31,10 @@
 % (word1,weight1);(word2,weight2);etc.
 \NewDocumentCommand\wordcloud{ o m }{%
   % mandatory argument : list (word1,weight1);(word2,weight2);etc.
-  % optional argument :
+  % optional arguments :
   % scale=<value> (default 1)
+  % rotation=<value> (default 0)
+  % margin=<value> (default 0.3pt)
 
   % pour les clés à valeur par défaut
   \keys_set:nn { wc/wordcloud } { scale=1 } %
@@ -45,6 +49,32 @@
   \directlua{%
     %tex.sprint("test")
     wc_build_wordcloud("#2",\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl")
+  }%
+}
+
+
+% function to build a wordcloud from a text file :
+\NewDocumentCommand\wordcloudFile{ o m m}{%
+  % two mandatory arguments : name of the file and number of words for the
+  % wordcloud 
+  % optional arguments :
+  % scale=<value> (default 1)
+  % rotation=<value> (default 0)
+  % margin=<value> (default 0.3pt)
+
+  % pour les clés à valeur par défaut
+  \keys_set:nn { wc/wordcloud } { scale=1 } %
+  \keys_set:nn { wc/wordcloud } { rotate=0 } %
+  \keys_set:nn { wc/wordcloud } { margin=0.3pt } %
+  
+  \IfNoValueF {#1}
+  {
+      \keys_set:nn { wc/wordcloud } { #1 }
+  }
+  %\show {coucous}
+  \directlua{%
+
+    wc_build_wordcloud_file("#2",#3,\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl")
   }%
 }
 

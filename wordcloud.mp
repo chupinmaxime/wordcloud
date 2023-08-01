@@ -105,7 +105,7 @@ vardef bb_intersection(expr tic, tac)=
     for _v within tic:
       for _p within _v:
       i:=i+1;
-      show "i"&decimal(i);
+      %show "i"&decimal(i);
       xmin_:= (xpart llcorner _p)-_wordcloud_box_margin;  
       ymin_ := (ypart llcorner _p)-_wordcloud_box_margin; 
       xmax_:= (xpart urcorner _p)+_wordcloud_box_margin;
@@ -114,7 +114,7 @@ vardef bb_intersection(expr tic, tac)=
       for _w within tac:
         for _q within _w:
         j:=j+1;
-        show "j"&decimal(j);
+        %show "j"&decimal(j);
         xmin__:= (xpart llcorner _q)-_wordcloud_box_margin;  
         ymin__ := (ypart llcorner _q)-_wordcloud_box_margin; 
         xmax__:= (xpart urcorner _q)+_wordcloud_box_margin;
@@ -199,7 +199,7 @@ vardef _wordcloud_scale_fct(expr e,_max,_min)=
   _a*_max+_b=2.5;
   _t:=_a*e+_b;
   _t:=ln(_t)-ln(0.7)+0.295;
-  _wordcloud_gen_scale*_t
+  _wordcloud_gen_scale*(1.1*_t)
 enddef;
 
 % fabrication des mots avec la taille requise
@@ -243,7 +243,7 @@ vardef draw_wordcloud(suffix _words, _weights, rotation)(expr _N)=
   _position:=0;
   _build_tabs(_words,_weights,_N);
   for i=1 upto _N:
-    show i;
+    %show i;
     _position:=0;
     if(i mod 2) = 0:
       _rotation_bool:=1;

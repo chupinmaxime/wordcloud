@@ -1,0 +1,60 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{ctan-metapost}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=511cd99806b631a54d6cdaf13b151cd1}{%
+           family={{The MetaPost Team}},
+           familyi={T\bibinitperiod}}}%
+        {{hash=9b9db78fa39c5cdba04bcdd784249c01}{%
+           family={Hobby},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{998f9943641bdc303774920b2d357b1d}
+      \strng{fullhash}{998f9943641bdc303774920b2d357b1d}
+      \strng{bibnamehash}{998f9943641bdc303774920b2d357b1d}
+      \strng{authorbibnamehash}{998f9943641bdc303774920b2d357b1d}
+      \strng{authornamehash}{998f9943641bdc303774920b2d357b1d}
+      \strng{authorfullhash}{998f9943641bdc303774920b2d357b1d}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{MetaPost uses a language based on that of to produce precise technical illustrations. Its output is scalable PostScript or SVG, rather than the bitmaps Metafont creates.}
+      \field{day}{26}
+      \field{month}{8}
+      \field{subtitle}{A development of Metafont for creating graphics}
+      \field{title}{The \texttt{metapost} package}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/metapost
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/metapost
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

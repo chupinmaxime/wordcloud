@@ -1,0 +1,170 @@
+\usepackage{tcolorbox}
+\tcbuselibrary{listings,breakable}
+%\tcbuselibrary{documentation}
+\usepackage{enumitem}
+\usepackage[tikz]{bclogo}
+\usepackage{mflogo}
+\usepackage{hologo}
+\usepackage{luamplib}
+\mplibtextextlabel{enable}
+\usepackage{biblatex}
+\addbibresource{ctan.bib}
+\usepackage{wrapfig}
+\usepackage{accsupp}
+\usepackage{siunitx}
+\usepackage{imakeidx}
+%\usepackage{csquotes}
+\usepackage{fancyvrb,xparse,xargs}
+\usepackage[sfdefault]{FiraSans}
+\usepackage[mathrm=sym]{firamath-otf}
+\setmonofont{Fira Mono}
+%\setmonofont{FiraCode-Regular.ttf}[BoldFont= FiraCode-Bold.ttf,ItalicFont= FiraCode-RegularItalic.otf,BoldItalicFont= FiraCode-BoldItalic.otf,Ligatures={NoCommon, NoDiscretionary, NoHistoric, NoRequired, NoContextual}]
+
+\usepackage{xspace}
+\usepackage{animate}
+\newcommand{\ctan}{\textsc{ctan}}
+\NewDocumentCommand{\package}{ m }{%
+  \href{https://ctan.org/pkg/#1}{#1}\xspace
+}
+
+\definecolor{darkred}{rgb}{0.6,0.1,0.1}
+\definecolor{vert}{rgb}{0.1,0.4,0.1}
+\definecolor{bleu}{rgb}{0.2,0.2,0.6}
+\definecolor{orange}{rgb}{0.6,0.4,0.}
+\colorlet{code}{blue!80!black}
+
+\usepackage[colorlinks=true,urlcolor=orange,linkcolor=orange,menucolor=black,citecolor=orange]{hyperref}
+
+\newcommand \file       {\nolinkurl}
+\renewcommand \cmd        {\texttt}
+\renewcommand \code   [1] {\texorpdfstring {\texttt{\color{code}#1}} {#1}}
+\renewcommand*\cs     [1] {\code{\textbackslash #1}}
+
+
+
+\newcommand*\commande{\par\bigskip\noindent\hspace{-30pt}%
+  \SaveVerb[aftersave={%
+   \UseVerb{Vitem}%
+  }%
+  ]{Vitem}%
+  }
+  \newcommand\vitem[1][]{\SaveVerb[%
+  aftersave={\item[\textnormal{\UseVerb[#1]{vsave}}]}]{vsave}}
+\newcommand*\textme[1]{\textcolor{black}{\rmfamily\textit{#1}}}
+%\renewcommand*\meta[1]{% % meta
+%  \textme{\ensuremath{\langle}#1\ensuremath{\rangle}}}
+\newcommand*\optstar{% % optional star
+  \meta{\ensuremath{*}}\xspace}
+\DefineShortVerb{\|}
+\newcommand\R{\mathbf{R}}
+\setlength{\fboxsep}{2pt}
+\fvset{%
+  codes={\catcode`\«\active \catcode`\×\active },
+  defineactive={\makefancyog\makefancytimes},
+  formatcom=\color{darkred},
+  frame=single
+}
+% rendre «...» équivalent à \meta{...}
+{\catcode`\«\active
+  \newcommandx\makefancyog[0][addprefix=\global]{%
+    \def«##1»{\meta{##1}}}}
+% rendre × équivalent à \optstar
+{\catcode`\×\active
+  \newcommandx\makefancytimes[0][addprefix=\global]{%
+    \def×{\optstar{}}}}
+
+
+\newcommand\wordcloudpkg{\texttt{wordcloud}\xspace}
+
+\def\MO/{{\fontspec{fetamont}META\-OBJ}}
+
+%\addbibresource{biblio.bib}
+
+
+\lstset{
+  numberstyle=\footnotesize\color{vert},
+  keywordstyle=\ttfamily\bfseries\color{bleu},
+  basicstyle=\ttfamily,
+  commentstyle=\itshape\color{vert},
+  stringstyle=\ttfamily\color{orange},
+  showstringspaces=false,
+  language=MetaPost,
+  breaklines=true,
+  breakindent=30pt,
+  defaultdialect=MetaPost,
+  classoffset=1,% frame=tb
+  morekeywords={},
+  keywordstyle=\color{darkred},
+  classoffset=2,% frame=tb
+  morekeywords={backboard,chessboard,chessboard_step},
+  keywordstyle=\color{vert},
+  classoffset=0,% frame=tb
+  morekeywords={draw},
+  keywordstyle=\color{bleu}
+}
+
+
+\extractcolorspecs{darkred!3}\modelcmd\colorcmd
+\makeatletter
+\tcbset{%
+    listing metapost/.code={%
+        \def\tcbuselistingtext@input{\begin{mplibcode}     verbatimtex \leavevmode etex;
+          background:=(\colorcmd); input \jobname.listing; \end{mplibcode}}%
+    }
+}
+\makeatother
+\newtcblisting[auto counter,]{ExempleMP}[1][]{%
+  arc=0pt,outer arc=0pt,
+  colback=darkred!3,
+  colframe=darkred,
+  breakable,fontupper=\small,
+  boxsep=0pt,left=5pt,right=5pt,top=5pt,bottom=5pt, bottomtitle =
+  3pt, toptitle=3pt,
+  boxrule=0pt,bottomrule=0.5pt,toprule=0.5pt, toprule at break =
+  0pt, bottomrule at break = 0pt,
+  %listing side text,
+  listing metapost,
+  title=Exemple~\thetcbcounter,
+  listing options={breaklines},#1
+}
+
+\newtcblisting{commandshell}{colback=black,colupper=white,colframe=black,
+  arc=0pt,
+  listing only,boxsep=0pt,listing
+  options={style=tcblatex,language=sh},
+  every listing line={\BeginAccSupp{ActualText={}}\textcolor{red}{\small\ttfamily\bfseries user \$> }}\EndAccSupp{}}
+
+
+  \newtcblisting{mpcode}[1][]{
+  arc=0pt,outer arc=0pt,
+  colback=darkred!3,
+  colframe=darkred,
+  breakable,
+  boxsep=0pt,left=5pt,right=5pt,top=5pt,bottom=5pt, bottomtitle =
+  3pt, toptitle=3pt,
+  boxrule=0pt,bottomrule=0.5pt,toprule=0.5pt, toprule at break =
+  0pt, bottomrule at break = 0pt,
+  listing only,boxsep=0pt,listing
+  options={breaklines},#1
+}
+
+\newtcblisting{latexcode}{
+  arc=0pt,outer arc=0pt,
+  colback=darkred!3,
+  colframe=darkred,
+  breakable,
+  boxsep=0pt,left=5pt,right=5pt,top=5pt,bottom=5pt, bottomtitle =
+  3pt, toptitle=3pt,
+  boxrule=0pt,bottomrule=0.5pt,toprule=0.5pt, toprule at break =
+  0pt, bottomrule at break = 0pt,
+  listing only,boxsep=0pt,listing
+  options={breaklines,language={[LaTeX]TeX}}
+}
+
+
+\newcommand\pdf{\textsc{pdf}}
+
+\usepackage{array,booktabs}
+\usepackage{collcell}
+
+\newcolumntype{H}{>{\collectcell\lstinline}l<{\endcollectcell}}

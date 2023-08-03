@@ -1,0 +1,485 @@
+
+% LTeX: language=en
+
+% wordcloud : draw word cloud with MetaPost and Lua
+%
+% Originally written by Maxime Chupin <notezik@gmail.com>,
+% 2023.
+%
+% Distributed under the terms of the GNU free documentation licence:
+%   http://www.gnu.org/licenses/fdl.html
+% without any invariant section or cover text.
+
+\documentclass[english]{ltxdoc}
+
+\input{wordcloud-preamble}
+\usepackage{wordcloud}
+\usepackage[english]{babel}
+
+\makeindex[title=Command Index, columns=2]
+
+
+
+%\lstset{moredelim=*[s][\color{red}\rmfamily\itshape]{<}{>}}
+%\lstset{moredelim=*[s][\color{blue}\rmfamily\itshape]{<<}{>>}}
+
+\begin{document}
+
+\title{{Wordcloud} : drawing wordclouds with \hologo{METAPOST} and Lua}
+\author{Maxime Chupin, \url{notezik@gmail.com}}
+\date{\today}
+
+%% === Page de garde ===================================================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[below right, shift={(-4pt,4pt)}] at (current page.north west) {%
+    \includegraphics{fond.pdf}%
+  };
+\end{tikzpicture}%
+
+\noindent
+{\Huge \texttt{wordcloud}}\par\bigskip
+\noindent
+{\Large  drawing wordclouds \\[0.2cm]with \hologo{METAPOST} and Lua}\\[3cm]
+\parbox{0.6\textwidth}{
+  \wordcloud[scale=2,rotate=0,margin=0.5pt]{(Wordcloud,10);(\\hologo{METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(latexmp,3);(graphism,2)}
+}\hfill
+\parbox{0.5\textwidth}{\Large\raggedleft
+  \textbf{Contributor}\\
+  Maxime \textsc{Chupin}\\
+  \url{notezik@gmail.com}
+}
+\vfill
+\begin{center}
+  Version 0.1, 2023, August, 3rd \\
+  \url{https://plmlab.math.cnrs.fr/mchupin/wordcloud}
+\end{center}
+%% == Page de garde ====================================================
+\newpage
+
+%\maketitle
+
+\begin{abstract}
+  These \hologo{METAPOST} and \hologo{LuaLaTeX} packages allows to draw
+  wordclouds from a list of words and weights. The algorithm is implemented with
+  \hologo{METAPOST} whereas Lua is used to parse \LaTeX{} commands and to build
+  the list of words and weights from a text file. 
+  The \hologo{LuaLaTeX} side require \package{luamplib}. 
+\end{abstract}
+
+
+\begin{center}
+  \url{https://plmlab.math.cnrs.fr/mchupin/wordcloud}
+  \url{https://github.com/chupinmaxime/wordcloud}
+\end{center}
+
+\tableofcontents
+
+\bigskip
+
+\begin{tcolorbox}[ arc=0pt,outer arc=0pt,
+  colback=darkred!3,
+  colframe=darkred,
+  breakable,
+  boxsep=0pt,left=5pt,right=5pt,top=5pt,bottom=5pt, bottomtitle =
+  3pt, toptitle=3pt,
+  boxrule=0pt,bottomrule=0.5pt,toprule=0.5pt, toprule at break =
+  0pt, bottomrule at break = 0pt,]
+  \itshape
+  This package is in beta version---do not hesitate to report bugs, as well as
+  requests for improvement, or better: to help me to improve it. 
+\end{tcolorbox}
+
+\section{Installation}
+
+\wordcloudpkg is on \ctan{} and can also be installed via the package manager of your
+distribution.
+
+\begin{center}
+  \url{https://www.ctan.org/pkg/wordcloud}
+\end{center}
+
+
+\subsection{With \TeX live under Linux or macOS}
+
+To install \wordcloudpkg with \TeX Live, you will have to create the directory
+\lstinline+texmf+  in your \lstinline+home+. 
+
+\begin{commandshell}
+mkdir ~/texmf
+\end{commandshell}
+
+Then, you will have to place the \lstinline+wordcloud.mp+ file in 
+\begin{center}
+  \lstinline+~/texmf/metapost/huffman/+
+\end{center}
+
+
+You will also have to place the \lstinline+wordcloud.lua+ file in 
+\begin{center}
+  \lstinline+~/texmf/scripts/wordcloud/+
+\end{center}
+
+And finally, you will have to place the \lstinline+wordcloud.sty+ file in 
+\begin{center}
+  \lstinline+~/texmf/tex/latex/wordcloud/+
+\end{center}
+
+
+
+Once this is done, \wordcloudpkg will be loaded with the classic \MP{}
+input code
+\begin{mpcode}
+input wordcloud
+\end{mpcode}
+
+And for the \hologo{LuaLaTeX} side, \wordcloudpkg will be loaded with
+\begin{latexcode}
+\usepackage{wordcloud}
+\end{latexcode}
+
+\subsection{With Mik\TeX{} and Windows}
+
+These two systems are unknown to the author of \wordcloudpkg, so we
+refer you to the Mik\TeX documentation concerning the addition of local packages:
+\begin{center}
+  \url{http://docs.miktex.org/manual/localadditions.html}
+\end{center}
+
+
+
+\subsection{Dependencies}
+
+
+\wordcloudpkg depends, of course on \MP~\cite{ctan-metapost}, and---if \wordcloudpkg
+is not used with \hologo{LuaLaTeX} and the \package{luamplib} package---the
+\package{latexmp} package. 
+
+\section{\hologo{METAPOST} side}
+
+\section{\hologo{LuaLaTeX} side}
+
+\end{document}
+
+\section{Main Command}
+
+The package \huffman provides one principal command (which is a \MO/ like
+constructor):
+
+\commande|newBinHuffman.«name»(«sizeofarrays»)(«symbarray»,«valuearray»)|\smallskip\index{newBinHuffman@\lstinline+newBinHuffman+}
+
+
+\begin{description}
+  \item[\meta{name}:] is the name of the object;
+  \item[\meta{sizeofarrays}:] is the size (integer) of the arrays;
+  \item[\meta{symbarray}:] is the array of \lstinline+string+ containing the
+  symbols;
+  \item[\meta{valuearray}:] is the array of \lstinline+numeric+ containing the
+  weights associated to the symbols.
+\end{description}
+
+The data arrays should begin at index 1.  
+
+\begin{ExempleMP}
+input huffman
+
+beginfig(0);
+string charList[];
+numeric frequency[];
+charList[1]:="a"; frequency[1]:=0.04;
+charList[2]:="b"; frequency[2]:=0.05;
+charList[3]:="c"; frequency[3]:=0.06;
+charList[4]:="d"; frequency[4]:=0.07;
+charList[5]:="e"; frequency[5]:=0.1;
+charList[6]:="f"; frequency[6]:=0.1;
+charList[7]:="g"; frequency[7]:=0.18;
+charList[8]:="h"; frequency[8]:=0.4;
+
+newBinHuffman.myHuff(8)(charList,frequency);
+myHuff.c=origin;
+drawObj(myHuff);
+endfig;
+\end{ExempleMP}
+
+Note that the symbols are composed in mathematical \TeX{} mode. 
+\section{Package Options}
+
+You can modify the size of the internal nodes of the tree with the following
+command:
+
+\commande|set_node_size(«dim»)|\smallskip\index{set_node_size@\lstinline+set_node_size+}
+\begin{description}
+  \item[\meta{dim}:] is the diameter with unit of the circle (default: 13pt).
+\end{description} 
+
+You can change the color for the symbol boxes with the following command:
+
+\commande|set_leaf_color(«color»)|\smallskip\index{set_leaf_color@\lstinline+set_leaf_color+}
+\begin{description}
+  \item[\meta{color}:] is a \hologo{METAPOST} \lstinline+color+.
+\end{description} 
+
+You can hide the bit values printed on the edges of the tree with the following
+boolean 
+(\lstinline+true+ by default):
+
+\commande|show_bits|\smallskip\index{show_bits@\lstinline+show_bits+}
+
+Similarly, you can set the following boolean to \lstinline+false+ to hide the
+node values: 
+
+\commande|show_node_values|\smallskip\index{show_node_values@\lstinline+show_node_values+}
+
+Finally, you can set the following boolean to \lstinline+false+ to hide the
+leaf values:
+
+\commande|show_leaf_values|\smallskip\index{show_leaf_values@\lstinline+show_leaf_values+}
+
+Here an example combining all these commands and variables.
+
+\begin{ExempleMP}
+input huffman
+
+beginfig(0);
+string charList[];
+numeric frequency[];
+charList[1]:="s_1"; frequency[1]:=2;
+charList[2]:="s_2"; frequency[2]:=4;
+charList[3]:="s_3"; frequency[3]:=2;
+charList[4]:="s_4"; frequency[4]:=12;
+charList[5]:="s_5"; frequency[5]:=8;
+
+set_leaf_color(0.2[white,green]);
+set_node_size(8pt);
+show_bits:=false;
+show_node_values:=false;
+show_leaf_values:=false;
+newBinHuffman.myHuff(5)(charList,frequency);
+myHuff.c=origin;
+drawObj(myHuff);
+endfig;
+\end{ExempleMP}
+  
+
+
+\section{\MO/ Tree Options}
+
+Because the Huffman tree is built using the \MO/ tree constructor, the \MO/ tree
+options are available. All of them are not well suited for this application
+mostly because the Huffman tree is built using elementary trees. The
+options we give to the Huffman constructor are passed to all the subtrees.
+
+We give in table~\ref{tab:options} the \MO/ options for the trees that could be
+used for the Huffman constructor.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{HHHp{5.5cm}}
+  \toprule 
+  Option & Type & Default & Description \\
+  \midrule 
+  treemode & string & "D" & direction in which the tree develops; there are
+  four different possible values: \lstinline+"D"+ (default),
+  \lstinline+"U"+, \lstinline+"L"+ and \lstinline+"R"+\\
+  treeflip & boolean & false & if true, reverses the order of the subtrees\\
+  treenodehsize & numeric & -1pt & if non-negative, all the nodes are assumed to
+  have this width\\
+  treenodevsize & numeric & -1pt & if non-negative, all the nodes are assumed to
+  have this height\\
+  dx & numeric & 0 & horizontal clearance around the tree\\
+  dy & numeric & 0 & vertical clearance around the tree\\
+  hsep & numeric & 1cm & for a horizontal tree, this is the separation be-
+  tween the root and the subtrees\\
+  vsep & numeric & 1cm & for a vertical tree, this is the separation be-
+  tween the root and the subtrees\\
+  hbsep & numeric & 1cm &for a vertical tree, this is the horizontal separation between subtrees;
+  the subtrees are actually put in a \lstinline+HBox+ and the value of this
+  option is passed to the \lstinline+HBox+ constructor\\
+  vbsep & numeric & 1cm & for an horizontal tree, this is the vertical separation between subtrees;
+  the subtrees are actually put in a \lstinline+HBox+ and the value of this
+  option is passed to the \lstinline+HBox+ constructor\\
+  edge & string & "ncline" & name of a connection command (se \MO/
+  documentation)
+  \\
+  Dalign & string & "top" & vertical alignment of subtrees for trees that go
+  down (the root on the top); the other possible
+  values are \lstinline+"center"+ and \lstinline+"bot"+\\
+  \bottomrule
+\end{tabular}
+\caption{Table of \MO/ tree options.}\label{tab:options}
+\end{table}
+
+Here is an example using some of these options.
+
+\begin{ExempleMP}
+input huffman
+
+beginfig(0);
+string charList[];
+numeric frequency[];
+charList[1]:="s_1"; frequency[1]:=2;
+charList[2]:="s_2"; frequency[2]:=4;
+charList[3]:="s_3"; frequency[3]:=2;
+charList[4]:="s_4"; frequency[4]:=12;
+charList[5]:="s_5"; frequency[5]:=8;
+
+newBinHuffman.myHuff(5)(charList,frequency)
+"treemode(R)","treeflip(true)","hsep(1.5cm)", "edge(nccurve)" , "angleA(0)", "angleB(0)";
+myHuff.c=origin;
+drawObj(myHuff);
+endfig;
+\end{ExempleMP}
+  
+\section{Access to Nodes and Leaves}
+
+To access the nodes and the leaves, you can use the \lstinline+treeroot+ command
+from \MO/, see the documentation for details.
+
+\commande|ntreepos(Obj(«name»))(«int»,«int»,etc.)|\smallskip\index{ntreepos@\lstinline+ntreepos+}
+
+The sequence of \meta{int} gives the choice of branch where the children are
+numbered from 1 to $n$.  
+
+The following example shows a use of this mecanism.
+\begin{ExempleMP}
+input huffman;
+beginfig(0);
+string charList[];
+numeric frequency[];
+charList[1]:="s_1"; frequency[1]:=2;
+charList[2]:="s_2"; frequency[2]:=4;
+charList[3]:="s_3"; frequency[3]:=2;
+charList[4]:="s_4"; frequency[4]:=12;
+charList[5]:="s_5"; frequency[5]:=8;
+
+newBinHuffman.myHuff(5)(charList,frequency);
+myHuff.c=origin;
+ncarcbox(ntreepos(Obj(myHuff))(2,1,2))(ntreepos(Obj(myHuff))(2,2))
+"linestyle(dashed evenly)", "nodesepA(5mm)", "nodesepB(5mm)" ;
+drawObj(myHuff);
+endfig;
+\end{ExempleMP}
+
+Of course, this can only be used in two steps, first build the tree, then
+annotate it. 
+
+You can also access the leaves and the nodes using names. During the
+construction of the tree, names are given to leaves and nodes. Because you may
+want to build several Huffman trees, the trees are numbered. You can get the
+current tree number with the following command:
+
+\commande|get_huffmanTreeNbr()|\smallskip\index{get_huffmanTreeNbr@\lstinline+get_huffmanTreeNbr+}
+
+The leaves are numbered during the construction, and the corresponding \MO/
+object is named as follows:
+
+\commande|leaf«leaf number»_«tree number»|\smallskip
+
+The nodes are numbered during the construction, and the corresponding \MO/
+object is named as follows:
+
+\commande|node«node number»_«tree number»|\smallskip
+
+Thanks to \MO/ you can annotate the tree using all the tools \MO/ provides. 
+
+\begin{ExempleMP}
+input huffman;
+beginfig(0);
+string charList[];
+numeric frequency[];
+charList[1]:="s_1"; frequency[1]:=2;
+charList[2]:="s_2"; frequency[2]:=4;
+charList[3]:="s_3"; frequency[3]:=2;
+charList[4]:="s_4"; frequency[4]:=12;
+charList[5]:="s_5"; frequency[5]:=8;
+
+newBinHuffman.myHuff(5)(charList,frequency);
+myHuff.c=origin;
+ncarcbox(node2_1)(leaf4_1)
+"linestyle(dashed evenly)", "nodesepA(5mm)", "nodesepB(5mm)" ;
+drawObj(myHuff);
+endfig;
+\end{ExempleMP}
+
+
+  
+
+
+
+
+
+\section{Constructors}
+
+The Huffman algorithm uses only three constructors that you can redefine to adapt
+the tree to your needs. Here are the three constructors (roughly commented in
+French) defined in this package. We will not discuss the code here but
+you are free to redefine and adapt it.
+
+\begin{mpcode}[title={Leaf Code}]
+% style d’une feuille caractère et proba
+vardef newHuffmanLeaf@#(expr ch)(expr v) text options=
+    % @# est l’identifiant de la feuille
+    % c est le caractère considéré (ou la chaine)
+    % v est la proba ou l’entier associé
+    save _text_v,
+    _text_token,_height_v,_height_token,_height_max,_width_token,_width_v;
+    picture _text_v,_text_token;
+    % on calcule le height max des deux écritures pour faire deux boites de même
+    % hauteur 
+    _text_v := textext(v);
+    _text_token := textext("$"&ch&"$");
+    _height_v := abs((ulcorner _text_v) - (llcorner _text_v));
+    _width_v := abs(urcorner _text_v - ulcorner _text_v);
+    _height_token := abs(ulcorner _text_token - llcorner _text_token);
+    _width_token := abs(urcorner _text_token - ulcorner _text_token);
+    _height_max := max(_height_token,_height_v);
+    % on fabrique deux boîtes vides aux bonne dimensions
+    % et on ajoute un label au centre de celles-ci 
+    if(show_leaf_values):    
+        newEmptyBox.scantokens(str @# & "ch1")(_width_token+4,2_height_max)
+        "framed(true)","fillcolor(_huffmanLeaf)", "filled(true)", options;
+        ObjLabel.Obj(scantokens(str @# & "ch1"))(textext("$" & ch & "$"));
+        newEmptyBox.scantokens(str @# & "ch2")(_width_v+4,2_height_max)
+        "framed(true)", options;
+        ObjLabel.Obj(scantokens(str @# & "ch2"))(textext(v));
+        % on fixe relativement les coordonnées des deux boites pour qu’elles se % touchent 
+        scantokens(str @# & "ch1").e=scantokens(str @# & "ch2").w;
+        % on fabrique un container qui les regroupes et qui sera la feuille
+        newContainer.@#(scantokens(str @# & "ch1"),scantokens(str @# & "ch2"));
+    else:
+        % si seulement le symbole
+        newBox.@#(textext("$" & ch & "$"))
+        "framed(true)","fillcolor(_huffmanLeaf)", "filled(true)", options;
+    fi
+enddef;
+\end{mpcode}
+
+
+\begin{mpcode}[title={Node Code}]
+% style d’un nœud interne (non feuille) de l’arbre 
+vardef newHuffmanNode@#(expr v) text options=
+    newCircle.@#("") "circmargin(_node_size)",options;
+    if(show_node_values):
+    ObjLabel.Obj(scantokens(str @#))(textext(v));
+    fi
+enddef;
+\end{mpcode}
+
+\begin{mpcode}[title={Tree Code}]
+% style de l’arbre binaire de Huffman
+vardef newHuffmanBinTree@#(suffix theroot)(text subtrees) text options=
+    % un simple arbre
+    newTree.@#(theroot)(subtrees) "Dalign(top)" , "hbsep(0.3cm)",options;
+    if(show_bits):
+        % et on met 0 et 1 sur ses deux connections
+        ObjLabel.Obj(@#)(btex 0 etex)
+        "labpathid(1)", "laberase(true)", "labcolor(_huffmanBit)";
+        ObjLabel.Obj(@#)(btex 1 etex)
+        "labpathid(2)", "laberase(true)", "labcolor(_huffmanBit)";
+    fi
+enddef;
+\end{mpcode}
+
+\printbibliography
+\printindex
+\end{document}

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  4 AUG 2023 08:58
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  4 AUG 2023 11:50
  restricted system commands enabled.
 **wordcloud-doc-en.tex
 (./wordcloud-doc-en.tex
@@ -2787,38 +2787,6 @@ File: ulogo.fd 1999/03/10 v2.0 LaTeX font defs for Metafont and MetaPost logos
 )
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 (Font)              scaled to size 7.2pt on input line 1.
-
-Module luamplib Warning: This is MetaPost, Version 2.02  4 AUG 2023 08:58
-(luamplib)               (/usr/local/texlive/2023/texmf-dist/metapost/base/plain
-.mp
-(luamplib)               Preloading the plain mem file, version 1.005)
-(luamplib)               
-(luamplib)               (/home/mc/.texlive2023/texmf-var/luamplib_cache/luampli
-b_input_wordcloud_mp
-(luamplib)               (/usr/local/texlive/2023/texmf-dist/metapost/metapost-c
-olorbrewer/colorbrewer-r
-(luamplib)               gb.mp
-(luamplib)               metapost-colorbrewer - Copyright (C) 2018 Toby Thurston
-. This program comes wit
-(luamplib)               h ABSOLUTELY NO WARRANTY. This is free software, and yo
-u are welcome to redistr
-(luamplib)               ibute it under certain conditions; read the LICENCE fil
-e for details. The color
-(luamplib)               brewer colours are copyright (C) Cynthia Brewer, Mark H
-arrower and The Pennsylv
-(luamplib)               ania State University. See http://colorbrewer2.org))
-(luamplib)               >> 2
-(luamplib)               >> 3
-(luamplib)               >> 4
-(luamplib)               >> 0
-(luamplib)               >> 1
-(luamplib)               >> 2
-(luamplib)               >> 3
-(luamplib)               >> 4
-(luamplib)               >> 0
-(luamplib)               >> 1
-(luamplib)               >> 2 [0]
-(luamplib)               on input line 1
 Module luamplib Info: flushing figure 1 on input line 1
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 (Font)              scaled to size 14.4pt on input line 51.
@@ -2836,7 +2804,7 @@ LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 (Font)              scaled to size 14.39845pt on input line 51.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 51.
-[1
+ [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./fond.pd
 f>]
@@ -2864,7 +2832,8 @@ LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 63.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 63.
- (./wordcloud-doc-en.toc
+
+(./wordcloud-doc-en.toc
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 (Font)              scaled to size 10.0pt on input line 2.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
@@ -2942,7 +2911,7 @@ pec, 56 attribute_list, 2 write, 16 pdf_literal, 16 pdf_colorstack nodes
    avail lists: 1:2,2:2177,3:426,4:178,5:1045,6:69,7:3797,8:49,9:1551,10:11,11:1
 79
  69930 multiletter control sequences out of 65536+600000
- 143 fonts using 44433171 bytes
+ 143 fonts using 44432955 bytes
  104i,6n,162p,954b,2247s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'cite.0@ctan-metapost
@@ -2957,7 +2926,7 @@ cal/share/fonts/FiraMono-Regular.ttf></usr/local/texlive/2023/texmf-dist/fonts/t
 ype1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/texmf-dist/fonts/
 type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/texmf-dist/fonts/
 type1/hoekwater/mflogo-font/logod10.pfb>
-Output written on wordcloud-doc-en.pdf (3 pages, 66237 bytes).
+Output written on wordcloud-doc-en.pdf (3 pages, 66239 bytes).
 
 PDF statistics: 187 PDF objects out of 1000 (max. 8388607)
  138 compressed objects within 2 object streams

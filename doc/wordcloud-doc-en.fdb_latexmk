@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber wordcloud-doc-en"] 1691060656 "wordcloud-doc-en.bcf" "wordcloud-doc-en.bbl" "wordcloud-doc-en" 1691060990 0
+["biber wordcloud-doc-en"] 1691060656 "wordcloud-doc-en.bcf" "wordcloud-doc-en.bbl" "wordcloud-doc-en" 1691098615 0
   "./ctan.bib" 1683754002 876 42133d987c52866cb62cb2c45418e356 ""
-  "wordcloud-doc-en.bcf" 1691060990 107413 bbda95f0de0ff5742336a98d93c0e53f "lualatex"
+  "wordcloud-doc-en.bcf" 1691098614 107413 bbda95f0de0ff5742336a98d93c0e53f "lualatex"
   (generated)
   "wordcloud-doc-en.bbl"
   "wordcloud-doc-en.blg"
   (rewritten before read)
-["lualatex"] 1691060982 "wordcloud-doc-en.tex" "wordcloud-doc-en.pdf" "wordcloud-doc-en" 1691060990 0
+["lualatex"] 1691098607 "wordcloud-doc-en.tex" "wordcloud-doc-en.pdf" "wordcloud-doc-en" 1691098615 0
   "/home/mc/.local/share/fonts/FiraMono-Bold.ttf" 1403046000 201708 ba7aefe1d903f1f89d285a01fac887a9 ""
   "/home/mc/.local/share/fonts/FiraMono-Regular.ttf" 1403046000 170204 aa00c5d91c47e7b718b5cdca3dea7875 ""
   "/home/mc/.texlive2023/texmf-var/luamplib_cache/luamplib_input_wordcloud_mp" 1690890613 12519 bcf023af4e681994cc8dc552320b848a ""
@@ -40,11 +40,13 @@
   "/home/mc/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-bold.luc" 1679431516 128410 e8b61c2a5e330cd0816cabbb13af398a ""
   "/home/mc/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman10-regular.luc" 1679431515 127327 0c22a2c7faa4e80fd8c3443dc8dd3208 ""
   "/home/mc/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc" 1679431515 128375 2e5afeca06d39c45f5cf763b222e39ce ""
-  "/home/mc/.texlive2023/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1691060627 14163 cd14e67ac31d7424483797ddc44c5ec7 ""
+  "/home/mc/.texlive2023/texmf-var/luatex-cache/generic/names/luaotfload-lookup-cache.luc" 1691098606 14241 8fc47cddf783a828267378d8dd8266c0 ""
   "/home/mc/.texlive2023/texmf-var/luatex-cache/generic/names/luaotfload-names.luc.gz" 1686236138 470570 e6816bd43f699fb2a26b9225a64bf6a4 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-Oblique.otf" 1591477838 201440 696f1425a0d3f4d719f48824dd5ae2d3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Bold.otf" 1554498137 521796 b69f0518bb1ec66c91ae284749de268f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Italic.otf" 1554498137 524840 dea7c0ccbe5363fe38d1a94525eca4f0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.otf" 1554498137 507828 561d013e24df85a9849f55bdbc97142d ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/opentype/public/firamath/FiraMath-Regular.otf" 1602796427 179840 bc0416de599a48532457e00d64f6695b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi5.tfm" 1136768653 1508 3b32edd0d68f6498a5a375e78f9edc5e ""
@@ -327,15 +329,15 @@
   "/usr/local/texlive/2023/texmf-var/tex/generic/config/language.dat" 1679430424 6627 2d2a76b2e389f4f238cbd0f9d7cadc8d ""
   "/usr/local/texlive/2023/texmf-var/web2c/luahbtex/lualatex.fmt" 1686235543 11890695 13750495f51b3fe89db3e61012864ae4 ""
   "fond.pdf" 1683622600 1309 210d7ac56417b4147880eaa5b23fff9a ""
-  "wordcloud-doc-en.aux" 1691060990 1811 465bbddcddea1be63376261522a6c033 "lualatex"
+  "wordcloud-doc-en.aux" 1691098614 2182 341f21b0565bfa00f80a8c248f018337 "lualatex"
   "wordcloud-doc-en.bbl" 1691060657 2050 686c7ea624e71a9a7eeced250e2d9f50 "biber wordcloud-doc-en"
-  "wordcloud-doc-en.hd" 1691060986 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
-  "wordcloud-doc-en.ind" 1691050029 0 d41d8cd98f00b204e9800998ecf8427e "makeindex wordcloud-doc-en.idx"
-  "wordcloud-doc-en.listing" 1691060990 23 2e9b768532967e6a12110117bf995b00 "lualatex"
-  "wordcloud-doc-en.out" 1691060990 1048 0c1b588335535bf23c647929c8ed6201 "lualatex"
-  "wordcloud-doc-en.run.xml" 1691060990 2418 3757971ebff790c66d4359e53356e513 "lualatex"
-  "wordcloud-doc-en.tex" 1691060980 15471 dec04d8ea5d7a907f1c76d644b4d899a ""
-  "wordcloud-doc-en.toc" 1691060990 540 1a01dd7de447d12a01a9cd83ea5fe8b5 "lualatex"
+  "wordcloud-doc-en.hd" 1691098611 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+  "wordcloud-doc-en.ind" 1691098607 84 06afb519480c3df4a76a946eab3fdf2d "makeindex wordcloud-doc-en.idx"
+  "wordcloud-doc-en.listing" 1691098614 23 2e9b768532967e6a12110117bf995b00 "lualatex"
+  "wordcloud-doc-en.out" 1691098614 1551 ea03ae18b5233a2d5ed208c2ae06e29a "lualatex"
+  "wordcloud-doc-en.run.xml" 1691098614 2418 3757971ebff790c66d4359e53356e513 "lualatex"
+  "wordcloud-doc-en.tex" 1691098591 15720 d62e9a31607b9b90b5d62082c05d70e3 ""
+  "wordcloud-doc-en.toc" 1691098614 788 c7c11b83c8957ed4fa04f60dab919019 "lualatex"
   "wordcloud-preamble.tex" 1691060480 4938 bd04cf4d9c23876c9f9252b6bf98d9cc ""
   "wordcloud.lua" 1690892310 5258 1bc06531c18b0edd05d28eb3171a62f5 ""
   "wordcloud.sty" 1690892399 2626 273ad2d713b5df0483b3cd301a3658a7 ""
@@ -352,8 +354,8 @@
   "wordcloud-doc-en.toc"
   (rewritten before read)
   "wordcloud-doc-en.listing"
-["makeindex wordcloud-doc-en.idx"] 0 "wordcloud-doc-en.idx" "wordcloud-doc-en.ind" "wordcloud-doc-en" 1691060990 -1
-  "wordcloud-doc-en.idx" 1691060986 0 d41d8cd98f00b204e9800998ecf8427e "lualatex"
+["makeindex wordcloud-doc-en.idx"] 1691098607 "wordcloud-doc-en.idx" "wordcloud-doc-en.ind" "wordcloud-doc-en" 1691098615 0
+  "wordcloud-doc-en.idx" 1691098614 68 b24653bbc20786addc123a0319f356d8 "lualatex"
   (generated)
   "wordcloud-doc-en.ilg"
   "wordcloud-doc-en.ind"

@@ -1,5 +1,5 @@
 if not known mplib: input latexmp ; show"wordcloud Infos: latexmp loaded";fi;
-
+input colorbrewer-rgb
 
 
 % function to get all the path of letters (too slow)
@@ -234,6 +234,25 @@ def _wordcloud_rotation(expr a,b)=
   fi
 enddef;
 
+%%% colors
+boolean _wordcloud_use_color;
+_wordcloud_use_color:=false;
+
+numeric _wordcloud_colors_number;
+color _wordcloud_colors[];
+
+% default colors
+_wordcloud_colors[1]:=Reds[3][3];
+_wordcloud_colors[2]:=Greens[3][3];
+_wordcloud_colors[3]:=Blues[3][3];
+_wordcloud_colors[4]:=Oranges[3][3];
+_wordcloud_colors[5]:=black;
+_wordcloud_colors_number:=5;
+
+def wordcloud_use_color(expr b)=
+  _wordcloud_use_color:= b;
+enddef;
+ 
 % main function to draw the picture 
 vardef draw_wordcloud(suffix _words, _weights, rotation)(expr _N)=
   save _rotation_bool,_position,_ok_draw,_tmp_word,_random_pt,_position_pt,_pt;
@@ -252,7 +271,8 @@ vardef draw_wordcloud(suffix _words, _weights, rotation)(expr _N)=
     fi
     if(i=1):
       draw _wordcloud_words[i] rotated (_wordcloud_rotation(rotation,_rotation_bool)) shifted (point _position
-      of _wordcloud_spiral);
+      of _wordcloud_spiral) if(_wordcloud_use_color): withcolor _wordcloud_colors[(i mod
+     _wordcloud_colors_number)] fi ;
       _position_pt:=(0,0);
       _random_pt:=(0,0);
     else:
@@ -275,7 +295,12 @@ vardef draw_wordcloud(suffix _words, _weights, rotation)(expr _N)=
           fi
         endfor;
         if(_ok_draw): % if there is no intersections
-          draw _wordcloud_words[i] rotated (_wordcloud_rotation(rotation,_rotation_bool)) shifted (_position_pt + _random_pt);
+          show (i
+          mod _wordcloud_colors_number);
+          draw _wordcloud_words[i] rotated
+          (_wordcloud_rotation(rotation,_rotation_bool)) shifted (_position_pt +
+          _random_pt)  if(_wordcloud_use_color): withcolor _wordcloud_colors[(i
+          mod _wordcloud_colors_number)+1] fi;
         else: % else, we move along the spiral
           _position:=_position+1;
         fi

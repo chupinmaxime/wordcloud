@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  3 AUG 2023 13:09
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  4 AUG 2023 08:58
  restricted system commands enabled.
 **wordcloud-doc-en.tex
 (./wordcloud-doc-en.tex
@@ -2673,7 +2673,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 \@quotereset=\count533
 (./wordcloud-doc-en.aux
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 35.
+(Font)              scaled to size 7.0pt on input line 38.
 )
 \openout1 = wordcloud-doc-en.aux
 
@@ -2770,7 +2770,7 @@ Package hyperref Info: Link coloring ON on input line 26.
 \HD@savedest@out=\write8
 
 \openout8 = wordcloud-doc-en.hd
-<fond.pdf, id=59, 598.235pt x 845.1575pt>
+<fond.pdf, id=71, 598.235pt x 845.1575pt>
 File: fond.pdf Graphic file (type pdf)
 <use fond.pdf>
 Package luatex.def Info: fond.pdf  used on input line 36.
@@ -2787,6 +2787,38 @@ File: ulogo.fd 1999/03/10 v2.0 LaTeX font defs for Metafont and MetaPost logos
 )
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 (Font)              scaled to size 7.2pt on input line 1.
+
+Module luamplib Warning: This is MetaPost, Version 2.02  4 AUG 2023 08:58
+(luamplib)               (/usr/local/texlive/2023/texmf-dist/metapost/base/plain
+.mp
+(luamplib)               Preloading the plain mem file, version 1.005)
+(luamplib)               
+(luamplib)               (/home/mc/.texlive2023/texmf-var/luamplib_cache/luampli
+b_input_wordcloud_mp
+(luamplib)               (/usr/local/texlive/2023/texmf-dist/metapost/metapost-c
+olorbrewer/colorbrewer-r
+(luamplib)               gb.mp
+(luamplib)               metapost-colorbrewer - Copyright (C) 2018 Toby Thurston
+. This program comes wit
+(luamplib)               h ABSOLUTELY NO WARRANTY. This is free software, and yo
+u are welcome to redistr
+(luamplib)               ibute it under certain conditions; read the LICENCE fil
+e for details. The color
+(luamplib)               brewer colours are copyright (C) Cynthia Brewer, Mark H
+arrower and The Pennsylv
+(luamplib)               ania State University. See http://colorbrewer2.org))
+(luamplib)               >> 2
+(luamplib)               >> 3
+(luamplib)               >> 4
+(luamplib)               >> 0
+(luamplib)               >> 1
+(luamplib)               >> 2
+(luamplib)               >> 3
+(luamplib)               >> 4
+(luamplib)               >> 0
+(luamplib)               >> 1
+(luamplib)               >> 2 [0]
+(luamplib)               on input line 1
 Module luamplib Info: flushing figure 1 on input line 1
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 (Font)              scaled to size 14.4pt on input line 51.
@@ -2804,7 +2836,7 @@ LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 (Font)              scaled to size 14.39845pt on input line 51.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 (Font)              scaled to size 6.99925pt on input line 51.
- [1
+[1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./fond.pd
 f>]
@@ -2832,12 +2864,11 @@ LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 63.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 (Font)              scaled to size 6.0pt on input line 63.
-
-(./wordcloud-doc-en.toc
+ (./wordcloud-doc-en.toc
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 (Font)              scaled to size 10.0pt on input line 2.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 7.2pt on input line 7.
+(Font)              scaled to size 7.2pt on input line 10.
 )
 \tf@toc=\write9
 
@@ -2894,7 +2925,7 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 
 (./wordcloud-doc-en.listing) [3] (./wordcloud-doc-en.aux)
 Package rerunfilecheck Info: File `wordcloud-doc-en.out' has not changed.
-(rerunfilecheck)             Checksum: 0C1B588335535BF23C647929C8ED6201;1048.
+(rerunfilecheck)             Checksum: EA03AE18B5233A2D5ED208C2AE06E29A;1551.
 Package rerunfilecheck Info: File `wordcloud-doc-en.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'wordcloud-doc-en.run.xml'.
@@ -2903,31 +2934,33 @@ Package logreq Info: Writing requests to 'wordcloud-doc-en.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51427 strings out of 478247
+ 51435 strings out of 478247
  125121,2373549 words of node,token memory allocated
  1340 words of node memory still in use:
    22 hlist, 2 vlist, 10 rule, 2 glue, 4 kern, 1 glyph, 61 attribute, 115 glue_s
 pec, 56 attribute_list, 2 write, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:3,2:2087,3:407,4:160,5:1140,6:63,7:3842,8:49,9:1727,10:11,11:1
-78
- 69925 multiletter control sequences out of 65536+600000
- 142 fonts using 44195027 bytes
+   avail lists: 1:2,2:2177,3:426,4:178,5:1045,6:69,7:3797,8:49,9:1551,10:11,11:1
+79
+ 69930 multiletter control sequences out of 65536+600000
+ 143 fonts using 44433171 bytes
  104i,6n,162p,954b,2247s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 warning  (pdf backend): unreferenced destination with name 'cite.0@ctan-metapost
 '
-</home/mc/.local/share/fonts/FiraMono-Bold.ttf></usr/local/texlive/2023/texmf-di
-st/fonts/opentype/public/fira/FiraSans-Italic.otf></usr/local/texlive/2023/texmf
--dist/fonts/opentype/public/fira/FiraSans-Bold.otf></usr/local/texlive/2023/texm
-f-dist/fonts/opentype/public/fira/FiraSans-Regular.otf></home/mc/.local/share/fo
-nts/FiraMono-Regular.ttf></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwat
-er/mflogo-font/logo10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwa
-ter/mflogo-font/logo9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/hoekwa
-ter/mflogo-font/logod10.pfb>
-Output written on wordcloud-doc-en.pdf (3 pages, 60071 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-Oblique.
+otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/firamath/FiraMath-
+Regular.otf></home/mc/.local/share/fonts/FiraMono-Bold.ttf></usr/local/texlive/2
+023/texmf-dist/fonts/opentype/public/fira/FiraSans-Italic.otf></usr/local/texliv
+e/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Bold.otf></usr/local/texli
+ve/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.otf></home/mc/.lo
+cal/share/fonts/FiraMono-Regular.ttf></usr/local/texlive/2023/texmf-dist/fonts/t
+ype1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/texmf-dist/fonts/
+type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/texmf-dist/fonts/
+type1/hoekwater/mflogo-font/logod10.pfb>
+Output written on wordcloud-doc-en.pdf (3 pages, 66237 bytes).
 
-PDF statistics: 158 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 131072)
- 232 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 187 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 131072)
+ 256 words of extra memory for PDF output out of 10000 (max. 100000000)
 

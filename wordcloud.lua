@@ -37,8 +37,8 @@ end
 -- function to build a tab from a string of the form
 -- word1,word2,word3,etc.
 function wc_string_to_tab(strWord)
-    local tab
     strWord=string.gsub(strWord, "%s+", "") -- space delete
+    local tab
     tab = string.explode(strWord, ",")
     return tab
 end
@@ -144,8 +144,27 @@ function wc_size_of_table(table)
     return lengthNum
 end 
 
+
+function wc_build_color_list(colors)
+    -- list of LaTeX colors separated with colons
+    local out = ""
+    print(colors:sub(1,-2)) -- delete last char
+    local pair = string.explode(colors:sub(1,-2), ";")
+    local lgth=#pair
+    for i=1,lgth do
+        print(pair[i])
+        out=out.."wordcloud_colors["..i.."]:="..pair[i]..";";   
+        print(i)
+    end
+    print(lgth)
+    out=out.."wordcloud_colors_number:="..lgth..";"
+    return out
+end
+
 -- build mp code for the wordcloud of a list given in LaTeX command
-function wc_build_wordcloud(str,rotation,scale,margin)
+function wc_build_wordcloud(str,rotation,scale,margin,usecolor,colors)
+    
+    maximum = maximum or 50
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)
     local output
@@ -153,6 +172,12 @@ function wc_build_wordcloud(str,rotation,scale,margin)
     input wordcloud
     beginfig(0);
     ]] 
+    if(usecolor=="true") then
+        output = output.."wordcloud_use_color(true);"    
+        if(colors~="") then
+            output=output..wc_build_color_list(colors)
+        end
+    end
     output = output.."set_wordcloud_scale("..scale..");"
     output = output.."set_box_margin("..margin..");"
     output = output..wc_build_mp_code(table,lgth_table,rotation)

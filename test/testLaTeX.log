@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  1 AUG 2023 15:12
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  7 AUG 2023 23:46
  restricted system commands enabled.
 **testLaTeX.tex
 (./testLaTeX.tex
@@ -58,6 +58,28 @@ r/luatex-cache/generic/names/luaotfload-names.luc.gz)
 \belowcaptionskip=\skip49
 \bibindent=\dimen139
 )
+(/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 227.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
+Package xcolor Info: Model `RGB' extended on input line 1369.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+)
 (./wordcloud.sty
 Package: wordcloud 2023/07/26 v0.1
 
@@ -77,56 +99,114 @@ Inserting `l3color' in `luaotfload.parse_color'.
 (./testLaTeX.aux)
 \openout1 = testLaTeX.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
 .
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count192
+\scratchdimen=\dimen140
+\scratchbox=\box53
+\nofMPsegments=\count193
+\nofMParguments=\count194
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count195
+\MPscratchDim=\dimen141
+\MPnumerator=\count196
+\makeMPintoPDFobject=\count197
+\everyMPtoPDFconversion=\toks18
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 1.
-Module luamplib Info: flushing figure 1 on input line 1
-[1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Module luamplib Info: flushing figure 1 on input line 1
+Module luamplib Warning: 
+(luamplib)               (/home/mc/.texlive2023/texmf-var/luamplib_cache/luampli
+b_input_wordcloud_mp
+(luamplib)               (/usr/local/texlive/2023/texmf-dist/metapost/metapost-c
+olorbrewer/colorbrewer-r
+(luamplib)               gb.mp
+(luamplib)               metapost-colorbrewer - Copyright (C) 2018 Toby Thurston
+. This program comes wit
+(luamplib)               h ABSOLUTELY NO WARRANTY. This is free software, and yo
+u are welcome to redistr
+(luamplib)               ibute it under certain conditions; read the LICENCE fil
+e for details. The color
+(luamplib)               brewer colours are copyright (C) Cynthia Brewer, Mark H
+arrower and The Pennsylv
+(luamplib)               ania State University. See http://colorbrewer2.org))
+(luamplib)               >> (redpart wordcloud_colors4,greenpart wordcloud_color
+s4,bluepart wordcloud_co
+(luamplib)               lors4)
+(luamplib)               >> 1
+(luamplib)               ! Equation cannot be performed (color=numeric).
+(luamplib)               <to be read again> 
+(luamplib)                                  ;
+(luamplib)               <*> ...s[3]:=(0.6,1,0.6);wordcloud_colors[4]:=(1);
+(luamplib)                                                                 wordc
+loud_colors_number:=4...
+(luamplib)               I'm sorry, but I don't know how to make such things equ
+al.
+(luamplib)               (See the two expressions just above the error message.)
 
-[2] (./testLaTeX.aux))
+(luamplib)               [0]
+(luamplib)               on input line 1
+...ocal/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua:110: 
+Module luamplib Error: see above messages on input line 1
+
+stack traceback:
+	[C]: in function 'error'
+	...ocal/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua:110: in function <.
+..ocal/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua:109>
+	(...tail calls...)
+	...texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:280: in upvalue 're
+porterror'
+	...texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:339: in function <.
+..texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:335>
+	(...tail calls...)
+	...texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:697: in field 'proc
+ess_mplibcode'
+	[\directlua]:1: in main chunk.
+<inserted text> BAD
+   
+l.7 ...cloud,5);(coucou,2);(Maxime,1);(élément,1)}
+                                                  
+? x
+
 
 Here is how much of LuaTeX's memory you used:
- 609 strings out of 478247
- 100000,1977958 words of node,token memory allocated
- 406 words of node memory still in use:
-   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 48 glue_spec,
- 4 attribute_list, 1 write nodes
-   avail lists: 2:79,3:86,4:1,5:32,6:2,7:220,9:92,11:16
- 20904 multiletter control sequences out of 65536+600000
+ 1621 strings out of 478247
+ 100000,1977958 words of node,token memory allocated 842 words of node memory still in use:
+   10 hlist, 1 vlist, 1 rule, 2 disc, 1 dir, 1 glue, 9 kern, 40 glyph, 15 attrib
+ute, 48 glue_spec, 15 attribute_list, 1 if_stack, 1 write, 1 pdf_colorstack node
+s
+   avail lists: 1:1,2:3,3:2,4:2,5:3
+ 21885 multiletter control sequences out of 65536+600000
  26 fonts using 1476743 bytes
- 40i,5n,46p,869b,123s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.ot
-f></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular
-.otf>
-Output written on testLaTeX.pdf (2 pages, 7719 bytes).
+ 40i,3n,53p,851b,102s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-PDF statistics: 25 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+warning  (pdf backend): no pages of output.
+
+PDF statistics: 0 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

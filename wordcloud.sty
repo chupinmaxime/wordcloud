@@ -26,6 +26,10 @@
   rotate .value_required:n = true,
   margin .tl_gset:N = \g__wc_wordcloud_margin_tl,
   margin .value_required:n = true,
+  usecolor .bool_set:N = \g__wc_wordcloud_usecolor_bool,
+  colors .clist_set:N = \g__wc_wordcloud_colors_clist, % list of LaTeX colors
+  colors .value_required:n = true,
+%  usecolor .default:n = true,
 }
 % function to build a wordcloud from a list of the form :
 % (word1,weight1);(word2,weight2);etc.
@@ -40,15 +44,26 @@
   \keys_set:nn { wc/wordcloud } { scale=1 } %
   \keys_set:nn { wc/wordcloud } { rotate=0 } %
   \keys_set:nn { wc/wordcloud } { margin=0.3pt } %
-  
+  \keys_set:nn { wc/wordcloud } { colors={} } %
+
   \IfNoValueF {#1}
   {
       \keys_set:nn { wc/wordcloud } { #1 }
   }
+
+  % parse the list to build a list of rgb colors for metapost code
+
+  \tl_new:N \l_colors_list_tl%
+  \clist_map_variable:NNn \g__wc_wordcloud_colors_clist \l_onecolor_tl {% 
+    \extractcolorspecs{\tl_use:N \l_onecolor_tl}{\wc_onecolor_type}{\wc_onecolor_values} 
+    \tl_gput_right:Nx \l_colors_list_tl {(\wc_onecolor_values);}
+  }%
+
+
   %\show {coucous}
   \directlua{%
     %tex.sprint("test")
-    wc_build_wordcloud("#2",\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl")
+    wc_build_wordcloud("#2",\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl",\bool_if:NTF \g__wc_wordcloud_usecolor_bool{"true"}{"false"},"\tl_use:N \l_colors_list_tl")
   }%
 }
 

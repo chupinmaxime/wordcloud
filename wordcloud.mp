@@ -236,7 +236,7 @@ enddef;
 
 %%% colors
 boolean _wordcloud_use_color;
-_wordcloud_use_color:=true;
+_wordcloud_use_color:=false;
 
 numeric wordcloud_colors_number;
 color wordcloud_colors[];
@@ -296,7 +296,7 @@ vardef draw_wordcloud(suffix _words, _weights, rotation)(expr _N)=
         if(_ok_draw): % if there is no intersections
           draw _wordcloud_words[i] rotated
           (_wordcloud_rotation(rotation,_rotation_bool)) shifted (_position_pt +
-          _random_pt)  if(_wordcloud_use_color): withcolor wordcloud_colors[(i
+          _random_pt)  if(_wordcloud_use_color): withcolor wordcloud_colors[((i-1)
           mod wordcloud_colors_number)+1] fi;
         else: % else, we move along the spiral
           _position:=_position+1;

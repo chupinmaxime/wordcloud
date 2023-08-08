@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  4 AUG 2023 11:50
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  8 AUG 2023 23:50
  restricted system commands enabled.
 **wordcloud-doc-en.tex
 (./wordcloud-doc-en.tex
@@ -2341,7 +2341,95 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/FiraMono(1)/bx/n on input line 22.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 (Font)              scaled to size 10.0pt on input line 22.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/algpseudocodex/algpseudocodex.sty
+Package: algpseudocodex 2023-04-17 v1.1.2 pseudocode typesetting
+(/usr/local/texlive/2023/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count493
+\c@ALG@rem=\count494
+\c@ALG@nested=\count495
+\ALG@tlm=\skip159
+\ALG@thistlm=\skip160
+\c@ALG@Lnr=\count496
+\c@ALG@blocknr=\count497
+\c@ALG@storecount=\count498
+\c@ALG@tmpcounter=\count499
+\ALG@tmplength=\skip161
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
+Package: fifo-stack 2014/03/24 v1.0 Multi-FIFO/stack system
+\tmp@fifo@stack@top=\count500
+\tmp@fifo@stack@bottom=\count501
+\tmp@fifo@stack@size=\count502
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box144
+\sift@deathcycles=\count503
+\@vwid@loff=\dimen293
+\@vwid@roff=\dimen294
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tabto-ltx/tabto.sty
+Package: tabto 2018/12/28  v 1.4  Another tabbing mechanism
+\CurrentLineWidth=\dimen295
+\TabPrevPos=\dimen296
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/totcount/totcount.sty
+Package: totcount 2011/01/25 v1.2 package for gettingthe total value of LaTeX c
+ounters
+)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tikzmark/tikzlibrarytikzmark.code
+.tex
+File: tikzlibrarytikzmark.code.tex 2022/08/24 v1.15 TikZ library for marking po
+sitions in a document
+\l__sn_x_dim=\dimen297
+\l__sn_y_dim=\dimen298
+\l__sn_xa_dim=\dimen299
+\l__sn_ya_dim=\dimen300
+)
+\algpx@codeBoxInnerSep=\skip162
+\algpx@codeBoxSep=\skip163
+\algpx@codeBoxOuterSep=\skip164
+\algpx@indShiftX=\skip165
+\algpx@indStartShiftY=\skip166
+\algpx@indEndShiftY=\skip167
+\algpx@indXLineLength=\skip168
+\algpx@minIndDist=\skip169
+\algpx@oldPos=\skip170
+\algpx@newPos=\skip171
+\algpx@tmpLen=\skip172
+\algpx@currentLineskiplimit=\skip173
+\algpx@currentLineskip=\skip174
+\algpx@indStartY=\skip175
+\algpx@indEndY=\skip176
+\algpx@indStartX=\skip177
+\algpx@extraShiftX=\skip178
+\algpx@minTopPageHeight=\skip179
+\algpx@minBotPageDepth=\skip180
+LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 103.
+\c@algpx@codeBoxCount=\count504
+\c@algpx@nestedCBoxCount=\count505
+\c@algpx@startedBoxesCount=\count506
+\c@algpx@endedBoxesCount=\count507
+\c@algpx@nestedBoxedStringCount=\count508
+\c@algpx@nestedBoxedStringMaxCount=\count509
+\c@algpx@indentCount=\count510
+\c@algpx@lastIndentEnded=\count511
+\c@algpx@pageCount=\count512
+\c@algpx@tmpCount=\count513
+\algpx@boxedStringBox=\box145
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/animate/animate.sty
@@ -2353,44 +2441,44 @@ Package: ifdraft 2016/05/16 v1.4 Detect class options draft and final (HO)
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count493
-\calc@Bcount=\count494
-\calc@Adimen=\dimen293
-\calc@Bdimen=\dimen294
-\calc@Askip=\skip159
-\calc@Bskip=\skip160
+\calc@Acount=\count514
+\calc@Bcount=\count515
+\calc@Adimen=\dimen301
+\calc@Bdimen=\dimen302
+\calc@Askip=\skip181
+\calc@Bskip=\skip182
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count495
-\calc@Cskip=\skip161
+\calc@Ccount=\count516
+\calc@Cskip=\skip183
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/media9/pdfbase.sty
 Package: pdfbase 2022/08/04 v0.55 driver independent access to low-level PDF fe
 atures
-\g_pbs_page_int=\count496
-\g_pbs_oc_int=\count497
+\g_pbs_page_int=\count517
+\g_pbs_oc_int=\count518
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/ocgx2/ocgbase.sty
 Package: ocgbase 2022/08/04 v0.22 support package for ocgx2.sty
-\g_ocgbase_nd_int=\count498
+\g_ocgbase_nd_int=\count519
 )
-\@anim@box=\box144
-\@anim@measbox=\box145
-\@anim@tmpdima=\dimen295
-\@anim@tmpdimb=\dimen296
-\@anim@num=\count499
-\@anim@curframe=\count500
-\@anim@curframe@zb=\count501
-\@anim@resizeflags=\count502
-\@anim@skipfram=\count503
-\@anim@mulframecnt=\count504
+\@anim@box=\box146
+\@anim@measbox=\box147
+\@anim@tmpdima=\dimen303
+\@anim@tmpdimb=\dimen304
+\@anim@num=\count520
+\@anim@curframe=\count521
+\@anim@curframe@zb=\count522
+\@anim@resizeflags=\count523
+\@anim@skipfram=\count524
+\@anim@mulframecnt=\count525
 \@anim@@tmlnfile=\read6
-\@anim@tmpcnt=\count505
-\c@@anim@ltxcnt=\count506
-\@anim@curlayer=\count507
-\@anim@lineno=\count508
-\@anim@curfield=\count509
-\@anim@@resizeflags=\count510
+\@anim@tmpcnt=\count526
+\c@@anim@ltxcnt=\count527
+\@anim@curlayer=\count528
+\@anim@lineno=\count529
+\@anim@curfield=\count530
+\@anim@@resizeflags=\count531
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-05-16 v7.00y Hypertext links for LaTeX
@@ -2411,18 +2499,18 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count511
+\c@section@level=\count532
 )
-\@linkdim=\dimen297
-\Hy@linkcounter=\count512
-\Hy@pagecounter=\count513
+\@linkdim=\dimen305
+\Hy@linkcounter=\count533
+\Hy@pagecounter=\count534
  (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2023-05-16 v7.00y Hyperref: PDFDocEncoding definition (HO)
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count514
+\Hy@SavedSpaceFactor=\count535
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2023-05-16 v7.00y Hyperref: PDF Unicode definition (HO)
@@ -2435,9 +2523,9 @@ Package hyperref Info: Plain pages OFF on input line 4182.
 Package hyperref Info: Backreferencing OFF on input line 4187.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count515
+\c@Hy@tempcnt=\count536
 LaTeX Info: Redefining \url on input line 4772.
-\XeTeXLinkMargin=\dimen298
+\XeTeXLinkMargin=\dimen306
 
 (/usr/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -2446,9 +2534,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count516
-\Field@Width=\dimen299
-\Fld@charsize=\dimen300
+\Fld@menulength=\count537
+\Field@Width=\dimen307
+\Fld@charsize=\dimen308
 Package hyperref Info: Hyper figures OFF on input line 6051.
 Package hyperref Info: Link nesting OFF on input line 6056.
 Package hyperref Info: Hyper index ON on input line 6059.
@@ -2456,9 +2544,9 @@ Package hyperref Info: backreferencing OFF on input line 6066.
 Package hyperref Info: Link coloring ON on input line 6069.
 Package hyperref Info: Link coloring with OCG OFF on input line 6076.
 Package hyperref Info: PDF/A mode OFF on input line 6081.
-\Hy@abspage=\count517
-\c@Item=\count518
-\c@Hfootnote=\count519
+\Hy@abspage=\count538
+\c@Item=\count539
+\c@Hfootnote=\count540
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
@@ -2474,9 +2562,9 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\HyAnn@Count=\count520
-\Fld@listcount=\count521
-\c@bookmark@seq@number=\count522
+\HyAnn@Count=\count541
+\Fld@listcount=\count542
+\c@bookmark@seq@number=\count543
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
@@ -2487,7 +2575,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip162
+\Hy@SectionHShift=\skip184
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
@@ -2500,31 +2588,32 @@ File: lstlang3.sty 2023/02/27 1.9 listings language file
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
-\c@tcb@cnt@ExempleMP=\count523
+\c@tcb@cnt@ExempleMP=\count544
+\c@tcb@cnt@ExempleLaTeX=\count545
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen301
-\lightrulewidth=\dimen302
-\cmidrulewidth=\dimen303
-\belowrulesep=\dimen304
-\belowbottomsep=\dimen305
-\aboverulesep=\dimen306
-\abovetopsep=\dimen307
-\cmidrulesep=\dimen308
-\cmidrulekern=\dimen309
-\defaultaddspace=\dimen310
-\@cmidla=\count524
-\@cmidlb=\count525
-\@aboverulesep=\dimen311
-\@belowrulesep=\dimen312
-\@thisruleclass=\count526
-\@lastruleclass=\count527
-\@thisrulewidth=\dimen313
+\heavyrulewidth=\dimen309
+\lightrulewidth=\dimen310
+\cmidrulewidth=\dimen311
+\belowrulesep=\dimen312
+\belowbottomsep=\dimen313
+\aboverulesep=\dimen314
+\abovetopsep=\dimen315
+\cmidrulesep=\dimen316
+\cmidrulekern=\dimen317
+\defaultaddspace=\dimen318
+\@cmidla=\count546
+\@cmidlb=\count547
+\@aboverulesep=\dimen319
+\@belowrulesep=\dimen320
+\@thisruleclass=\count548
+\@lastruleclass=\count549
+\@thisrulewidth=\dimen321
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/collcell/collcell.sty
 Package: collcell 2011/02/27 v0.5 Collect the content of a tabular cell
-\collect@cell@count=\count528
+\collect@cell@count=\count550
 ))
 (./wordcloud.sty
 Package: wordcloud 2023/07/26 v0.1
@@ -2624,8 +2713,8 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \babelcatcodetablenum=\catcodetable14
 \bbl@pattcodes=\catcodetable15
 )
-\babel@savecnt=\count529
-\U@D=\dimen314
+\babel@savecnt=\count551
+\U@D=\dimen322
 \l@unhyphenated=\language89
 
 (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/luababel.def
@@ -2661,19 +2750,25 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 66.
 Package hyperref Info: Option `plainpages' set `false' on input line 66.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 66.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 66.
-\c@HD@unique=\count530
-\c@HD@hypercount=\count531
-\HD@helplength=\skip163
+\c@HD@unique=\count552
+\c@HD@hypercount=\count553
+\HD@helplength=\skip185
 )
 
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count532
-\@quotereset=\count533
+\@quotelevel=\count554
+\@quotereset=\count555
 (./wordcloud-doc-en.aux
+\c@algpx@indentEndPage-0@totc=\count556
+\c@algpx@indentEndPage-1@totc=\count557
+\c@algpx@indentEndPage-2@totc=\count558
+\c@algpx@indentEndPage-3@totc=\count559
+\c@algpx@indentEndPage-4@totc=\count560
+\c@algpx@indentEndPage-5@totc=\count561
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 38.
+(Font)              scaled to size 7.0pt on input line 279.
 )
 \openout1 = wordcloud-doc-en.aux
 
@@ -2701,16 +2796,16 @@ Package doc Info: Made | a short reference for \verb on input line 26.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count534
-\scratchdimen=\dimen315
-\scratchbox=\box146
-\nofMPsegments=\count535
-\nofMParguments=\count536
+\scratchcounter=\count562
+\scratchdimen=\dimen323
+\scratchbox=\box148
+\nofMPsegments=\count563
+\nofMParguments=\count564
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count537
-\MPscratchDim=\dimen316
-\MPnumerator=\count538
-\makeMPintoPDFobject=\count539
+\MPscratchCnt=\count565
+\MPscratchDim=\dimen324
+\MPnumerator=\count566
+\makeMPintoPDFobject=\count567
 \everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -2721,7 +2816,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count540
+\c@lstlisting=\count568
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -2770,7 +2865,7 @@ Package hyperref Info: Link coloring ON on input line 26.
 \HD@savedest@out=\write8
 
 \openout8 = wordcloud-doc-en.hd
-<fond.pdf, id=71, 598.235pt x 845.1575pt>
+<fond.pdf, id=103, 598.235pt x 845.1575pt>
 File: fond.pdf Graphic file (type pdf)
 <use fond.pdf>
 Package luatex.def Info: fond.pdf  used on input line 36.
@@ -2837,7 +2932,7 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 (Font)              scaled to size 10.0pt on input line 2.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 7.2pt on input line 10.
+(Font)              scaled to size 7.2pt on input line 13.
 )
 \tf@toc=\write9
 
@@ -2887,14 +2982,80 @@ File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-(./wordcloud-doc-en.listing)
+(./wordcloud-doc-en.listing) [2]
 \openout10 = wordcloud-doc-en.listing
- (./wordcloud-doc-en.listing) [2]
+ (./wordcloud-doc-en.listing)
 \openout10 = wordcloud-doc-en.listing
 
-(./wordcloud-doc-en.listing) [3] (./wordcloud-doc-en.aux)
+(./wordcloud-doc-en.listing)
+LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 168.
+LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
+(Font)              scaled to size 8.00085pt on input line 168.
+LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 168.
+ [3]
+\c@algpx@indentEndPage-0=\count569
+\c@algpx@indentEndPage-1=\count570
+LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
+(Font)              scaled to size 5.8pt on input line 180.
+\c@algpx@indentEndPage-2=\count571
+\c@algpx@indentEndPage-3=\count572
+\c@algpx@indentEndPage-4=\count573
+\c@algpx@indentEndPage-5=\count574
+LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/it' will be
+(Font)              scaled to size 10.0pt on input line 220.
+ [4]
+\openout10 = wordcloud-doc-en.listing
+ (./wordcloud-doc-en.listing)
+Module luamplib Info: flushing figure 1 on input line 243
+
+\openout10 = wordcloud-doc-en.listing
+
+(./wordcloud-doc-en.listing)
+Overfull \hbox (1.69882pt too wide) in paragraph at lines 265--277
+[][]\TU/FiraSans(0)/m/n/10 metapost-colorbrewer[][] [[][]󰌳[][]]. [][]word-clo
+ud[][] de-fines an ar-ray of [][][][][][]s and a [][]
+ []
+
+[5] [6]
+Underfull \hbox (badness 3930) in paragraph at lines 339--339
+[][][]\TU/FiraSans(0)/m/n/8 Be-ware that scal-ing in-creases the com-pu-ta-tion time and the val-ues ma-nip-u-lated by
+ []
+
+
+\openout10 = wordcloud-doc-en.listing
+(./wordcloud-doc-en.listing) (./wordcloud-doc-en.listing
+Module luamplib Info: flushing figure 1 on input line 1
+) [7]
+LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
+(Font)              scaled to size 8.0pt on input line 382.
+
+\openout10 = wordcloud-doc-en.listing
+
+(./wordcloud-doc-en.listing)
+\openout10 = wordcloud-doc-en.listing
+ (./wordcloud-doc-en.listing)
+<doc-wc.pdf, id=276, 101.98pt x 98.52107pt>
+File: doc-wc.pdf Graphic file (type pdf)
+<use doc-wc.pdf>
+Package luatex.def Info: doc-wc.pdf  used on input line 398.
+(luatex.def)             Requested size: 355.0pt x 342.99487pt.
+ [8]
+LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/it' will be
+(Font)              scaled to size 7.2pt on input line 411.
+
+Overfull \hbox (12.91563pt too wide) in paragraph at lines 412--412
+[]\TU/FiraSans(0)/m/n/10 Uwe Kern and The L[]T[]X Project Team. \TU/FiraSans(0)
+/m/it/10 The \TU/FiraMono(0)/m/it/10 xcolor \TU/FiraSans(0)/m/it/10 pack-age. Dr
+iver-independent
+ []
+
+[9<./doc-wc.pdf>] [10] (./wordcloud-doc-en.ind) [11
+
+] (./wordcloud-doc-en.aux)
 Package rerunfilecheck Info: File `wordcloud-doc-en.out' has not changed.
-(rerunfilecheck)             Checksum: EA03AE18B5233A2D5ED208C2AE06E29A;1551.
+(rerunfilecheck)             Checksum: F8EF077D841C4C9C01BDC73F9CB1DBD0;2626.
 Package rerunfilecheck Info: File `wordcloud-doc-en.hd' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'wordcloud-doc-en.run.xml'.
@@ -2903,33 +3064,34 @@ Package logreq Info: Writing requests to 'wordcloud-doc-en.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 51435 strings out of 478247
- 125121,2373549 words of node,token memory allocated
- 1340 words of node memory still in use:
-   22 hlist, 2 vlist, 10 rule, 2 glue, 4 kern, 1 glyph, 61 attribute, 115 glue_s
-pec, 56 attribute_list, 2 write, 16 pdf_literal, 16 pdf_colorstack nodes
-   avail lists: 1:2,2:2177,3:426,4:178,5:1045,6:69,7:3797,8:49,9:1551,10:11,11:1
-79
- 69930 multiletter control sequences out of 65536+600000
- 143 fonts using 44432955 bytes
- 104i,6n,162p,954b,2247s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 53452 strings out of 478247
+ 156448,2373549 words of node,token memory allocated
+ 1553 words of node memory still in use:
+   23 hlist, 2 vlist, 10 rule, 9 glue, 4 kern, 1 glyph, 89 attribute, 122 glue_s
+pec, 70 attribute_list, 2 write, 16 pdf_literal, 6 pdf_action, 16 pdf_colorstack
+ nodes
+   avail lists: 1:8,2:8062,3:3238,4:260,5:2077,6:96,7:6167,8:51,9:4052,10:16,11:
+270,12:1
+ 71736 multiletter control sequences out of 65536+600000
+ 155 fonts using 48329215 bytes
+ 104i,8n,162p,1370b,2277s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-BoldItal
+ic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-O
+blique.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/firamath/Fi
+raMath-Regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fir
+amath/FiraMath-Regular.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/pu
+blic/fira/FiraSans-Italic.otf></home/mc/.local/share/fonts/FiraMono-Bold.ttf></u
+sr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Bold.otf></
+usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.ot
+f></home/mc/.local/share/fonts/FiraMono-Regular.ttf></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/hoekwater/mflogo-font/logo8.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/hoekwater/mflogo-font/logod10.pfb>
+Output written on wordcloud-doc-en.pdf (11 pages, 117337 bytes).
 
-warning  (pdf backend): unreferenced destination with name 'cite.0@ctan-metapost
-'
-</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-Oblique.
-otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/firamath/FiraMath-
-Regular.otf></home/mc/.local/share/fonts/FiraMono-Bold.ttf></usr/local/texlive/2
-023/texmf-dist/fonts/opentype/public/fira/FiraSans-Italic.otf></usr/local/texliv
-e/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Bold.otf></usr/local/texli
-ve/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-Regular.otf></home/mc/.lo
-cal/share/fonts/FiraMono-Regular.ttf></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/texmf-dist/fonts/
-type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/texmf-dist/fonts/
-type1/hoekwater/mflogo-font/logod10.pfb>
-Output written on wordcloud-doc-en.pdf (3 pages, 66239 bytes).
-
-PDF statistics: 187 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 131072)
- 256 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 416 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 85 named destinations out of 1000 (max. 131072)
+ 320 words of extra memory for PDF output out of 10000 (max. 100000000)
 

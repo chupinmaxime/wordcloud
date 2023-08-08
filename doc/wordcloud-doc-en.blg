@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'wordcloud-doc-en.blg'
-[73] biber:340> INFO - === jeu. août  3, 2023, 13:04:17
-[84] Biber.pm:419> INFO - Reading 'wordcloud-doc-en.bcf'
-[131] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
-[142] Biber.pm:4419> INFO - Processing section 0
-[156] Biber.pm:4610> INFO - Looking for bibtex file 'ctan.bib' for section 0
-[157] bibtex.pm:1713> INFO - LaTeX decoding ...
-[161] bibtex.pm:1519> INFO - Found BibTeX data source 'ctan.bib'
-[192] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[192] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[192] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[192] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[196] bbl.pm:660> INFO - Writing 'wordcloud-doc-en.bbl' with encoding 'UTF-8'
-[197] bbl.pm:763> INFO - Output to wordcloud-doc-en.bbl
+[45] biber:340> INFO - === mar. août  8, 2023, 23:35:07
+[55] Biber.pm:419> INFO - Reading 'wordcloud-doc-en.bcf'
+[103] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
+[112] Biber.pm:4419> INFO - Processing section 0
+[119] Biber.pm:4610> INFO - Looking for bibtex file 'ctan.bib' for section 0
+[120] bibtex.pm:1713> INFO - LaTeX decoding ...
+[127] bibtex.pm:1519> INFO - Found BibTeX data source 'ctan.bib'
+[174] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[174] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[175] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[175] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[183] bbl.pm:660> INFO - Writing 'wordcloud-doc-en.bbl' with encoding 'UTF-8'
+[186] bbl.pm:763> INFO - Output to wordcloud-doc-en.bbl

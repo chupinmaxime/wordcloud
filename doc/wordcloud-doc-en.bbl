@@ -19,6 +19,198 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{ctan-graphicx}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=3094f4812cc660f7320fd1ab3d3da906}{%
+           family={Carlisle},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b69c372d975132352501a9b5891648ef}{%
+           family={{The \LaTeX{} Project Team}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{070498b175d8f09a640acc1f14412283}
+      \strng{fullhash}{070498b175d8f09a640acc1f14412283}
+      \strng{bibnamehash}{070498b175d8f09a640acc1f14412283}
+      \strng{authorbibnamehash}{070498b175d8f09a640acc1f14412283}
+      \strng{authornamehash}{070498b175d8f09a640acc1f14412283}
+      \strng{authorfullhash}{070498b175d8f09a640acc1f14412283}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{12}
+      \field{month}{11}
+      \field{subtitle}{Enhanced support for graphics}
+      \field{title}{The \texttt{graphicx} package}
+      \field{version}{1.2d}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/graphicx
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/graphicx
+      \endverb
+    \endentry
+    \entry{ctan-luamplib}{manual}{}
+      \name{author}{6}{}{%
+        {{hash=340c04bf0d05579e01e13e7be6554a4e}{%
+           family={Hagen},
+           familyi={H\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4b4e38d885c8c696063a171d9bbfdb56}{%
+           family={Hoekwater},
+           familyi={H\bibinitperiod},
+           given={Taco},
+           giveni={T\bibinitperiod}}}%
+        {{hash=894ce289fc15ee89ba25f852b9cc1846}{%
+           family={Roux},
+           familyi={R\bibinitperiod},
+           given={Élie},
+           giveni={É\bibinitperiod}}}%
+        {{hash=c669684cb3fc248c6312419d5a139a5b}{%
+           family={Pégourié-Gonnard},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=640d7744f3fccdc7c84a5e4cfb77e468}{%
+           family={Gesang},
+           familyi={G\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2add9a1cd1b06538e2cf429c05f91a1a}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Dohyun},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c24260d41f562e2cec9b584f515115fe}
+      \strng{fullhash}{7b469c1c691648435808421b8eac9c6a}
+      \strng{bibnamehash}{c24260d41f562e2cec9b584f515115fe}
+      \strng{authorbibnamehash}{c24260d41f562e2cec9b584f515115fe}
+      \strng{authornamehash}{c24260d41f562e2cec9b584f515115fe}
+      \strng{authorfullhash}{7b469c1c691648435808421b8eac9c6a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{12}
+      \field{month}{1}
+      \field{subtitle}{Use LuaTeX’s built-in MetaPost interpreter}
+      \field{title}{The \texttt{luamplib} package}
+      \field{version}{2.23.0}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/luamplib
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/luamplib
+      \endverb
+    \endentry
+    \entry{ctan-xcolor}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=cba86c359af09403b14c88478fb9457f}{%
+           family={Kern},
+           familyi={K\bibinitperiod},
+           given={Uwe},
+           giveni={U\bibinitperiod}}}%
+        {{hash=b69c372d975132352501a9b5891648ef}{%
+           family={{The \LaTeX{} Project Team}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{61081defce69ee69a18c5e08326ad35f}
+      \strng{fullhash}{61081defce69ee69a18c5e08326ad35f}
+      \strng{bibnamehash}{61081defce69ee69a18c5e08326ad35f}
+      \strng{authorbibnamehash}{61081defce69ee69a18c5e08326ad35f}
+      \strng{authornamehash}{61081defce69ee69a18c5e08326ad35f}
+      \strng{authorfullhash}{61081defce69ee69a18c5e08326ad35f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{The package starts from the basic facilities of the package, and provides easy driver-independent access to several kinds of color tints, shades, tones, and mixes of arbitrary colors. It allows a user to select a document-wide target color model and offers complete tools for conversion between eight color models. Additionally, there is a command for alternating row colors plus repeated non-aligned material (like horizontal lines) in tables. Colors can be mixed like \textbackslash{}color{red!30!green!40!blue}.}
+      \field{day}{12}
+      \field{month}{6}
+      \field{subtitle}{Driver-independent color extensions for \LaTeX{} and pdfLaTeX}
+      \field{title}{The \texttt{xcolor} package}
+      \field{version}{2.14}
+      \field{year}{2022}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/xcolor
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/xcolor
+      \endverb
+    \endentry
+    \entry{ctan-latexmp}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=22c900f39257902066bb7f71bb6a25df}{%
+           family={Morawski},
+           familyi={M\bibinitperiod},
+           given={Jens-Uwe},
+           giveni={J\bibinithyphendelim U\bibinitperiod}}}%
+      }
+      \strng{namehash}{22c900f39257902066bb7f71bb6a25df}
+      \strng{fullhash}{22c900f39257902066bb7f71bb6a25df}
+      \strng{bibnamehash}{22c900f39257902066bb7f71bb6a25df}
+      \strng{authorbibnamehash}{22c900f39257902066bb7f71bb6a25df}
+      \strng{authornamehash}{22c900f39257902066bb7f71bb6a25df}
+      \strng{authorfullhash}{22c900f39257902066bb7f71bb6a25df}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{The MetaPost package latexMP implements a user-friendly interface to access \LaTeX{}-based typesetting capabilities in MetaPost. The text to be typeset is given as string. This allows even dynamic text elements, for example counters, to be used in labels. Compared to other implementations it is much more flexible, since it can be used as direct replacement for , and much faster, compared for example to the solution provided by .}
+      \field{day}{21}
+      \field{month}{6}
+      \field{subtitle}{Interface for \LaTeX{}-based typesetting in MetaPost}
+      \field{title}{The \texttt{latexMP} package}
+      \field{version}{1.2.1}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/latexmp
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/latexmp
+      \endverb
+    \endentry
+    \entry{ctan-lualatex-doc}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=c669684cb3fc248c6312419d5a139a5b}{%
+           family={Pégourié-Gonnard},
+           familyi={P\bibinithyphendelim G\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c669684cb3fc248c6312419d5a139a5b}
+      \strng{fullhash}{c669684cb3fc248c6312419d5a139a5b}
+      \strng{bibnamehash}{c669684cb3fc248c6312419d5a139a5b}
+      \strng{authorbibnamehash}{c669684cb3fc248c6312419d5a139a5b}
+      \strng{authornamehash}{c669684cb3fc248c6312419d5a139a5b}
+      \strng{authorfullhash}{c669684cb3fc248c6312419d5a139a5b}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{24}
+      \field{month}{6}
+      \field{subtitle}{A guide to use of \LaTeX{} with LuaTeX}
+      \field{title}{The \texttt{lualatex-doc} package}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/lualatex-doc
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/lualatex-doc
+      \endverb
+    \endentry
     \entry{ctan-metapost}{manual}{}
       \name{author}{2}{}{%
         {{hash=511cd99806b631a54d6cdaf13b151cd1}{%
@@ -52,6 +244,37 @@
       \endverb
       \verb{url}
       \verb https://ctan.org/pkg/metapost
+      \endverb
+    \endentry
+    \entry{ctan-metapost-colorbrewer}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=3f64202fec398995e6a9352201f719aa}{%
+           family={Thurston},
+           familyi={T\bibinitperiod},
+           given={Toby},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f64202fec398995e6a9352201f719aa}
+      \strng{fullhash}{3f64202fec398995e6a9352201f719aa}
+      \strng{bibnamehash}{3f64202fec398995e6a9352201f719aa}
+      \strng{authorbibnamehash}{3f64202fec398995e6a9352201f719aa}
+      \strng{authornamehash}{3f64202fec398995e6a9352201f719aa}
+      \strng{authorfullhash}{3f64202fec398995e6a9352201f719aa}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{25}
+      \field{month}{9}
+      \field{subtitle}{An implementation of the colorbrewer2.org colours for MetaPost}
+      \field{title}{The \texttt{metapost-colorbrewer} package}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://ctan.org/pkg/metapost-colorbrewer
+      \endverb
+      \verb{url}
+      \verb https://ctan.org/pkg/metapost-colorbrewer
       \endverb
     \endentry
   \enddatalist

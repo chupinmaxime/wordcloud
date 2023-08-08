@@ -20,7 +20,7 @@ end
 
 function wc_ignor_en()
     local output;
-    output= {"and", "so", "the", "the", "hence", "some", "that", "are", "is", "have", "has","in","on","could","should","with","be","this","these","where","when",}
+    output= {"and", "so", "the", "the", "hence", "some", "that", "are", "is", "have", "has","in","on","could","should","with","be","this","these","where","when","not","with","can",}
     return output
 end
 

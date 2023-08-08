@@ -1,0 +1,642 @@
+wordcloud
+
+mplib
+
+drawing wordclouds
+with METAPOST and Lua
+
+graphism
+
+algorithm
+
+METAPOST
+
+Wordcloud
+mathematics
+
+LuaTEX
+
+CTAN
+
+LATEX
+
+Lua
+latexmp
+
+code
+
+Contributor
+Maxime Chupin
+notezik@gmail.com
+
+Version 0.1, 2023, August, 3rd
+https://plmlab.math.cnrs.fr/mchupin/wordcloud
+
+Abstract
+These METAPOST and LuaLATEX packages allows to draw wordclouds from
+a list of words and weights. The algorithm is implemented with METAPOST
+whereas Lua is used to parse LATEX commands and to build the list of words
+and weights from a text file. The LuaLATEX side require luamplib.
+
+https://plmlab.math.cnrs.fr/mchupin/wordcloud
+https://github.com/chupinmaxime/wordcloud
+
+Contents
+1
+
+Installation
+1.1 With TEXlive under Linux or macOS . . . . . . . . . . . . . . . . . . .
+1.2 With MikTEX and Windows . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Dependencies . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2 METAPOST side
+2.1 Description of the algorithm
+2.2 Main command . . . . . . . .
+2.3 Parameters . . . . . . . . . .
+2.3.1 Colors . . . . . . . . .
+2.3.2 Scaling . . . . . . . . .
+2.3.3 Margins . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+3 LuaLATEX side
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+
+2
+2
+3
+3
+3
+3
+4
+5
+5
+6
+6
+6
+
+This package is in beta version—do not hesitate to report bugs, as well as
+requests for improvement, or better: to help me to improve it.
+
+1
+
+Installation
+
+wordcloud is on ctan and can also be installed via the package manager of your
+distribution.
+https://www.ctan.org/pkg/wordcloud
+
+1.1
+
+With TEXlive under Linux or macOS
+
+To install wordcloud with TEXLive, you will have to create the directory texmf in
+your home.
+mkdir ~/texmf
+
+Then, you will have to place the wordcloud.mp file in
+~/texmf/metapost/huffman/
+2
+
+You will also have to place the wordcloud.lua file in
+~/texmf/scripts/wordcloud/
+And finally, you will have to place the wordcloud.sty file in
+~/texmf/tex/latex/wordcloud/
+Once this is done, wordcloud will be loaded with the classic METAPOST input
+code
+input wordcloud
+And for the LuaLATEX side, wordcloud will be loaded with
+\usepackage{wordcloud}
+
+1.2
+
+With MikTEX and Windows
+
+These two systems are unknown to the author of wordcloud, so we refer you to
+the MikTEXdocumentation concerning the addition of local packages:
+http://docs.miktex.org/manual/localadditions.html
+
+1.3
+
+Dependencies
+
+wordcloud depends, of course on METAPOST [4] and metapost-colorbrewer [5],
+and—if wordcloud is not used with LuaLATEX [3] and the luamplib package [1]—the
+latexmp package [2].
+
+2 METAPOST side
+2.1
+
+Description of the algorithm
+
+Given a set of words and weights, we first use a scale function of the weights to
+scale the words. In this beta version of wordcloud, we only provide a log-based
+function1 .
+Then, we compute a spiral line starting at the center2 .
+Then the algorithm is quite simple:
+Require: set of words (𝑊𝑖 )𝑖∈{1,…,𝑁 and corresponding weight (𝑤𝑖 )𝑖∈{1,…,𝑁 , and a spiral line 𝑆
+1: for all 𝑖 ∈ {1, … , 𝑁} do
+2:
+Place 𝑊𝑖 at the start of 𝑆
+3:
+repeat
+4:
+Set 𝑏draw ∶= true
+1
+2
+
+Other scale options could be provided in the next versions.
+There is variants of the algorithm that use different line: squared spiral, etc.
+
+3
+
+for all 𝑗 ∈ 1, … , 𝑖 do
+if 𝑊𝑖 ∩ 𝑊𝑗 ≠ ∅ then
+7:
+Set 𝑏draw ∶= false
+8:
+end if
+9:
+end for
+10:
+if 𝑏draw == true then
+11:
+Draw 𝑊𝑖
+12:
+else
+13:
+Move 𝑊𝑖 along 𝑆
+14:
+end if
+15:
+until 𝑊𝑖 is drawn
+16: end for
+The hard part is making it perform efficiently! According to Jonathan Feinberg, Wordle3 uses a combination of hierarchical bounding boxes and quadtrees
+to achieve reasonable speeds. Here, with METAPOST, we compute intersections
+with the bounding box of the word.
+5:
+6:
+
+Remark
+The words with METAPOST are built with the textext() function of latexmp or luamplib. We are trying to use the bounding boxes of the letters when we get an intersection between “global” bounding boxes to allow
+placing words nearer of each other. Unfortunately, this does not work for
+the moment. Any help is welcomed.
+We first tried to compute intersections between words by decomposing
+the letter using their contours and compute intersection of contours (with
+intersectiontimes). Unfortunately, this is much too slow.
+
+2.2
+
+Main command
+
+The main command is
+draw_wordcloud(⟨words⟩, ⟨weights⟩,⟨rotation⟩,⟨size⟩)
+⟨words⟩: array of strings ;
+⟨weights⟩: array of numerics ;
+⟨rotation⟩: angle for wordcloud drawing;
+⟨size⟩: number of elements in arrays.
+Exemple METAPOST 1
+input wordcloud
+beginfig(0);
+string words[];
+3
+
+One of the first web application to build wordcloud.
+
+4
+
+METAPOST
+
+numeric weights[];
+words[1]:="\LaTeX";
+words[2]:="\hologo{METAPOST}";
+words[3]:="Document";
+words[4]:="Lua";
+words[5]:="\TeX";
+weights[1]:=5;
+weights[2]:=4;
+weights[3]:=3.5;
+weights[4]:=3;
+weights[5]:=3;
+draw_wordcloud(words,weights,0,5);
+endfig;
+
+Lua
+
+Document
+
+LATEX
+TEX
+
+Remark
+The “unity” of weights is not really important because internally, wordcloud
+compute new weights (with a min and a max, etc.) to work with the internal
+scaling function.
+
+2.3
+
+Parameters
+
+There are few parameters.
+2.3.1
+
+Colors
+
+You can use set of colors to draw the wordcloud. For that, you have to use the
+following command:
+wordcloud_use_color(⟨bool⟩)
+⟨bool⟩: boolean true or false (default false).
+wordcloud provides a set of five colors using the METAPOST package
+metapost-colorbrewer [5]. wordcloud defines an array of colors and a numeric
+to set the colors to use.
+wordcloud_colors[1]:=Reds[3][3];
+wordcloud_colors[2]:=Greens[3][3];
+wordcloud_colors[3]:=Blues[3][3];
+wordcloud_colors[4]:=Oranges[3][3];
+
+5
+
+wordcloud_colors[5]:=black;
+wordcloud_colors_number:=5;
+Feel free to modify that variables to customize the colors.
+2.3.2
+
+Scaling
+
+You can globally scale the picture using the following command:
+set_wordcloud_scale(⟨scale⟩)
+⟨scale⟩: numeric.
+2.3.3
+
+Margins
+
+You can adjust the margins of the global bounding boxes of words using the
+following command:
+set_box_margin(⟨dim⟩)
+⟨dim⟩: a dimension with units (default 0.3pt).
+
+3
+
+LuaLATEX side
+
+wordcloud provides a LuaLATEX package. It uses the package luamplib to interpret
+a METAPOST code produced by Lua.
+The first LATEX command provided by wordcloud is:
+\wordcloud[⟨options⟩]{⟨list of words and weights⟩}
+where
+⟨list of words and weights⟩: is a list of couples of the form (word1,weight1)
+;(word2,weight2);(word3,weight3);...
+The second LATEX command allows to read a text file, to build the list of words
+and weights and draw the wordcloud up to a certain number of words.
+\wordcloudFile[⟨options⟩]{⟨text file⟩}{⟨number of words⟩}
+where:
+⟨text file⟩: is a text file to analyze and from which the wordcloud is build ;
+⟨number of words⟩: is the number of words composing the wordcloud.
+Both of these functions (\wordcloud and \wordcloudFile) have the
+same options:
+scale=⟨value⟩: to scale the picture4 ;
+4
+Beware that scaling increases the computation time and the values manipulated by
+METAPOST.
+
+6
+
+margin=⟨value with units⟩: to adjust the margins (default 0.3pt) ;
+rotation=⟨angle⟩: to rotate (degrees) the words with ±⟨angle⟩ alternatively
+(default 0) ;
+usecolor: to use color for word drawing (boolean, default false) as described in section 2.3.1 ;
+colors=⟨list of colors⟩: to define a new set of colors as described in section 2.3.15 .
+Here an example:
+Exemple LATEX 1
+\wordcloud[scale=1,rotate=45,margin=0.5pt,usecolor,colors={red
+!40,blue!40,green!20!black}]{(Wordcloud,10);(\\hologo{
+METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(
+mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(
+latexmp,3);(graphism,2)}
+
+W L
+M o ua
+ET r
+APdc
+OSlo
+T ud
+
+Lu
+
+p
+xm X
+te
+la
+aT E
+
+s
+
+ic
+
+at
+
+al
+go
+rit
+hm
+
+sm
+
+m
+
+he
+
+gr
+ap
+hi
+
+at
+
+X
+
+co
+de
+
+m
+
+AN
+CT
+
+ALT E
+
+ib
+
+pl
+
+m
+
+References
+[1] Hans Hagen et al. The luamplib package. Use LuaTeX’s built-in MetaPost
+interpreter. Version 2.23.0. Jan. 12, 2022. url: https://ctan.org/pkg/
+luamplib.
+[2] Jens-Uwe Morawski. The latexMP package. Interface for LATEX-based typesetting in MetaPost. Version 1.2.1. June 21, 2020. url: https://ctan.org/
+pkg/latexmp.
+[3] Manuel Pégourié-Gonnard. The lualatex-doc package. A guide to use
+of LATEX with LuaTeX. June 24, 2016. url: https : / / ctan . org / pkg /
+lualatex-doc.
+[4] The MetaPost Team and John Hobby. The metapost package. A development of Metafont for creating graphics. Aug. 26, 2021. url: https://ctan.
+org/pkg/metapost.
+[5] Toby Thurston. The metapost-colorbrewer package. An implementation of the colorbrewer2.org colours for MetaPost. Sept. 25, 2018. url:
+https://ctan.org/pkg/metapost-colorbrewer.
+5
+This needs xcolor because the colors are converted to rgb coding and then transferred to
+METAPOST.
+
+7
+
+Command Index
+\wordcloud, 6
+\wordcloudFile, 6
+
+set_wordcloud_scale, 6
+wordcloud_colors, 5
+wordcloud_colors_number, 5
+wordcloud_use_color, 5
+
+draw_wordcloud, 4
+set_box_margin, 6
+
+8
+
+� function
+
+input
+
+��
+
+The
+
+https
+
+command You
+
+end
+
+file
+
+�
+
+you
+
+Lua set
+
+luamplib
+
+use
+
+ctan for
+
+pkg
+
+true
+
+compute
+following
+
+9
+
+draw
+
+latexmp
+
+url
+bounding
+
+LuaLATEX
+
+spiral
+
+colors
+
+algorithm
+
+package
+
+�draw
+
+words
+
+wordcloud
+weights
+texmf scale
+
+With
+
+side
+
+metapost
+
+colorbrewer
+
+using
+
+METAPOST
+
+first
+
+will
+
+MetaPost
+boxes
+
+org place
+
+LATEX
+
+

@@ -19,7 +19,7 @@
 \usepackage[mathrm=sym]{firamath-otf}
 \setmonofont{Fira Mono}
 %\setmonofont{FiraCode-Regular.ttf}[BoldFont= FiraCode-Bold.ttf,ItalicFont= FiraCode-RegularItalic.otf,BoldItalicFont= FiraCode-BoldItalic.otf,Ligatures={NoCommon, NoDiscretionary, NoHistoric, NoRequired, NoContextual}]
-
+\usepackage[noEnd=false,]{algpseudocodex}
 \usepackage{xspace}
 \usepackage{animate}
 \newcommand{\ctan}{\textsc{ctan}}
@@ -74,7 +74,7 @@
     \def×{\optstar{}}}}
 
 
-\newcommand\wordcloudpkg{\texttt{wordcloud}\xspace}
+\newcommand\wordcloudpkg{\package{wordcloud}}
 
 \def\MO/{{\fontspec{fetamont}META\-OBJ}}
 
@@ -93,10 +93,10 @@
   breakindent=30pt,
   defaultdialect=MetaPost,
   classoffset=1,% frame=tb
-  morekeywords={},
+  morekeywords={draw_wordcloud,set_box_margin,set_wordcloud_scale,wordcloud_colors,wordcloud_colors_number,wordcloud_use_color,\wordcloud,\wordcloudFile,\wordcloudIgnoreWords},
   keywordstyle=\color{darkred},
   classoffset=2,% frame=tb
-  morekeywords={backboard,chessboard,chessboard_step},
+  morekeywords={Reds,Greens,Blues,Oranges},
   keywordstyle=\color{vert},
   classoffset=0,% frame=tb
   morekeywords={draw},
@@ -124,8 +124,32 @@
   0pt, bottomrule at break = 0pt,
   %listing side text,
   listing metapost,
-  title=Exemple~\thetcbcounter,
+  title=Exemple \hologo{METAPOST}~\thetcbcounter,
   listing options={breaklines},#1
+}
+
+\newtcblisting[auto counter,]{ExempleLaTeX}{%
+  arc=0pt,outer arc=0pt,
+  colback=darkred!3,
+  colframe=darkred,
+  breakable,fontupper=\small,
+  boxsep=0pt,left=5pt,right=5pt,top=5pt,bottom=5pt, bottomtitle =
+  3pt, toptitle=3pt,
+  boxrule=0pt,bottomrule=0.5pt,toprule=0.5pt, toprule at break =
+  0pt, bottomrule at break = 0pt,
+  %listing side text,
+  title=Exemple \LaTeX~\thetcbcounter,
+  listing options={breaklines,language={[LaTeX]TeX},
+  classoffset=1,% frame=tb
+  morekeywords={\wordcloud,\wordcloudFile},
+  keywordstyle=\color{darkred},
+  classoffset=2,% frame=tb
+  morekeywords={scale,rotate,margin,usecolor,colors},
+  keywordstyle=\color{vert},
+  classoffset=0,% frame=tb
+  morekeywords={draw},
+  keywordstyle=\color{bleu}
+  }
 }
 
 \newtcblisting{commandshell}{colback=black,colupper=white,colframe=black,
@@ -158,7 +182,16 @@
   boxrule=0pt,bottomrule=0.5pt,toprule=0.5pt, toprule at break =
   0pt, bottomrule at break = 0pt,
   listing only,boxsep=0pt,listing
-  options={breaklines,language={[LaTeX]TeX}}
+  options={breaklines,language={[LaTeX]TeX},
+  classoffset=1,% frame=tb
+  morekeywords={\wordcloud,\wordcloudFile},
+  keywordstyle=\color{darkred},
+  classoffset=2,% frame=tb
+  morekeywords={scale,rotate,margin,usecolor,colors},
+  keywordstyle=\color{vert},
+  classoffset=0,% frame=tb
+  morekeywords={draw},
+  keywordstyle=\color{bleu}}
 }
 
 
@@ -168,3 +201,14 @@
 \usepackage{collcell}
 
 \newcolumntype{H}{>{\collectcell\lstinline}l<{\endcollectcell}}
+
+\NewDocumentEnvironment{remark}{o}{
+  \tcbset{%
+   arc=0pt,outer arc=0pt,colback=black!10,colframe=black,
+   boxsep=0pt,left=10pt,right=10pt,top=8pt,bottom=10pt, bottomtitle = 3pt, toptitle=3pt,
+   boxrule=0pt
+ }
+ \smallskip
+ \begin{tcolorbox}[fonttitle=\bfseries,title={Remark \IfNoValueF{#1}{(#1)}}]}%
+ {\end{tcolorbox}\medskip
+}

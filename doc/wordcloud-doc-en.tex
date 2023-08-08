@@ -42,7 +42,7 @@
 \noindent
 {\Large  drawing wordclouds \\[0.2cm]with \hologo{METAPOST} and Lua}\\[3cm]
 \parbox{0.6\textwidth}{
-  \wordcloud[scale=2,rotate=0,margin=0.5pt]{(Wordcloud,10);(\\hologo{METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(latexmp,3);(graphism,2)}
+  \wordcloud[scale=2,rotate=0,margin=0.5pt,usecolor]{(Wordcloud,10);(\\hologo{METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(latexmp,3);(graphism,2)}
 }\hfill
 \parbox{0.5\textwidth}{\Large\raggedleft
   \textbf{Contributor}\\
@@ -151,344 +151,267 @@ refer you to the Mik\TeX documentation concerning the addition of local packages
 \subsection{Dependencies}
 
 
-\wordcloudpkg depends, of course on \MP~\cite{ctan-metapost}, and---if \wordcloudpkg
-is not used with \hologo{LuaLaTeX} and the \package{luamplib} package---the
-\package{latexmp} package. 
+\wordcloudpkg depends, for the \MP side, of course on \MP~\cite{ctan-metapost},
+but also on \package{metapost-colorbrewer}~\cite{ctan-metapost-colorbrewer} and the
+\package{latexmp} package~\cite{ctan-latexmp}. For the \hologo{LuaLaTeX} side~\cite{ctan-lualatex-doc},
+\wordcloudpkg depends on  the \package{luamplib} package~\cite{ctan-luamplib}
+and the \package{xcolor}~\cite{ctan-xcolor}.
+
 
 \section{\hologo{METAPOST} side}
 
 \subsection{Description of the algorithm}
 
+Given a set of words and weights, we first use a
+\emph{scale function} of the weights to scale the words. In this beta version of
+\package{wordcloud}, we only provide a log-based function\footnote{Other scale
+options could be provided in the next versions.}. 
+
+Then, we compute a spiral line starting at the center\footnote{There is variants
+of the algorithm that use different line: squared spiral, etc.}.
+
+Then the algorithm is quite simple:
+\begin{algorithmic}[1]
+\Require set of words $(W_i)_{i\in\{1,\dots,N}$ and corresponding weight
+$(w_i)_{i\in\{1,\dots,N}$, and a spiral line $\mathcal{S}$
+\ForAll{$i\in\{1, \dots,N\}$}
+\State Place $W_i$ at the start of $\mathcal{S}$
+\Repeat
+  \State Set $b_\text{draw}:=\text{true}$
+  \ForAll{$j\in{1,\dots,i}$}
+    \If{$W_i\cap W_j\neq\emptyset$}
+    \State Set $b_\text{draw}:=\text{false}$
+    \EndIf
+  \EndFor
+  \If{$b_\text{draw}==\text{true}$}
+    \State Draw $W_i$
+  \Else
+    \State Move $W_i$ along $\mathcal{S}$
+  \EndIf
+\Until{$W_i$ is drawn}
+\EndFor
+\end{algorithmic}
+
+The hard part is making it perform efficiently! According to Jonathan Feinberg,
+Wordle\footnote{One of the first web application to build wordcloud.} uses a
+combination of hierarchical bounding boxes and quadtrees to achieve reasonable
+speeds. Here, with \hologo{METAPOST}, we compute intersections with the bounding
+box of the word. 
+
+\begin{remark}
+  The words with \hologo{METAPOST} are built with the \lstinline+textext()+
+  function of \package{latexmp} or \package{luamplib}. We are trying to use the
+  bounding boxes of the letters when we get an intersection between ``global''
+  bounding boxes to allow placing words nearer of each other. Unfortunately,
+  this does not work for the moment. Any help is welcomed. \medskip
+
+  We first tried to compute intersections between words by decomposing the
+  letter using their contours and compute intersection of contours (with
+  \lstinline+intersectiontimes+). Unfortunately, this is much too slow. 
+\end{remark}
+
 \subsection{Main command}
 
 The main command is 
 
-\commande|draw_wordcloud(«words», «weights», «rotation»,«size»)|\smallskip\index{draw_wordcloud@\lstinline+draw_wordcloud+}
+\commande|draw_wordcloud(«words», «weights»,«rotation»,«size»)|\smallskip\index{draw_wordcloud@\lstinline+draw_wordcloud+}
+
+\begin{description}
+\item[\meta{words}:] array of strings ;
+\item[\meta{weights}:] array of numerics ;
+\item[\meta{rotation}:] angle for wordcloud drawing;
+\item[\meta{size}:] number of elements in arrays.   
+\end{description}
+
+\begin{ExempleMP}
+input wordcloud
+beginfig(0);
+string words[];
+numeric weights[];
+words[1]:="\LaTeX";
+words[2]:="\hologo{METAPOST}";
+words[3]:="Document";
+words[4]:="Lua";
+words[5]:="\TeX";
+weights[1]:=5;
+weights[2]:=4;
+weights[3]:=3.5;
+weights[4]:=3;
+weights[5]:=3;
+draw_wordcloud(words,weights,0,5);
+endfig;
+\end{ExempleMP}
+
+\begin{remark}
+The ``unity'' of weights is not really important because internally,
+\package{wordcloud} compute new weights (with a min and a max, etc.) to work
+with the internal scaling function.  
+\end{remark}
+
 \subsection{Parameters}
+
+There are few parameters.
+
+\subsubsection{Colors}\label{sec:colors}
+
+You can use set of colors to draw the wordcloud. For that, you have to use the
+following command:
+\commande|wordcloud_use_color(«bool»)|\smallskip\index{wordcloud_use_color@\lstinline+wordcloud_use_color+}
+
+\begin{description}
+  \item[\meta{bool}:] boolean \lstinline+true+ or \lstinline+false+ (default \lstinline+false+). 
+\end{description}
+
+\package{wordcloud} provides a set of five colors using the \hologo{METAPOST}
+package \package{metapost-colorbrewer}~\cite{ctan-metapost-colorbrewer}.
+\package{wordcloud} defines an array of \lstinline+color+s and a
+\lstinline+numeric+ to set the colors to use.\index{wordcloud_colors@\lstinline+wordcloud_colors+}\index{wordcloud_colors_number@\lstinline+wordcloud_colors_number+}
+\begin{mpcode}
+% default colors
+wordcloud_colors[1]:=Reds[3][3];
+wordcloud_colors[2]:=Greens[3][3];
+wordcloud_colors[3]:=Blues[3][3];
+wordcloud_colors[4]:=Oranges[3][3];
+wordcloud_colors[5]:=black;
+wordcloud_colors_number:=5;
+\end{mpcode} 
+Feel free to modify that variables to customize the colors.
+
+\subsubsection{Scaling}
+
+You can globally scale the picture using the following command:
+\commande|set_wordcloud_scale(«scale»)|\smallskip\index{set_wordcloud_scale@\lstinline+set_wordcloud_scale+}
+
+\begin{description}
+  \item[\meta{scale}:] \lstinline+numeric+. 
+\end{description}
+
+\subsubsection{Margins}
+
+You can adjust the margins of the global bounding boxes of words using the
+following command:
+\commande|set_box_margin(«dim»)|\smallskip\index{set_box_margin@\lstinline+set_box_margin+}
+
+\begin{description}
+  \item[\meta{dim}:] a dimension with units (default 0.3pt). 
+\end{description}
+
+
 
 \section{\hologo{LuaLaTeX} side}
 
-\end{document}
-
-\section{Main Command}
-
-The package \huffman provides one principal command (which is a \MO/ like
-constructor):
-
-\commande|newBinHuffman.«name»(«sizeofarrays»)(«symbarray»,«valuearray»)|\smallskip\index{newBinHuffman@\lstinline+newBinHuffman+}
+\package{wordcloud} provides a \hologo{LuaLaTeX} package. It uses the package
+\package{luamplib} to interpret a \hologo{METAPOST} code produced by Lua. 
 
 
+\subsection{Main commands}
+
+The first \LaTeX{} command provided by \wordcloudpkg is:
+
+\commande|\wordcloud[«options»]{«list of words and weights»}|\smallskip\index{\wordcloud@\lstinline+\wordcloud+}
+
+where
 \begin{description}
-  \item[\meta{name}:] is the name of the object;
-  \item[\meta{sizeofarrays}:] is the size (integer) of the arrays;
-  \item[\meta{symbarray}:] is the array of \lstinline+string+ containing the
-  symbols;
-  \item[\meta{valuearray}:] is the array of \lstinline+numeric+ containing the
-  weights associated to the symbols.
+  \item[\meta{list of words and weights}:] is a list of couples of the form
+  \lstinline+(word1,weight1);(word2,weight2);(word3,weight3);...+
 \end{description}
 
-The data arrays should begin at index 1.  
+The second \LaTeX{} command allows to read a text file, to build the list of
+words and weights and draw the wordcloud up to a certain number of words.
 
-\begin{ExempleMP}
-input huffman
+\commande|\wordcloudFile[«options»]{«text file»}{«number of words»}|\smallskip\index{\wordcloudFile@\lstinline+\wordcloudFile+}
 
-beginfig(0);
-string charList[];
-numeric frequency[];
-charList[1]:="a"; frequency[1]:=0.04;
-charList[2]:="b"; frequency[2]:=0.05;
-charList[3]:="c"; frequency[3]:=0.06;
-charList[4]:="d"; frequency[4]:=0.07;
-charList[5]:="e"; frequency[5]:=0.1;
-charList[6]:="f"; frequency[6]:=0.1;
-charList[7]:="g"; frequency[7]:=0.18;
-charList[8]:="h"; frequency[8]:=0.4;
-
-newBinHuffman.myHuff(8)(charList,frequency);
-myHuff.c=origin;
-drawObj(myHuff);
-endfig;
-\end{ExempleMP}
-
-Note that the symbols are composed in mathematical \TeX{} mode. 
-\section{Package Options}
-
-You can modify the size of the internal nodes of the tree with the following
-command:
-
-\commande|set_node_size(«dim»)|\smallskip\index{set_node_size@\lstinline+set_node_size+}
+where:
 \begin{description}
-  \item[\meta{dim}:] is the diameter with unit of the circle (default: 13pt).
-\end{description} 
+  \item[\meta{text file}:] is a text file to analyze and from which the
+  wordcloud is build ;
+  \item[\meta{number of words}:] is the number of words composing the wordcloud.  
+\end{description}
 
-You can change the color for the symbol boxes with the following command:
+\subsubsection{Options}
 
-\commande|set_leaf_color(«color»)|\smallskip\index{set_leaf_color@\lstinline+set_leaf_color+}
+Both of these functions (\lstinline+\wordcloud+ and \lstinline+\wordcloudFile+)
+have the same options:
+
 \begin{description}
-  \item[\meta{color}:] is a \hologo{METAPOST} \lstinline+color+.
-\end{description} 
-
-You can hide the bit values printed on the edges of the tree with the following
-boolean 
-(\lstinline+true+ by default):
-
-\commande|show_bits|\smallskip\index{show_bits@\lstinline+show_bits+}
-
-Similarly, you can set the following boolean to \lstinline+false+ to hide the
-node values: 
-
-\commande|show_node_values|\smallskip\index{show_node_values@\lstinline+show_node_values+}
-
-Finally, you can set the following boolean to \lstinline+false+ to hide the
-leaf values:
-
-\commande|show_leaf_values|\smallskip\index{show_leaf_values@\lstinline+show_leaf_values+}
-
-Here an example combining all these commands and variables.
-
-\begin{ExempleMP}
-input huffman
-
-beginfig(0);
-string charList[];
-numeric frequency[];
-charList[1]:="s_1"; frequency[1]:=2;
-charList[2]:="s_2"; frequency[2]:=4;
-charList[3]:="s_3"; frequency[3]:=2;
-charList[4]:="s_4"; frequency[4]:=12;
-charList[5]:="s_5"; frequency[5]:=8;
-
-set_leaf_color(0.2[white,green]);
-set_node_size(8pt);
-show_bits:=false;
-show_node_values:=false;
-show_leaf_values:=false;
-newBinHuffman.myHuff(5)(charList,frequency);
-myHuff.c=origin;
-drawObj(myHuff);
-endfig;
-\end{ExempleMP}
+  \item[\texttt{scale=}\meta{value}:] to scale the picture\footnote{Beware
+  that scaling increases the computation time and the values manipulated by
+  \hologo{METAPOST}.} ;
+  \item[\texttt{margin=}\meta{value with units}:] to adjust the margins
+  (default \lstinline+0.3pt+) ;
+  \item[\texttt{rotation=}\meta{angle}:] to rotate (degrees) the words with
+  $\pm$\meta{angle} alternatively (default 0) ;
+  \item[\texttt{usecolor}:] to use color for word drawing (boolean, default
+  \lstinline+false+) as described in section~\ref{sec:colors} ;
+  \item[\texttt{colors=}\meta{list of colors}:] to define a new
+  set of colors as described in section~\ref{sec:colors}\footnote{This needs
+  \package{xcolor} because the colors are converted to rgb coding and then
+  transferred to \hologo{METAPOST}.}.
+\end{description}
   
 
+Here an example:
+\begin{ExempleLaTeX} 
+\wordcloud[scale=1,rotate=45,margin=0.5pt,usecolor,colors={red!40,blue!40,green!20!black}]{(Wordcloud,10);(\\hologo{METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(latexmp,3);(graphism,2)} 
+\end{ExempleLaTeX}
 
-\section{\MO/ Tree Options}
+\begin{remark}
+Because the list of words and weights is given to Lua, we have to escape the
+\lstinline+\+ to use \LaTeX{} commands. 
+\end{remark}
 
-Because the Huffman tree is built using the \MO/ tree constructor, the \MO/ tree
-options are available. All of them are not well suited for this application
-mostly because the Huffman tree is built using elementary trees. The
-options we give to the Huffman constructor are passed to all the subtrees.
+\subsection{Add ignored words}
 
-We give in table~\ref{tab:options} the \MO/ options for the trees that could be
-used for the Huffman constructor.
+The Lua function that builds words and weights from a text file ignores some
+words (and characters). For the moment, \package{wordcloud} only includes word
+lists to ignore for English and French.
 
-\begin{table}[ht]
-\centering\small
-\begin{tabular}{HHHp{5.5cm}}
-  \toprule 
-  Option & Type & Default & Description \\
-  \midrule 
-  treemode & string & "D" & direction in which the tree develops; there are
-  four different possible values: \lstinline+"D"+ (default),
-  \lstinline+"U"+, \lstinline+"L"+ and \lstinline+"R"+\\
-  treeflip & boolean & false & if true, reverses the order of the subtrees\\
-  treenodehsize & numeric & -1pt & if non-negative, all the nodes are assumed to
-  have this width\\
-  treenodevsize & numeric & -1pt & if non-negative, all the nodes are assumed to
-  have this height\\
-  dx & numeric & 0 & horizontal clearance around the tree\\
-  dy & numeric & 0 & vertical clearance around the tree\\
-  hsep & numeric & 1cm & for a horizontal tree, this is the separation be-
-  tween the root and the subtrees\\
-  vsep & numeric & 1cm & for a vertical tree, this is the separation be-
-  tween the root and the subtrees\\
-  hbsep & numeric & 1cm &for a vertical tree, this is the horizontal separation between subtrees;
-  the subtrees are actually put in a \lstinline+HBox+ and the value of this
-  option is passed to the \lstinline+HBox+ constructor\\
-  vbsep & numeric & 1cm & for an horizontal tree, this is the vertical separation between subtrees;
-  the subtrees are actually put in a \lstinline+HBox+ and the value of this
-  option is passed to the \lstinline+HBox+ constructor\\
-  edge & string & "ncline" & name of a connection command (se \MO/
-  documentation)
-  \\
-  Dalign & string & "top" & vertical alignment of subtrees for trees that go
-  down (the root on the top); the other possible
-  values are \lstinline+"center"+ and \lstinline+"bot"+\\
-  \bottomrule
-\end{tabular}
-\caption{Table of \MO/ tree options.}\label{tab:options}
-\end{table}
+However, you can add a list of words to ignore with the following command:
 
-Here is an example using some of these options.
+\commande|\wordcloudIgnoreWords{«word list»}|\smallskip\index{\wordcloudIgnoreWords@\lstinline+\wordcloudIgnoreWords+}
 
-\begin{ExempleMP}
-input huffman
-
-beginfig(0);
-string charList[];
-numeric frequency[];
-charList[1]:="s_1"; frequency[1]:=2;
-charList[2]:="s_2"; frequency[2]:=4;
-charList[3]:="s_3"; frequency[3]:=2;
-charList[4]:="s_4"; frequency[4]:=12;
-charList[5]:="s_5"; frequency[5]:=8;
-
-newBinHuffman.myHuff(5)(charList,frequency)
-"treemode(R)","treeflip(true)","hsep(1.5cm)", "edge(nccurve)" , "angleA(0)", "angleB(0)";
-myHuff.c=origin;
-drawObj(myHuff);
-endfig;
-\end{ExempleMP}
-  
-\section{Access to Nodes and Leaves}
-
-To access the nodes and the leaves, you can use the \lstinline+treeroot+ command
-from \MO/, see the documentation for details.
-
-\commande|ntreepos(Obj(«name»))(«int»,«int»,etc.)|\smallskip\index{ntreepos@\lstinline+ntreepos+}
-
-The sequence of \meta{int} gives the choice of branch where the children are
-numbered from 1 to $n$.  
-
-The following example shows a use of this mecanism.
-\begin{ExempleMP}
-input huffman;
-beginfig(0);
-string charList[];
-numeric frequency[];
-charList[1]:="s_1"; frequency[1]:=2;
-charList[2]:="s_2"; frequency[2]:=4;
-charList[3]:="s_3"; frequency[3]:=2;
-charList[4]:="s_4"; frequency[4]:=12;
-charList[5]:="s_5"; frequency[5]:=8;
-
-newBinHuffman.myHuff(5)(charList,frequency);
-myHuff.c=origin;
-ncarcbox(ntreepos(Obj(myHuff))(2,1,2))(ntreepos(Obj(myHuff))(2,2))
-"linestyle(dashed evenly)", "nodesepA(5mm)", "nodesepB(5mm)" ;
-drawObj(myHuff);
-endfig;
-\end{ExempleMP}
-
-Of course, this can only be used in two steps, first build the tree, then
-annotate it. 
-
-You can also access the leaves and the nodes using names. During the
-construction of the tree, names are given to leaves and nodes. Because you may
-want to build several Huffman trees, the trees are numbered. You can get the
-current tree number with the following command:
-
-\commande|get_huffmanTreeNbr()|\smallskip\index{get_huffmanTreeNbr@\lstinline+get_huffmanTreeNbr+}
-
-The leaves are numbered during the construction, and the corresponding \MO/
-object is named as follows:
-
-\commande|leaf«leaf number»_«tree number»|\smallskip
-
-The nodes are numbered during the construction, and the corresponding \MO/
-object is named as follows:
-
-\commande|node«node number»_«tree number»|\smallskip
-
-Thanks to \MO/ you can annotate the tree using all the tools \MO/ provides. 
-
-\begin{ExempleMP}
-input huffman;
-beginfig(0);
-string charList[];
-numeric frequency[];
-charList[1]:="s_1"; frequency[1]:=2;
-charList[2]:="s_2"; frequency[2]:=4;
-charList[3]:="s_3"; frequency[3]:=2;
-charList[4]:="s_4"; frequency[4]:=12;
-charList[5]:="s_5"; frequency[5]:=8;
-
-newBinHuffman.myHuff(5)(charList,frequency);
-myHuff.c=origin;
-ncarcbox(node2_1)(leaf4_1)
-"linestyle(dashed evenly)", "nodesepA(5mm)", "nodesepB(5mm)" ;
-drawObj(myHuff);
-endfig;
-\end{ExempleMP}
-
+\begin{description}
+  \item[\meta{word list}:] the list of words, separated with commas, to ignore
+  \lstinline+word1,word2,word3, etc.+
+\end{description}
 
   
+\section{With \texttt{pdftotext}}
 
+Thanks to \package{wordcloud} and the program \texttt{pdftotext}\footnote{It
+should be possible to parse a \pdf{} with \hologo{LuaTeX}, though.} one can
+easily produce the wordcloud of the current \pdf. 
 
+For that, you can produce the text file of the \pdf{}:
+\begin{commandshell}
+pdftotext wordcloud-doc-en.pdf
+\end{commandshell}
+and then, you can use the following code:
+\begin{latexcode}
+\wordcloudFile[usecolor]{wordcloud-doc-en.txt}{50}
+\end{latexcode}  
 
+This produce the following wordcloud\footnote{Note that, because the wordcloud
+production is slow, we used a separate file to only produce the \pdf{} of the
+wordcloud, without any scaling, and we inserted the result scaling it with \package{graphicx}\cite{ctan-graphicx}.} 
+\begin{center}
+  \includegraphics[width=\linewidth]{doc-wc.pdf}
+\end{center}
 
+\section{To do}
 
-\section{Constructors}
-
-The Huffman algorithm uses only three constructors that you can redefine to adapt
-the tree to your needs. Here are the three constructors (roughly commented in
-French) defined in this package. We will not discuss the code here but
-you are free to redefine and adapt it.
-
-\begin{mpcode}[title={Leaf Code}]
-% style d’une feuille caractère et proba
-vardef newHuffmanLeaf@#(expr ch)(expr v) text options=
-    % @# est l’identifiant de la feuille
-    % c est le caractère considéré (ou la chaine)
-    % v est la proba ou l’entier associé
-    save _text_v,
-    _text_token,_height_v,_height_token,_height_max,_width_token,_width_v;
-    picture _text_v,_text_token;
-    % on calcule le height max des deux écritures pour faire deux boites de même
-    % hauteur 
-    _text_v := textext(v);
-    _text_token := textext("$"&ch&"$");
-    _height_v := abs((ulcorner _text_v) - (llcorner _text_v));
-    _width_v := abs(urcorner _text_v - ulcorner _text_v);
-    _height_token := abs(ulcorner _text_token - llcorner _text_token);
-    _width_token := abs(urcorner _text_token - ulcorner _text_token);
-    _height_max := max(_height_token,_height_v);
-    % on fabrique deux boîtes vides aux bonne dimensions
-    % et on ajoute un label au centre de celles-ci 
-    if(show_leaf_values):    
-        newEmptyBox.scantokens(str @# & "ch1")(_width_token+4,2_height_max)
-        "framed(true)","fillcolor(_huffmanLeaf)", "filled(true)", options;
-        ObjLabel.Obj(scantokens(str @# & "ch1"))(textext("$" & ch & "$"));
-        newEmptyBox.scantokens(str @# & "ch2")(_width_v+4,2_height_max)
-        "framed(true)", options;
-        ObjLabel.Obj(scantokens(str @# & "ch2"))(textext(v));
-        % on fixe relativement les coordonnées des deux boites pour qu’elles se % touchent 
-        scantokens(str @# & "ch1").e=scantokens(str @# & "ch2").w;
-        % on fabrique un container qui les regroupes et qui sera la feuille
-        newContainer.@#(scantokens(str @# & "ch1"),scantokens(str @# & "ch2"));
-    else:
-        % si seulement le symbole
-        newBox.@#(textext("$" & ch & "$"))
-        "framed(true)","fillcolor(_huffmanLeaf)", "filled(true)", options;
-    fi
-enddef;
-\end{mpcode}
-
-
-\begin{mpcode}[title={Node Code}]
-% style d’un nœud interne (non feuille) de l’arbre 
-vardef newHuffmanNode@#(expr v) text options=
-    newCircle.@#("") "circmargin(_node_size)",options;
-    if(show_node_values):
-    ObjLabel.Obj(scantokens(str @#))(textext(v));
-    fi
-enddef;
-\end{mpcode}
-
-\begin{mpcode}[title={Tree Code}]
-% style de l’arbre binaire de Huffman
-vardef newHuffmanBinTree@#(suffix theroot)(text subtrees) text options=
-    % un simple arbre
-    newTree.@#(theroot)(subtrees) "Dalign(top)" , "hbsep(0.3cm)",options;
-    if(show_bits):
-        % et on met 0 et 1 sur ses deux connections
-        ObjLabel.Obj(@#)(btex 0 etex)
-        "labpathid(1)", "laberase(true)", "labcolor(_huffmanBit)";
-        ObjLabel.Obj(@#)(btex 1 etex)
-        "labpathid(2)", "laberase(true)", "labcolor(_huffmanBit)";
-    fi
-enddef;
-\end{mpcode}
+Some things to do:
+\begin{itemize}
+  \item Improve intersection of words by using the letters bounding boxes.
+  \item Work on speed of the algorithm.
+  \item Add supported languages (ignored words).
+  \item Build wordcloud inside a shape.
+\end{itemize}
 
 \printbibliography
 \printindex
+\newpage
+
+
+
 \end{document}

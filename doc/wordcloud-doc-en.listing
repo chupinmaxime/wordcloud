@@ -1,1 +1,1 @@
-\usepackage{wordcloud}
+\wordcloudFile[usecolor]{wordcloud-doc-en.txt}{50}

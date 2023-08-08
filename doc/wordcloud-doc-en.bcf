@@ -2362,6 +2362,13 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">ctan-metapost</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">ctan-metapost-colorbrewer</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">ctan-latexmp</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">ctan-lualatex-doc</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">ctan-luamplib</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">ctan-xcolor</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">ctan-metapost-colorbrewer</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">ctan-graphicx</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
@@ -2393,4 +2400,13 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

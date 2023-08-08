@@ -148,15 +148,11 @@ end
 function wc_build_color_list(colors)
     -- list of LaTeX colors separated with colons
     local out = ""
-    print(colors:sub(1,-2)) -- delete last char
-    local pair = string.explode(colors:sub(1,-2), ";")
+    local pair = string.explode(colors:sub(1,-2), ";") -- sub(1,-2) to delete last ;
     local lgth=#pair
     for i=1,lgth do
-        print(pair[i])
         out=out.."wordcloud_colors["..i.."]:="..pair[i]..";";   
-        print(i)
     end
-    print(lgth)
     out=out.."wordcloud_colors_number:="..lgth..";"
     return out
 end
@@ -187,7 +183,7 @@ end
 
 
 -- build mp code for the wordcloud of a file given in LaTeX command
-function wc_build_wordcloud_file(file,number,rotation,scale,margin)
+function wc_build_wordcloud_file(file,number,rotation,scale,margin,usecolor,colors)
     local str = wc_file2string(file)
 
     local words = wc_build_word_table(str)
@@ -198,6 +194,12 @@ function wc_build_wordcloud_file(file,number,rotation,scale,margin)
     input wordcloud
     beginfig(0);
     ]] 
+    if(usecolor=="true") then
+        output = output.."wordcloud_use_color(true);"    
+        if(colors~="") then
+            output=output..wc_build_color_list(colors)
+        end
+    end
     output = output.."set_wordcloud_scale("..scale..");"
     output = output.."set_box_margin("..margin..");"
     output = output..wc_build_mp_code(table_weight,number,rotation)

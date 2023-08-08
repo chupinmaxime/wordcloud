@@ -4,11 +4,11 @@
 
 \begin{document}
 
-\wordcloud[scale=3,rotate=45,margin=3pt,usecolor=true,colors={red!20,blue!130!black,green!40,white}]{(\\LaTeX,10);(test,6);(wordcloud,5);(coucou,2);(Maxime,1);(élément,1)}
+\wordcloud[scale=3,rotate=45,margin=3pt,usecolor=true,colors={red!20,blue!130!black,green!40,black}]{(\\LaTeX,10);(test,6);(wordcloud,5);(coucou,2);(Maxime,1);(élément,1)}
 
 \newpage
 
 \wordcloudIgnoreWords{document   , forme , plus }
-\wordcloudFile[scale=2]{texte.txt}{10}
+\wordcloudFile[scale=2,usecolor]{texte.txt}{10}
 
 \end{document}

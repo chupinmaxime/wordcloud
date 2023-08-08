@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  7 AUG 2023 23:46
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  8 AUG 2023 10:50
  restricted system commands enabled.
 **testLaTeX.tex
 (./testLaTeX.tex
@@ -138,75 +138,31 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 1.
+Module luamplib Info: flushing figure 1 on input line 1
+ [1
 
-Module luamplib Warning: 
-(luamplib)               (/home/mc/.texlive2023/texmf-var/luamplib_cache/luampli
-b_input_wordcloud_mp
-(luamplib)               (/usr/local/texlive/2023/texmf-dist/metapost/metapost-c
-olorbrewer/colorbrewer-r
-(luamplib)               gb.mp
-(luamplib)               metapost-colorbrewer - Copyright (C) 2018 Toby Thurston
-. This program comes wit
-(luamplib)               h ABSOLUTELY NO WARRANTY. This is free software, and yo
-u are welcome to redistr
-(luamplib)               ibute it under certain conditions; read the LICENCE fil
-e for details. The color
-(luamplib)               brewer colours are copyright (C) Cynthia Brewer, Mark H
-arrower and The Pennsylv
-(luamplib)               ania State University. See http://colorbrewer2.org))
-(luamplib)               >> (redpart wordcloud_colors4,greenpart wordcloud_color
-s4,bluepart wordcloud_co
-(luamplib)               lors4)
-(luamplib)               >> 1
-(luamplib)               ! Equation cannot be performed (color=numeric).
-(luamplib)               <to be read again> 
-(luamplib)                                  ;
-(luamplib)               <*> ...s[3]:=(0.6,1,0.6);wordcloud_colors[4]:=(1);
-(luamplib)                                                                 wordc
-loud_colors_number:=4...
-(luamplib)               I'm sorry, but I don't know how to make such things equ
-al.
-(luamplib)               (See the two expressions just above the error message.)
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Module luamplib Info: flushing figure 1 on input line 1
 
-(luamplib)               [0]
-(luamplib)               on input line 1
-...ocal/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua:110: 
-Module luamplib Error: see above messages on input line 1
-
-stack traceback:
-	[C]: in function 'error'
-	...ocal/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua:110: in function <.
-..ocal/texlive/2023/texmf-dist/tex/latex/base/ltluatex.lua:109>
-	(...tail calls...)
-	...texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:280: in upvalue 're
-porterror'
-	...texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:339: in function <.
-..texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:335>
-	(...tail calls...)
-	...texlive/2023/texmf-dist/tex/luatex/luamplib/luamplib.lua:697: in field 'proc
-ess_mplibcode'
-	[\directlua]:1: in main chunk.
-<inserted text> BAD
-   
-l.7 ...cloud,5);(coucou,2);(Maxime,1);(élément,1)}
-                                                  
-? x
-
+[2] (./testLaTeX.aux))
 
 Here is how much of LuaTeX's memory you used:
- 1621 strings out of 478247
- 100000,1977958 words of node,token memory allocated 842 words of node memory still in use:
-   10 hlist, 1 vlist, 1 rule, 2 disc, 1 dir, 1 glue, 9 kern, 40 glyph, 15 attrib
-ute, 48 glue_spec, 15 attribute_list, 1 if_stack, 1 write, 1 pdf_colorstack node
-s
-   avail lists: 1:1,2:3,3:2,4:2,5:3
- 21885 multiletter control sequences out of 65536+600000
+ 1628 strings out of 478247
+ 100000,1977958 words of node,token memory allocated
+ 406 words of node memory still in use:
+   3 hlist, 1 vlist, 1 rule, 2 glue, 3 kern, 1 glyph, 4 attribute, 48 glue_spec,
+ 4 attribute_list, 1 write nodes
+   avail lists: 1:1,2:87,3:86,4:10,5:36,6:2,7:210,9:98,11:14
+ 21886 multiletter control sequences out of 65536+600000
  26 fonts using 1476743 bytes
- 40i,3n,53p,851b,102s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 40i,5n,53p,898b,124s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.ot
+f></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman10-regular
+.otf>
+Output written on testLaTeX.pdf (2 pages, 7719 bytes).
 
-warning  (pdf backend): no pages of output.
-
-PDF statistics: 0 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 25 PDF objects out of 1000 (max. 8388607)
+ 14 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

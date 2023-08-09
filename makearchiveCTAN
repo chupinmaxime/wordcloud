@@ -10,7 +10,7 @@ cp wordcloud.sty wordcloud/tex/
 cp wordcloud.lua wordcloud/scripts/
 cp wordcloud.mp wordcloud/metapost/
 
-cp README luamesh/
+cp README.md wordcloud/
 
 cp doc/fond.pdf wordcloud/doc/
 cp doc/ctan.bib wordcloud/doc/

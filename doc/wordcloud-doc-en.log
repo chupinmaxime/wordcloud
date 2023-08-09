@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  8 AUG 2023 23:50
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  9 AUG 2023 12:11
  restricted system commands enabled.
 **wordcloud-doc-en.tex
 (./wordcloud-doc-en.tex
@@ -3004,22 +3004,22 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 \c@algpx@indentEndPage-4=\count573
 \c@algpx@indentEndPage-5=\count574
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/it' will be
-(Font)              scaled to size 10.0pt on input line 220.
+(Font)              scaled to size 10.0pt on input line 229.
  [4]
 \openout10 = wordcloud-doc-en.listing
  (./wordcloud-doc-en.listing)
-Module luamplib Info: flushing figure 1 on input line 243
+Module luamplib Info: flushing figure 1 on input line 252
 
 \openout10 = wordcloud-doc-en.listing
 
 (./wordcloud-doc-en.listing)
-Overfull \hbox (1.69882pt too wide) in paragraph at lines 265--277
+Overfull \hbox (1.69882pt too wide) in paragraph at lines 274--286
 [][]\TU/FiraSans(0)/m/n/10 metapost-colorbrewer[][] [[][]󰌳[][]]. [][]word-clo
 ud[][] de-fines an ar-ray of [][][][][][]s and a [][]
  []
 
 [5] [6]
-Underfull \hbox (badness 3930) in paragraph at lines 339--339
+Underfull \hbox (badness 3930) in paragraph at lines 348--348
 [][][]\TU/FiraSans(0)/m/n/8 Be-ware that scal-ing in-creases the com-pu-ta-tion time and the val-ues ma-nip-u-lated by
  []
 
@@ -3029,29 +3029,34 @@ Underfull \hbox (badness 3930) in paragraph at lines 339--339
 Module luamplib Info: flushing figure 1 on input line 1
 ) [7]
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 382.
+(Font)              scaled to size 8.0pt on input line 391.
+
+Overfull \hbox (19.47198pt too wide) in paragraph at lines 391--391
+\TU/FiraMono(0)/m/n/8 com/questions/692930/recovering-[]the-[]textual-[]content-
+[]of-[]a-[]pdf-[]file-[]with-[]luatex$[][]\TU/FiraSans(0)/m/n/8 .| 
+ []
+
 
 \openout10 = wordcloud-doc-en.listing
-
 (./wordcloud-doc-en.listing)
 \openout10 = wordcloud-doc-en.listing
  (./wordcloud-doc-en.listing)
-<doc-wc.pdf, id=276, 101.98pt x 98.52107pt>
+<doc-wc.pdf, id=277, 101.98pt x 98.52107pt>
 File: doc-wc.pdf Graphic file (type pdf)
 <use doc-wc.pdf>
-Package luatex.def Info: doc-wc.pdf  used on input line 398.
+Package luatex.def Info: doc-wc.pdf  used on input line 407.
 (luatex.def)             Requested size: 355.0pt x 342.99487pt.
- [8]
+ [8] [9<./doc-wc.pdf>]
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/it' will be
-(Font)              scaled to size 7.2pt on input line 411.
+(Font)              scaled to size 7.2pt on input line 423.
 
-Overfull \hbox (12.91563pt too wide) in paragraph at lines 412--412
+Overfull \hbox (12.91563pt too wide) in paragraph at lines 424--424
 []\TU/FiraSans(0)/m/n/10 Uwe Kern and The L[]T[]X Project Team. \TU/FiraSans(0)
 /m/it/10 The \TU/FiraMono(0)/m/it/10 xcolor \TU/FiraSans(0)/m/it/10 pack-age. Dr
 iver-independent
  []
 
-[9<./doc-wc.pdf>] [10] (./wordcloud-doc-en.ind) [11
+[10] (./wordcloud-doc-en.ind) [11
 
 ] (./wordcloud-doc-en.aux)
 Package rerunfilecheck Info: File `wordcloud-doc-en.out' has not changed.
@@ -3064,16 +3069,16 @@ Package logreq Info: Writing requests to 'wordcloud-doc-en.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 53452 strings out of 478247
+ 53446 strings out of 478247
  156448,2373549 words of node,token memory allocated
  1553 words of node memory still in use:
    23 hlist, 2 vlist, 10 rule, 9 glue, 4 kern, 1 glyph, 89 attribute, 122 glue_s
 pec, 70 attribute_list, 2 write, 16 pdf_literal, 6 pdf_action, 16 pdf_colorstack
  nodes
-   avail lists: 1:8,2:8062,3:3238,4:260,5:2077,6:96,7:6167,8:51,9:4052,10:16,11:
-270,12:1
- 71736 multiletter control sequences out of 65536+600000
- 155 fonts using 48329215 bytes
+   avail lists: 1:13,2:8035,3:3260,4:255,5:2050,6:96,7:6180,8:103,9:4005,10:16,1
+1:270,12:1
+ 71730 multiletter control sequences out of 65536+600000
+ 156 fonts using 48567223 bytes
  104i,8n,162p,1370b,2277s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-BoldItal
 ic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-O
@@ -3088,10 +3093,10 @@ mf-dist/fonts/type1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logo8.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logod10.pfb>
-Output written on wordcloud-doc-en.pdf (11 pages, 117337 bytes).
+Output written on wordcloud-doc-en.pdf (11 pages, 118163 bytes).
 
-PDF statistics: 416 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
+PDF statistics: 418 PDF objects out of 1000 (max. 8388607)
+ 348 compressed objects within 4 object streams
  85 named destinations out of 1000 (max. 131072)
  320 words of extra memory for PDF output out of 10000 (max. 100000000)
 

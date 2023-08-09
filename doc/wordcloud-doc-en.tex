@@ -51,7 +51,7 @@
 }
 \vfill
 \begin{center}
-  Version 0.1, 2023, August, 3rd \\
+  Version 0.1, 2023, August, 9th \\
   \url{https://plmlab.math.cnrs.fr/mchupin/wordcloud}
 \end{center}
 %% == Page de garde ====================================================
@@ -62,9 +62,9 @@
 \begin{abstract}
   These \hologo{METAPOST} and \hologo{LuaLaTeX} packages allows to draw
   wordclouds from a list of words and weights. The algorithm is implemented with
-  \hologo{METAPOST} whereas Lua is used to parse \LaTeX{} commands and to build
-  the list of words and weights from a text file. 
-  The \hologo{LuaLaTeX} side require \package{luamplib}. 
+  \hologo{METAPOST} whereas Lua is used to parse \LaTeX{} commands, to build
+  the list of words and weights from a text file, and to generate
+  \hologo{METAPOST} code interpreted by \package{luamplib}.
 \end{abstract}
 
 
@@ -111,18 +111,18 @@ mkdir ~/texmf
 
 Then, you will have to place the \lstinline+wordcloud.mp+ file in 
 \begin{center}
-  \lstinline+~/texmf/metapost/huffman/+
+  \verb+~/texmf/metapost/wordcloud/+
 \end{center}
 
 
 You will also have to place the \lstinline+wordcloud.lua+ file in 
 \begin{center}
-  \lstinline+~/texmf/scripts/wordcloud/+
+  \verb+~/texmf/scripts/wordcloud/+
 \end{center}
 
 And finally, you will have to place the \lstinline+wordcloud.sty+ file in 
 \begin{center}
-  \lstinline+~/texmf/tex/latex/wordcloud/+
+  \verb+~/texmf/tex/latex/wordcloud/+
 \end{center}
 
 
@@ -199,16 +199,25 @@ speeds. Here, with \hologo{METAPOST}, we compute intersections with the bounding
 box of the word. 
 
 \begin{remark}
+  \begin{itemize}
+    \item 
   The words with \hologo{METAPOST} are built with the \lstinline+textext()+
   function of \package{latexmp} or \package{luamplib}. We are trying to use the
   bounding boxes of the letters when we get an intersection between ``global''
   bounding boxes to allow placing words nearer of each other. Unfortunately,
   this does not work for the moment. Any help is welcomed. \medskip
 
-  We first tried to compute intersections between words by decomposing the
+  \item We first tried to compute intersections between words by decomposing the
   letter using their contours and compute intersection of contours (with
   \lstinline+intersectiontimes+). Unfortunately, this is much too slow. 
+\end{itemize}
+  
 \end{remark}
+
+Some explanations can be found here:
+\begin{center}
+  \url{https://www.jasondavies.com/wordcloud/about/}
+\end{center}
 
 \subsection{Main command}
 
@@ -243,8 +252,8 @@ endfig;
 \end{ExempleMP}
 
 \begin{remark}
-The ``unity'' of weights is not really important because internally,
-\package{wordcloud} compute new weights (with a min and a max, etc.) to work
+The ``unity'' of weights is not important because internally,
+\package{wordcloud} compute new weights to work
 with the internal scaling function.  
 \end{remark}
 
@@ -301,7 +310,7 @@ following command:
 \section{\hologo{LuaLaTeX} side}
 
 \package{wordcloud} provides a \hologo{LuaLaTeX} package. It uses the package
-\package{luamplib} to interpret a \hologo{METAPOST} code produced by Lua. 
+\package{luamplib} to interpret the \hologo{METAPOST} code produced by Lua. 
 
 
 \subsection{Main commands}
@@ -379,7 +388,7 @@ However, you can add a list of words to ignore with the following command:
 \section{With \texttt{pdftotext}}
 
 Thanks to \package{wordcloud} and the program \texttt{pdftotext}\footnote{It
-should be possible to parse a \pdf{} with \hologo{LuaTeX}, though.} one can
+should be possible to parse a \pdf{} with \hologo{LuaTeX}, though. See \url{https://tex.stackexchange.com/questions/692930/recovering-the-textual-content-of-a-pdf-file-with-luatex}.} one can
 easily produce the wordcloud of the current \pdf. 
 
 For that, you can produce the text file of the \pdf{}:
@@ -405,7 +414,10 @@ Some things to do:
   \item Improve intersection of words by using the letters bounding boxes.
   \item Work on speed of the algorithm.
   \item Add supported languages (ignored words).
+  \item Improve text file analysis with Lua to build the set of words and
+  weights.  
   \item Build wordcloud inside a shape.
+  \item Add options for rotation of words.
 \end{itemize}
 
 \printbibliography

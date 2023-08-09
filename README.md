@@ -13,7 +13,7 @@ repository on github:
 
 ## Installation
 
-MPchess is on the [ctan](ctan.org) and can be installed via the package manager of your
+Wordcloud is on the [ctan](ctan.org) and can be installed via the package manager of your
 distribution [https://www.ctan.org/pkg/wordcloud](https://www.ctan.org/pkg/wordcloud).
 
 ### With TeX live under Linux or MacOS
@@ -34,7 +34,7 @@ Then, you will have to place the .mp files in the
 
 ### With MikTEX and Windows
 
-These two systems are unknown to the author of MPchess, so we refer to their
+These two systems are unknown to the author of Wordcloud, so we refer to their
 documentation to add local packages:
 [http://docs.miktex.org/manual/localadditions.html](http://docs.miktex.org/manual/localadditions.html)
 

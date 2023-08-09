@@ -9,12 +9,12 @@ requests for improvement. There is lots to do!_
 
 To allow for easier feedback and bug reporting, this repository has a mirror
 repository on github:
-[https://github.com/chupinmaxime/mpchess](https://github.com/chupinmaxime/wordcloud) 
+[https://github.com/chupinmaxime/wordcloud](https://github.com/chupinmaxime/wordcloud) 
 
 ## Installation
 
 MPchess is on the [ctan](ctan.org) and can be installed via the package manager of your
-distribution [https://www.ctan.org/pkg/mpchess](https://www.ctan.org/pkg/wordcloud).
+distribution [https://www.ctan.org/pkg/wordcloud](https://www.ctan.org/pkg/wordcloud).
 
 ### With TeX live under Linux or MacOS
 
@@ -28,11 +28,9 @@ Then, you will have to place the .mp files in the
 `~/texmf/tex/metapost/wordcloud/`.
 
 `wordcloud` consists of 3 files:
-* `wordcloud.mp` (MetaPost);
-* `wordcloud.tex` (LaTeX);
-* `wordcloud.lua` (Lua).
-
-
+* `wordcloud.mp` (MetaPost) that should be in `~/texmf/metapost/wordcloud/`;
+* `wordcloud.tex` (LaTeX) that should be in `~/texmf/tex/latex/wordcloud/`;
+* `wordcloud.lua` (Lua) that should be in `~/texmf/scripts/wordcloud/`.
 
 ### With MikTEX and Windows
 
@@ -42,10 +40,13 @@ documentation to add local packages:
 
 ## Dependencies
 
-
+* metapost-colorbrewer 
+* latexmp 
+* luamplib 
+* xcolor
 ## Documentation
 
-* [English documentation](doc/wordcloud.pdf)
+* [English documentation](doc/wordcloud-doc-en.pdf)
 
 ## Contact
 

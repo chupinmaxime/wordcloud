@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+mkdir -p wordcloud/tex
+mkdir -p wordcloud/scripts
+mkdir -p wordcloud/doc
+mkdir -p wordcloud/metapost
+
+cp wordcloud.sty wordcloud/tex/
+cp wordcloud.lua wordcloud/scripts/
+cp wordcloud.mp wordcloud/metapost/
+
+cp README luamesh/
+
+cp doc/fond.pdf wordcloud/doc/
+cp doc/ctan.bib wordcloud/doc/
+cp doc/wordcloud-doc-en.pdf wordcloud/doc/
+cp doc/wordcloud-doc-en.tex wordcloud/doc/
+cp doc/doc-wc.pdf wordcloud/doc/
+cp doc/wordcloud-preamble.tex wordcloud/doc/
+
+
+zip -r archives/wordcloud-v0-1-CTAN.zip wordcloud/
+
+rm -r wordcloud

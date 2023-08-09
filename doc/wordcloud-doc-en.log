@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  9 AUG 2023 12:11
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  9 AUG 2023 13:08
  restricted system commands enabled.
 **wordcloud-doc-en.tex
 (./wordcloud-doc-en.tex
@@ -3069,7 +3069,7 @@ Package logreq Info: Writing requests to 'wordcloud-doc-en.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 53446 strings out of 478247
+ 53445 strings out of 478247
  156448,2373549 words of node,token memory allocated
  1553 words of node memory still in use:
    23 hlist, 2 vlist, 10 rule, 9 glue, 4 kern, 1 glyph, 89 attribute, 122 glue_s
@@ -3077,8 +3077,8 @@ pec, 70 attribute_list, 2 write, 16 pdf_literal, 6 pdf_action, 16 pdf_colorstack
  nodes
    avail lists: 1:13,2:8035,3:3260,4:255,5:2050,6:96,7:6180,8:103,9:4005,10:16,1
 1:270,12:1
- 71730 multiletter control sequences out of 65536+600000
- 156 fonts using 48567223 bytes
+ 71729 multiletter control sequences out of 65536+600000
+ 156 fonts using 48567103 bytes
  104i,8n,162p,1370b,2277s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-BoldItal
 ic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-O
@@ -3093,7 +3093,7 @@ mf-dist/fonts/type1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logo8.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logod10.pfb>
-Output written on wordcloud-doc-en.pdf (11 pages, 118163 bytes).
+Output written on wordcloud-doc-en.pdf (11 pages, 118155 bytes).
 
 PDF statistics: 418 PDF objects out of 1000 (max. 8388607)
  348 compressed objects within 4 object streams

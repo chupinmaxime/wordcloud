@@ -639,8 +639,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/mflogo/ulogo.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/knuth-lib/logo10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/metapost/base/plain.mp
 INPUT /usr/local/texlive/2023/texmf-dist/metapost/base/plain.mp
-INPUT ./wordcloud.mp
-OUTPUT /home/mc/.texlive2023/texmf-var/luamplib_cache/luamplib_input_wordcloud_mp
 INPUT /home/mc/.texlive2023/texmf-var/luamplib_cache/luamplib_input_wordcloud_mp
 INPUT /home/mc/.texlive2023/texmf-var/luamplib_cache/luamplib_input_wordcloud_mp
 INPUT /usr/local/texlive/2023/texmf-dist/metapost/metapost-colorbrewer/colorbrewer-rgb.mp

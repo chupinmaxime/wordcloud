@@ -453,7 +453,7 @@ METAPOST.
 6
 
 margin=⟨value with units⟩: to adjust the margins (default 0.3pt) ;
-rotation=⟨angle⟩: to rotate (degrees) the words with ±⟨angle⟩ alternatively
+rotate=⟨angle⟩: to rotate (degrees) the words with ±⟨angle⟩ alternatively
 (default 0) ;
 usecolor: to use color for word drawing (boolean, default false) as described in section 2.3.1 ;
 colors=⟨list of colors⟩: to define a new set of colors as described in section 2.3.15 .

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  9 AUG 2023 13:08
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2023.6.8)  10 AUG 2023 21:21
  restricted system commands enabled.
 **wordcloud-doc-en.tex
 (./wordcloud-doc-en.tex
@@ -2772,27 +2772,27 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 )
 \openout1 = wordcloud-doc-en.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-Package doc Info: Made | a short reference for \verb on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+Package doc Info: Made | a short reference for \verb on input line 23.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -2833,8 +2833,8 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'wordcloud-doc-en.bbl' found.
 
 (./wordcloud-doc-en.bbl)
-Package biblatex Info: Reference section=0 on input line 26.
-Package biblatex Info: Reference segment=0 on input line 26.
+Package biblatex Info: Reference section=0 on input line 23.
+Package biblatex Info: Reference segment=0 on input line 23.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-d
 ictionary-english.trsl
@@ -2842,20 +2842,20 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 26.
+or `english'. on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  TU/FiraMathRegular(1)/m/n --> TU/lmr/m/n on input line 
-26.
+23.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 26.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 26.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/FiraSans(0)/m/n on input line 26.
+(Font)                  OT1/cmss/m/n --> TU/FiraSans(0)/m/n on input line 23.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/FiraSans(0)/bx/n on input line 26.
+(Font)                  OT1/cmss/bx/n --> TU/FiraSans(0)/bx/n on input line 23.
 
-Package hyperref Info: Link coloring ON on input line 26.
+Package hyperref Info: Link coloring ON on input line 23.
  (./wordcloud-doc-en.out) (./wordcloud-doc-en.out)
 \@outlinefile=\write7
 
@@ -2868,13 +2868,13 @@ Package hyperref Info: Link coloring ON on input line 26.
 <fond.pdf, id=103, 598.235pt x 845.1575pt>
 File: fond.pdf Graphic file (type pdf)
 <use fond.pdf>
-Package luatex.def Info: fond.pdf  used on input line 36.
+Package luatex.def Info: fond.pdf  used on input line 33.
 (luatex.def)             Requested size: 598.23354pt x 845.15544pt.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 41.
+(Font)              scaled to size 24.88pt on input line 38.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 43.
-LaTeX Font Info:    Trying to load font information for U+logo on input line 43
+(Font)              scaled to size 14.4pt on input line 40.
+LaTeX Font Info:    Trying to load font information for U+logo on input line 40
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/mflogo/ulogo.fd
@@ -2884,49 +2884,49 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
 (Font)              scaled to size 7.2pt on input line 1.
 Module luamplib Info: flushing figure 1 on input line 1
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 51.
+(Font)              scaled to size 14.4pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 51.
+(Font)              scaled to size 14.4pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 51.
+(Font)              scaled to size 14.4pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 51.
+(Font)              scaled to size 7.0pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 51.
+(Font)              scaled to size 14.40152pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 51.
+(Font)              scaled to size 7.00075pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 51.
+(Font)              scaled to size 14.39845pt on input line 48.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 51.
+(Font)              scaled to size 6.99925pt on input line 48.
  [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./fond.pd
 f>]
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 62.
+(Font)              scaled to size 9.0pt on input line 59.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 9.0pt on input line 62.
+(Font)              scaled to size 9.0pt on input line 59.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 63.
+(Font)              scaled to size 9.0pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 63.
+(Font)              scaled to size 6.0pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 63.
+(Font)              scaled to size 5.0pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 63.
+(Font)              scaled to size 9.00096pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 63.
+(Font)              scaled to size 6.00064pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 63.
+(Font)              scaled to size 5.00053pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 63.
+(Font)              scaled to size 8.99904pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 63.
+(Font)              scaled to size 5.99936pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 63.
+(Font)              scaled to size 4.99947pt on input line 60.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 63.
+(Font)              scaled to size 6.0pt on input line 60.
 
 (./wordcloud-doc-en.toc
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
@@ -2938,13 +2938,13 @@ LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
 
 \openout9 = wordcloud-doc-en.toc
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 88.
+(Font)              scaled to size 10.0pt on input line 85.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 95.
+(Font)              scaled to size 10.0pt on input line 92.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 103.
+(Font)              scaled to size 12.0pt on input line 100.
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 103.
+(Font)              scaled to size 12.0pt on input line 100.
 \tcb@out=\write10
 
 \openout10 = wordcloud-doc-en.listing
@@ -2989,37 +2989,37 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 
 (./wordcloud-doc-en.listing)
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 168.
+(Font)              scaled to size 8.0pt on input line 165.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 168.
+(Font)              scaled to size 8.00085pt on input line 165.
 LaTeX Font Info:    Font shape `TU/FiraMathRegular(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 168.
+(Font)              scaled to size 7.99915pt on input line 165.
  [3]
 \c@algpx@indentEndPage-0=\count569
 \c@algpx@indentEndPage-1=\count570
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/n' will be
-(Font)              scaled to size 5.8pt on input line 180.
+(Font)              scaled to size 5.8pt on input line 177.
 \c@algpx@indentEndPage-2=\count571
 \c@algpx@indentEndPage-3=\count572
 \c@algpx@indentEndPage-4=\count573
 \c@algpx@indentEndPage-5=\count574
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/b/it' will be
-(Font)              scaled to size 10.0pt on input line 229.
+(Font)              scaled to size 10.0pt on input line 226.
  [4]
 \openout10 = wordcloud-doc-en.listing
  (./wordcloud-doc-en.listing)
-Module luamplib Info: flushing figure 1 on input line 252
+Module luamplib Info: flushing figure 1 on input line 249
 
 \openout10 = wordcloud-doc-en.listing
 
 (./wordcloud-doc-en.listing)
-Overfull \hbox (1.69882pt too wide) in paragraph at lines 274--286
+Overfull \hbox (1.69882pt too wide) in paragraph at lines 271--283
 [][]\TU/FiraSans(0)/m/n/10 metapost-colorbrewer[][] [[][]󰌳[][]]. [][]word-clo
 ud[][] de-fines an ar-ray of [][][][][][]s and a [][]
  []
 
 [5] [6]
-Underfull \hbox (badness 3930) in paragraph at lines 348--348
+Underfull \hbox (badness 3930) in paragraph at lines 345--345
 [][][]\TU/FiraSans(0)/m/n/8 Be-ware that scal-ing in-creases the com-pu-ta-tion time and the val-ues ma-nip-u-lated by
  []
 
@@ -3029,9 +3029,9 @@ Underfull \hbox (badness 3930) in paragraph at lines 348--348
 Module luamplib Info: flushing figure 1 on input line 1
 ) [7]
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 391.
+(Font)              scaled to size 8.0pt on input line 388.
 
-Overfull \hbox (19.47198pt too wide) in paragraph at lines 391--391
+Overfull \hbox (19.47198pt too wide) in paragraph at lines 388--388
 \TU/FiraMono(0)/m/n/8 com/questions/692930/recovering-[]the-[]textual-[]content-
 []of-[]a-[]pdf-[]file-[]with-[]luatex$[][]\TU/FiraSans(0)/m/n/8 .| 
  []
@@ -3044,13 +3044,13 @@ Overfull \hbox (19.47198pt too wide) in paragraph at lines 391--391
 <doc-wc.pdf, id=277, 101.98pt x 98.52107pt>
 File: doc-wc.pdf Graphic file (type pdf)
 <use doc-wc.pdf>
-Package luatex.def Info: doc-wc.pdf  used on input line 407.
+Package luatex.def Info: doc-wc.pdf  used on input line 404.
 (luatex.def)             Requested size: 355.0pt x 342.99487pt.
  [8] [9<./doc-wc.pdf>]
 LaTeX Font Info:    Font shape `TU/FiraSans(0)/m/it' will be
-(Font)              scaled to size 7.2pt on input line 423.
+(Font)              scaled to size 7.2pt on input line 420.
 
-Overfull \hbox (12.91563pt too wide) in paragraph at lines 424--424
+Overfull \hbox (12.91563pt too wide) in paragraph at lines 421--421
 []\TU/FiraSans(0)/m/n/10 Uwe Kern and The L[]T[]X Project Team. \TU/FiraSans(0)
 /m/it/10 The \TU/FiraMono(0)/m/it/10 xcolor \TU/FiraSans(0)/m/it/10 pack-age. Dr
 iver-independent
@@ -3078,7 +3078,7 @@ pec, 70 attribute_list, 2 write, 16 pdf_literal, 6 pdf_action, 16 pdf_colorstack
    avail lists: 1:13,2:8035,3:3260,4:255,5:2050,6:96,7:6180,8:103,9:4005,10:16,1
 1:270,12:1
  71729 multiletter control sequences out of 65536+600000
- 156 fonts using 48567103 bytes
+ 156 fonts using 48567223 bytes
  104i,8n,162p,1370b,2277s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraSans-BoldItal
 ic.otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/fira/FiraMono-O
@@ -3093,7 +3093,7 @@ mf-dist/fonts/type1/hoekwater/mflogo-font/logo10.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logo8.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logo9.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/hoekwater/mflogo-font/logod10.pfb>
-Output written on wordcloud-doc-en.pdf (11 pages, 118155 bytes).
+Output written on wordcloud-doc-en.pdf (11 pages, 118128 bytes).
 
 PDF statistics: 418 PDF objects out of 1000 (max. 8388607)
  348 compressed objects within 4 object streams

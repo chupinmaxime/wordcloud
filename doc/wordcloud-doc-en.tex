@@ -39,7 +39,7 @@
 \noindent
 {\Large  drawing wordclouds \\[0.2cm]with \hologo{METAPOST} and Lua}\\[3cm]
 \parbox{0.6\textwidth}{
-  \wordcloud[scale=2,rotate=0,margin=0.5pt,usecolor]{(Wordcloud,10);(\\hologo{METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(latexmp,3);(graphism,2)}
+  \wordcloud[scale=2,rotate=0,margin=0.5pt,usecolor]{(Wordcloud,10);(\hologo{METAPOST},6);(\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\hologo{LuaTeX},4);(latexmp,3);(graphism,2)}
 }\hfill
 \parbox{0.5\textwidth}{\Large\raggedleft
   \textbf{Contributor}\\
@@ -48,8 +48,8 @@
 }
 \vfill
 \begin{center}
-  Version 0.1, 2023, August, 9th \\
-  \url{https://plmlab.math.cnrs.fr/mchupin/wordcloud}
+  Version 0.2, 2023, September, 7th \\
+  \url{https://plmlab.math.cnrs.fr/mchupin/mchupin/wordcloud}
 \end{center}
 %% == Page de garde ====================================================
 \newpage
@@ -358,12 +358,19 @@ have the same options:
 
 Here an example:
 \begin{ExempleLaTeX} 
-\wordcloud[scale=1,rotate=45,margin=0.5pt,usecolor,colors={red!40,blue!40,green!20!black}]{(Wordcloud,10);(\\hologo{METAPOST},6);(\\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\\hologo{LuaTeX},4);(latexmp,3);(graphism,2)} 
+\wordcloud[scale=1,rotate=45,margin=0.5pt,usecolor,colors={red!40,blue!40,green!20!black}]{(Wordcloud,10);(\hologo{METAPOST},6);(\LaTeX,7);(Lua,4);(algorithm,3);(code,2);(mathematics,2);(CTAN,2);(mplib,4);(\hologo{LuaTeX},4);(\texttt{latexmp},3);(graphism,2)} 
 \end{ExempleLaTeX}
 
+Since version 0.2, you could use any \LaTeX{} code to define words for the
+wordcloud. In the definition of the \LaTeX{} command, \wordcloudpkg{} uses
+\lstinline+\luaescapestring+ to deals with commands. For example, as far as we
+know,  this \wordcloudpkg package is the only wordcloud tool that could build a
+wordcloud of mathematical formulas. 
+
 \begin{remark}
-Because the list of words and weights is given to Lua, we have to escape the
-\lstinline+\+ to use \LaTeX{} commands. 
+  Because the \hologo{METAPOST} side uses \lstinline+textext+ command to build
+  words, \lstinline+\mplibtextextlabel{enable}+ is used to enable string labels
+  typeset via \lstinline+textext()+ instead of \emph{infont} operator.
 \end{remark}
 
 \subsection{Add ignored words}

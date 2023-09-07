@@ -1,9 +1,20 @@
 \documentclass[french]{article}
 \usepackage{wordcloud}
 \usepackage{babel}
-
+\usepackage{luamplib}
 \begin{document}
+\LaTeX
 
-\wordcloud{($f(x)$,1);(\textbf{test},0.8)}
+\wordcloud{($f(x)$,1);(\textbf{\LaTeX},0.8);(une phrase hein ?,0.77)}
+
+\begin{mplibcode}
+    beginfig(0);
+    picture test;
+    test:=textext("\textbf{test}");
+    draw test;
+    endfig;
+\end{mplibcode}
+
+
 
 \end{document}

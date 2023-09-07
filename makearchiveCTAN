@@ -20,6 +20,6 @@ cp doc/doc-wc.pdf wordcloud/doc/
 cp doc/wordcloud-preamble.tex wordcloud/doc/
 
 
-zip -r archives/wordcloud-v0-1-CTAN.zip wordcloud/
+zip -r archives/wordcloud-v0-2-CTAN.zip wordcloud/
 
 rm -r wordcloud

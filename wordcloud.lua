@@ -128,7 +128,7 @@ function wc_build_mp_code(table_weight,maximum,rotation)
     ]]
     local i=0
     for i=1, #tabular_weight do
-         
+        print(tabular_weight[i][1])
         str_mp=str_mp.."words["..i.."]:=\""..tabular_weight[i][1].."\";"
         str_mp=str_mp.."weights["..i.."]:="..tabular_weight[i][2]..";"
         if (i>=maximum) then
@@ -175,7 +175,7 @@ end
 
 -- build mp code for the wordcloud of a list given in LaTeX command
 function wc_build_wordcloud(str,rotation,scale,margin,usecolor,colors)
-    
+    print(str)
     maximum = maximum or 50
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)

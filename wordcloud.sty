@@ -88,7 +88,7 @@
   %\show {coucous}
   \directlua{%
     %tex.sprint("test")
-    wc_build_wordcloud("#2",\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl",\bool_if:NTF \g__wc_wordcloud_usecolor_bool{"true"}{"false"},"\tl_use:N \l_colors_list_tl")
+    wc_build_wordcloud("\luaescapestring{\unexpanded{#2}}",\tl_use:N \g__wc_wordcloud_rotate_tl,\tl_use:N \g__wc_wordcloud_scale_tl,"\tl_use:N \g__wc_wordcloud_margin_tl",\bool_if:NTF \g__wc_wordcloud_usecolor_bool{"true"}{"false"},"\tl_use:N \l_colors_list_tl")
   }%
 }
 

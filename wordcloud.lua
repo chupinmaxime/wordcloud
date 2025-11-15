@@ -45,6 +45,9 @@ wordcloud_ignor_words = {};
 wc_table_concat(wordcloud_ignor_words,wc_ignor_fr())
 wc_table_concat(wordcloud_ignor_words,wc_ignor_en())
 
+-- global variable for alt text (PDF tagging)
+wc_alt_text = "Wordcloud image composed of the following list of words and associated weights to scale them: "
+
 -- function to add list of words to be ignored
 function wc_add_ignored_words(tab)
     wc_table_concat(wordcloud_ignor_words,tab)    
@@ -178,8 +181,8 @@ function wc_build_wordcloud(str,rotation,scale,margin,usecolor,colors)
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)
     local output
-    output= [[\begin{mplibcode}[wordcloud]
-    input wordcloud
+    output= "\\begin{mplibcode}[wordcloud,alt={"..wc_alt_text..str.."}]"
+    output = output..[[input wordcloud
     beginfig(0);
     ]] 
     if(usecolor=="true") then
@@ -195,6 +198,17 @@ function wc_build_wordcloud(str,rotation,scale,margin,usecolor,colors)
     tex.sprint(output)
 end
 
+-- build list of (word,weight) for tagging a wordcloud file
+function wc_build_list_tag(table_weight,number)
+    local tabular_weight = wc_table_to_tabular(table_weight)
+    local output = ""
+    local i=0
+    for i=1, number do
+        print(tabular_weight[i][1])
+        output = output..tabular_weight[i][1]:gsub(' \\ ',' ')--..","..tabular_weight[i][2]..")"
+    end
+    return output
+end
 
 -- build mp code for the wordcloud of a file given in LaTeX command
 function wc_build_wordcloud_file(file,number,rotation,scale,margin,usecolor,colors)
@@ -204,8 +218,9 @@ function wc_build_wordcloud_file(file,number,rotation,scale,margin,usecolor,colo
 
     local table_weight = wc_build_table_weight(words)
     local output
-    output= [[\begin{mplibcode}[wordcloud]
-    input wordcloud
+    
+    output= "\\begin{mplibcode}[wordcloud,alt={"..wc_alt_text..wc_build_list_tag(table_weight,number).."}]"
+    output = output..[[input wordcloud
     beginfig(0);
     ]] 
     if(usecolor=="true") then

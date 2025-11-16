@@ -4,7 +4,7 @@
 %%                    drawing wordclouds                      %%
 %%                   with METAPOST and Lua                    %%
 %%                chupin@ceremade.dauphine.fr                 %%
-%%                Version 0.2 (septembre    2023)             %%
+%%                Version 0.3 (vovembre    2025)              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % This work may be distributed and/or modified under the conditions of
@@ -181,7 +181,7 @@ function wc_build_wordcloud(str,rotation,scale,margin,usecolor,colors)
     local table = wc_list_to_table(str)
     local lgth_table = wc_size_of_table(table)
     local output
-    output= "\\begin{mplibcode}[wordcloud,alt={"..wc_alt_text..str.."}]"
+    output= "\\begin{mplibcode}[wordcloud,alt={"..wc_alt_text..str:gsub("\\","").."}]"
     output = output..[[input wordcloud
     beginfig(0);
     ]] 
@@ -204,8 +204,7 @@ function wc_build_list_tag(table_weight,number)
     local output = ""
     local i=0
     for i=1, number do
-        print(tabular_weight[i][1])
-        output = output..tabular_weight[i][1]:gsub(' \\ ',' ')--..","..tabular_weight[i][2]..")"
+        output = output.."("..tabular_weight[i][1]:gsub("\\","")..","..string.format("%.2f",tabular_weight[i][2])..");"
     end
     return output
 end

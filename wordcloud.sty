@@ -3,7 +3,7 @@
 %%                    drawing wordclouds                      %%
 %%                   with METAPOST and Lua                    %%
 %%                chupin@ceremade.dauphine.fr                 %%
-%%                Version 0.2 (septembre    2023)             %%
+%%                Version 0.3 (novembre    2025)              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % This work may be distributed and/or modified under the conditions of

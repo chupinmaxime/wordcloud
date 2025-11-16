@@ -4,7 +4,7 @@
 % wordcloud : draw word cloud with MetaPost and Lua
 %
 % Originally written by Maxime Chupin <notezik@gmail.com>,
-% 2023.
+% 2025.
 %
 
 \documentclass[english]{ltxdoc}
@@ -48,8 +48,8 @@
 }
 \vfill
 \begin{center}
-  Version 0.2, 2023, September, 7th \\
-  \url{https://plmlab.math.cnrs.fr/mchupin/mchupin/wordcloud}
+  Version 0.3, 2025, Novembre, 16th \\
+  \url{https://github.com/chupinmaxime/wordcloud}
 \end{center}
 %% == Page de garde ====================================================
 \newpage
@@ -368,9 +368,15 @@ know,  this \wordcloudpkg package is the only wordcloud tool that could build a
 wordcloud of mathematical formulas. 
 
 \begin{remark}
-  Because the \hologo{METAPOST} side uses \lstinline+textext+ command to build
+  \begin{itemize}
+    \item   Because the \hologo{METAPOST} side uses \lstinline+textext+ command to build
   words, \lstinline+\mplibtextextlabel{enable}+ is used to enable string labels
   typeset via \lstinline+textext()+ instead of \emph{infont} operator.
+\item The \lstinline+\wordcloud+ command build an \lstinline+mplibcode+
+environment with \hologo{METAPOST} code. Each of the \lstinline+mplibcode+
+environment use the \lstinline+luamplib+~\cite{ctan-luamplib} mechanism of
+\emph{instance} named \lstinline+wordcloud+. 
+  \end{itemize}
 \end{remark}
 
 \subsection{Add ignored words}
@@ -388,6 +394,12 @@ However, you can add a list of words to ignore with the following command:
   \lstinline+word1,word2,word3, etc.+
 \end{description}
 
+\subsection{\textsc{pdf} tagging}
+
+Thanks to the demand of David Carlisle, the \hologo{LaTeX} commands generate
+now, if the tagging in on with \hologo{LuaLaTeX}, alternative text to describe
+the wordcloud produced. It uses the \lstinline+luamplib+ mechanism tot deal with
+\textsc{pdf} tagging. 
   
 \section{With \texttt{pdftotext}}
 
@@ -427,6 +439,7 @@ Some things to do:
 \section{History}
 
 \begin{description}
+  \item[v0.3 (11/2025):] Add \textsc{pdf} tagging for \LaTeX{} figures. 
   \item[v0.2 (09/2023):] Deal with \lstinline+\luaescapestring+ for list with
   \lstinline+\wordcloud+. Typos in doc. 
   \item[v0.1 (08/2023):] First publication.
